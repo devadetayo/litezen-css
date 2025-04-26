@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = path.resolve(__dirname, 'base.css'); // change to your base file
-const outputCSS = path.resolve(__dirname, 'litezen-variants.css');
-const outputJSON = path.resolve(__dirname, 'litezen-styles.json');
+const inputPath = path.resolve(__dirname, '../src/utilities/base.css'); // change to your base file
+const outputCSS = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
+const outputJSON = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
 
 const responsivePrefixes = {
   sm: '@media (min-width: 480px)',

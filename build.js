@@ -36,6 +36,7 @@ const componentFiles = [
   'src/components/gallery.css',
   'src/components/hero.css',
   'src/components/list.css',
+  'src/components/index.css',
   'src/components/megamenu.css',
   'src/components/modals.css',
   'src/components/navbar.css',

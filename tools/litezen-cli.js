@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = path.resolve(__dirname, '../dist/input.css');
+const inputPath = path.resolve(__dirname, '../dist/components.css');
 const utilitiesPath = path.resolve(__dirname, '../dist/litezen-styles.json');
 const outputPath = path.resolve(__dirname, '../dist/litezen.css');
 
