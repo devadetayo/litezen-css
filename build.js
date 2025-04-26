@@ -3,39 +3,90 @@ const { execSync } = require('child_process');
 
 const outDir = 'dist';
 
-// Utilities
+// Utility files (add all utility files here)
 const utilityFiles = [
   'src/utilities/reset.css',
   'src/utilities/normalize.css',
   'src/utilities/variables.css',
-  'src/utilities/utilities.css',
+  'src/utilities/base.css',
   'src/utilities/responsive.css',
-  'src/utilities/states.css'
 ];
 
-// Components
+// Component files (add all component files here)
 const componentFiles = [
   'src/components/reset.css',
   'src/components/variables.css',
   'src/components/base.css',
-  // Add all component files below
-  'src/components/button.css',
-  'src/components/card.css'
+  'src/components/accordions.css',
+  'src/components/alerts.css',
+  'src/components/avatars.css',
+  'src/components/badges.css',
+  'src/components/base.css',
+  'src/components/breadcrumbs.css',
+  'src/components/buttons.css',
+  'src/components/cards.css',
+  'src/components/carousel.css',
+  'src/components/cards.css',
+  'src/components/chips.css',
+  'src/components/datepicker.css',
+  'src/components/dropdown.css',
+  'src/components/file-uploads.css',
+  'src/components/footer.css',
+  'src/components/forms.css',
+  'src/components/gallery.css',
+  'src/components/hero.css',
+  'src/components/list.css',
+  'src/components/megamenu.css',
+  'src/components/modals.css',
+  'src/components/navbar.css',
+  'src/components/notifications.css',
+  'src/components/paginations.css',
+  'src/components/popovers.css',
+  'src/components/pricing.css',
+  'src/components/progress-bars.css',
+  'src/components/range-slider.css',
+  'src/components/reset.css',
+  'src/components/searchfilter.css',
+  'src/components/sidebar.css',
+  'src/components/skeleton.css',
+  'src/components/spinners.css',
+  'src/components/stats.css',
+  'src/components/stepper.css',
+  'src/components/sticky-elements.css',
+  'src/components/tables.css',
+  'src/components/tabs.css',
+  'src/components/timeline.css',
+  'src/components/tooltips.css',
+  'src/components/variables.css'
 ];
 
-// Full Bundle
+// Full bundle (combined utilities + components)
 const litezenFiles = [...utilityFiles, ...componentFiles];
 
-// Utility build
-fs.writeFileSync(`${outDir}/utilities.css`, utilityFiles.map(f => fs.readFileSync(f)).join('\n'));
+// Ensure dist folder exists
+if (!fs.existsSync(outDir)) {
+  fs.mkdirSync(outDir);
+}
 
-// Component build
-fs.writeFileSync(`${outDir}/components.css`, componentFiles.map(f => fs.readFileSync(f)).join('\n'));
+// Utility build (compiles utility files into dist/utilities.css)
+fs.writeFileSync(
+  `${outDir}/utilities.css`,
+  utilityFiles.map(f => fs.readFileSync(f)).join('\n')
+);
 
-// Full build
-fs.writeFileSync(`${outDir}/litezen.css`, litezenFiles.map(f => fs.readFileSync(f)).join('\n'));
+// Component build (compiles component files into dist/components.css)
+fs.writeFileSync(
+  `${outDir}/components.css`,
+  componentFiles.map(f => fs.readFileSync(f)).join('\n')
+);
 
-// Minify using PostCSS
+// Full build (compiles both utilities and components into dist/litezen.css)
+fs.writeFileSync(
+  `${outDir}/litezen.css`,
+  litezenFiles.map(f => fs.readFileSync(f)).join('\n')
+);
+
+// Minify using PostCSS for full bundle
 execSync(`npx postcss ${outDir}/litezen.css -o ${outDir}/litezen.min.css`);
 
 console.log('✅ Build complete: utilities.css, components.css, litezen.css, litezen.min.css');

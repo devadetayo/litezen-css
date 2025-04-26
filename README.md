@@ -8,7 +8,7 @@
 
 ## 🚀 What is Litezen?
 
-Litezen CSS is a hybrid CSS framework that combines the power of utility-first classes like Tailwind with the clean component structure of Pico and Bulma — all while staying lean, theme-aware, and production-ready.
+Litezen CSS is a hybrid CSS framework that combines the power of utility-first classes and components based like other css — all while staying lean, theme-aware, and production-ready.
 
 ---
 
