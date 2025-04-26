@@ -4485,9 +4485,9 @@ html[data-theme="dark"] {
 
 
 /* src/components/accordion.css */
-@layer components.accordion {
+@layer components.lz-accordion {
   /* ─── Accordion Container ─────────────────────────────────── */
-  .accordion {
+  .lz-accordion {
     display: flex;
     flex-direction: column;
     gap: var(--lz-space-2);
@@ -4495,7 +4495,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Accordion Item ──────────────────────────────────────── */
-  .accordion-item {
+  .lz-accordion-item {
     border: var(--lz-border-width) solid var(--lz-border-color);
     border-radius: var(--lz-rounded);
     overflow: hidden;
@@ -4503,7 +4503,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Accordion Header ────────────────────────────────────── */
-  .accordion-header {
+  .lz-accordion-header {
     background-color: var(--lz-bg-surface);
     color: var(--lz-text-default);
     padding: var(--lz-space-3) var(--lz-space-4); /* Mobile-first padding */
@@ -4518,12 +4518,12 @@ html[data-theme="dark"] {
     width: 100%;
   }
 
-  .accordion-header:hover {
+  .lz-accordion-header:hover {
     background-color: var(--lz-bg-emphasis);
   }
 
   /* ─── Accordion Content ───────────────────────────────────── */
-  .accordion-content {
+  .lz-accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--lz-transition-normal), padding var(--lz-transition-fast);
@@ -4531,114 +4531,114 @@ html[data-theme="dark"] {
     background-color: var(--lz-bg-default);
   }
 
-  .accordion-content.open {
+  .lz-accordion-content.open {
     padding: var(--lz-space-3) var(--lz-space-4);
     max-height: 100vh; /* large enough to show content */
   }
 
   /* ─── Icon Toggles ─────────────────────────────────────────── */
-  .accordion-header .icon {
+  .lz-accordion-header .icon {
     transition: transform var(--lz-transition-fast);
   }
 
-  .accordion-header.active .icon {
+  .lz-accordion-header.lz-active .icon {
     transform: rotate(180deg);
   }
 
   /* ─── Dark Mode Tweaks ─────────────────────────────────────── */
-  html[data-theme="dark"] .accordion-header {
+  html[data-theme="dark"] .lz-accordion-header {
     background-color: var(--lz-bg-surface);
     color: var(--lz-text-default);
   }
 
-  html[data-theme="dark"] .accordion-content {
+  html[data-theme="dark"] .lz-accordion-content {
     background-color: var(--lz-bg-default);
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles are for mobile devices */
-  .accordion-header {
+  .lz-accordion-header {
     font-size: var(--lz-body-size); /* Default font size for mobile */
     padding: var(--lz-space-3) var(--lz-space-4); /* Padding for mobile */
   }
 
-  .accordion-content {
+  .lz-accordion-content {
     padding: 0 var(--lz-space-4); /* Padding for mobile */
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* Tablet and larger screens (min-width: 768px) */
   @media (min-width: 768px) {
-    .accordion-header {
+    .lz-accordion-header {
       padding: var(--lz-space-3) var(--lz-space-5); /* Larger padding for tablets */
       font-size: var(--lz-body-size-md); /* Slightly larger font on tablets */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-3) var(--lz-space-5); /* Increase padding on larger screens */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-3); /* Larger space between accordion items */
     }
   }
 
   /* Larger screens (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .accordion-header {
+    .lz-accordion-header {
       font-size: var(--lz-body-size-lg); /* Increase font size on large screens */
       padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding on larger screens */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-4); /* More space on larger screens */
     }
   }
 
   /* Extra Large screens (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .accordion-header {
+    .lz-accordion-header {
       font-size: var(--lz-body-size-xl); /* Even larger font size on extra large screens */
       padding: var(--lz-space-5) var(--lz-space-8); /* Adjust padding for larger screens */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-5) var(--lz-space-8); /* More padding for larger screens */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-5); /* Larger space on extra large screens */
     }
   }
 
   /* ─── Accessibility & Usability Enhancements ───────────────── */
-  .accordion-header:focus {
+  .lz-accordion-header:focus {
     outline: 2px solid var(--lz-primary); /* Focus state for accessibility */
     background-color: var(--lz-bg-emphasis);
   }
 
-  .accordion-header[aria-expanded="true"] {
+  .lz-accordion-header[aria-expanded="true"] {
     background-color: var(--lz-bg-emphasis);
   }
 
   /* ─── Additional Utility Support ──────────────────────────── */
   /* Allow utility-based control for padding and margins */
-  .accordion-header {
+  .lz-accordion-header {
     @apply p-4; /* Utility class for padding */
     @apply mb-2; /* Margin-bottom utility */
   }
 
-  .accordion-content {
+  .lz-accordion-content {
     @apply p-4; /* Utility class for padding */
   }
 }
 /* src/components/alerts.css */
-@layer components.alerts {
-  .alert {
+@layer components.lz-alerts {
+  .lz-alert {
     display: flex;
     align-items: center;
     gap: var(--lz-space-3);
@@ -4652,56 +4652,56 @@ html[data-theme="dark"] {
     width: 100%; /* Ensure full width on small screens */
   }
 
-  .alert svg {
+  .lz-alert svg {
     flex-shrink: 0;
     width: 1.25rem;
     height: 1.25rem;
   }
 
-  .alert-info {
+  .lz-alert-info {
     background-color: var(--lz-blue-50);
     color: var(--lz-blue-800);
     border-color: var(--lz-blue-300);
   }
 
-  .alert-success {
+  .lz-alert-success {
     background-color: var(--lz-green-50);
     color: var(--lz-green-800);
     border-color: var(--lz-green-300);
   }
 
-  .alert-warning {
+  .lz-alert-warning {
     background-color: var(--lz-yellow-50);
     color: var(--lz-yellow-800);
     border-color: var(--lz-yellow-300);
   }
 
-  .alert-error {
+  .lz-alert-error {
     background-color: var(--lz-red-50);
     color: var(--lz-red-800);
     border-color: var(--lz-red-300);
   }
 
   /* Dark Mode Variants */
-  html[data-theme="dark"] .alert-info {
+  html[data-theme="dark"] .lz-alert-info {
     background-color: var(--lz-blue-900);
     color: var(--lz-blue-100);
     border-color: var(--lz-blue-700);
   }
 
-  html[data-theme="dark"] .alert-success {
+  html[data-theme="dark"] .lz-alert-success {
     background-color: var(--lz-green-900);
     color: var(--lz-green-100);
     border-color: var(--lz-green-700);
   }
 
-  html[data-theme="dark"] .alert-warning {
+  html[data-theme="dark"] .lz-alert-warning {
     background-color: var(--lz-yellow-900);
     color: var(--lz-yellow-100);
     border-color: var(--lz-yellow-700);
   }
 
-  html[data-theme="dark"] .alert-error {
+  html[data-theme="dark"] .lz-alert-error {
     background-color: var(--lz-red-900);
     color: var(--lz-red-100);
     border-color: var(--lz-red-700);
@@ -4709,7 +4709,7 @@ html[data-theme="dark"] {
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles for mobile devices */
-  .alert {
+  .lz-alert {
     font-size: var(--lz-text-sm); /* Default smaller font-size on mobile */
     padding: var(--lz-space-3) var(--lz-space-4); /* Adjust padding for mobile */
     width: 100%; /* Ensure alerts span full width on small screens */
@@ -4718,7 +4718,7 @@ html[data-theme="dark"] {
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .alert {
+    .lz-alert {
       padding: var(--lz-space-4) var(--lz-space-5); /* More padding on small tablets */
       font-size: var(--lz-text-base); /* Larger font size for small tablets */
     }
@@ -4726,7 +4726,7 @@ html[data-theme="dark"] {
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .alert {
+    .lz-alert {
       width: 90%; /* Slightly narrower on larger tablets */
       padding: var(--lz-space-4) var(--lz-space-6); /* Even more padding on tablets */
       font-size: var(--lz-text-lg); /* Larger font size */
@@ -4735,7 +4735,7 @@ html[data-theme="dark"] {
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .alert {
+    .lz-alert {
       width: 80%; /* More space on larger screens */
       padding: var(--lz-space-5) var(--lz-space-7); /* Adjust padding */
       font-size: var(--lz-text-xl); /* Larger font size */
@@ -4744,7 +4744,7 @@ html[data-theme="dark"] {
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .alert {
+    .lz-alert {
       width: 70%; /* Even more space on large desktops */
       padding: var(--lz-space-6) var(--lz-space-8); /* Adjust padding for larger screens */
       font-size: var(--lz-text-2xl); /* Extra large font size */
@@ -4753,7 +4753,7 @@ html[data-theme="dark"] {
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .alert {
+    .lz-alert {
       width: 60%; /* Ultra-wide screens get even more space */
       padding: var(--lz-space-7) var(--lz-space-9); /* Ultra-wide screen padding */
       font-size: var(--lz-text-3xl); /* Extra large text for huge displays */
@@ -4761,7 +4761,7 @@ html[data-theme="dark"] {
   }
 }
 /* src/components/avatars.css */
-@layer components.avatars {
+@layer components.lz-avatars {
   .lz-avatar {
     display: inline-block;
     width: var(--lz-space-8);
@@ -4791,8 +4791,8 @@ html[data-theme="dark"] {
 }
 
 /* src/components/badges.css */
-@layer components.badges {
-  .badge {
+@layer components.lz-badges {
+  .lz-badge {
     display: inline-block;
     padding: var(--lz-space-1) var(--lz-space-2);
     font-size: var(--lz-text-xs);
@@ -4807,68 +4807,68 @@ html[data-theme="dark"] {
   }
 
   /* Badge Sizes */
-  .badge-sm {
+  .lz-badge-sm {
     font-size: var(--lz-text-xxs);
     padding: var(--lz-space-1);
   }
 
-  .badge-lg {
+  .lz-badge-lg {
     font-size: var(--lz-text-sm);
     padding: var(--lz-space-2) var(--lz-space-4);
   }
 
   /* Variants */
-  .badge-primary {
+  .lz-badge-primary {
     background-color: var(--lz-bg-primary);
     color: var(--lz-text-primary);
   }
-  .badge-secondary {
+  .lz-badge-secondary {
     background-color: var(--lz-bg-secondary);
     color: var(--lz-text-secondary);
   }
-  .badge-success {
+  .lz-badge-success {
     background-color: var(--lz-bg-success);
     color: var(--lz-text-success);
   }
-  .badge-warning {
+  .lz-badge-warning {
     background-color: var(--lz-bg-warning);
     color: var(--lz-text-warning);
   }
-  .badge-danger {
+  .lz-badge-danger {
     background-color: var(--lz-bg-danger);
     color: var(--lz-text-danger);
   }
-  .badge-info {
+  .lz-badge-info {
     background-color: var(--lz-bg-info);
     color: var(--lz-text-info);
   }
 
   /* Dark Mode */
-  html[data-theme="dark"] .badge {
+  html[data-theme="dark"] .lz-badge {
     background-color: var(--lz-bg-emphasis);
     color: var(--lz-text-default);
   }
-  html[data-theme="dark"] .badge-primary {
+  html[data-theme="dark"] .lz-badge-primary {
     background-color: var(--lz-primary-hover);
     color: var(--lz-text-primary);
   }
-  html[data-theme="dark"] .badge-secondary {
+  html[data-theme="dark"] .lz-badge-secondary {
     background-color: var(--lz-secondary-hover);
     color: var(--lz-text-secondary);
   }
-  html[data-theme="dark"] .badge-success {
+  html[data-theme="dark"] .lz-badge-success {
     background-color: var(--lz-success-hover);
     color: var(--lz-text-success);
   }
-  html[data-theme="dark"] .badge-warning {
+  html[data-theme="dark"] .lz-badge-warning {
     background-color: var(--lz-warning-hover);
     color: var(--lz-text-warning);
   }
-  html[data-theme="dark"] .badge-danger {
+  html[data-theme="dark"] .lz-badge-danger {
     background-color: var(--lz-danger-hover);
     color: var(--lz-text-danger);
   }
-  html[data-theme="dark"] .badge-info {
+  html[data-theme="dark"] .lz-badge-info {
     background-color: var(--lz-info-hover);
     color: var(--lz-text-info);
   }
@@ -4876,17 +4876,17 @@ html[data-theme="dark"] {
   /* Responsive Breakpoints */
   /* Mobile first approach */
   @media (max-width: 767px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-xs); /* Adjust font size on small screens */
       padding: var(--lz-space-1) var(--lz-space-2); /* Adjust padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-xxs); /* Small badge adjustments for mobile */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-sm); /* Large badge adjustments for mobile */
       padding: var(--lz-space-2);
     }
@@ -4894,17 +4894,17 @@ html[data-theme="dark"] {
 
   /* Tablets (768px and above) */
   @media (min-width: 768px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-sm); /* Slightly larger font for tablets */
       padding: var(--lz-space-2) var(--lz-space-3); /* Slightly larger padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-xs); /* Small badge adjustments for tablets */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-md); /* Larger font for larger badges */
       padding: var(--lz-space-2) var(--lz-space-4);
     }
@@ -4912,17 +4912,17 @@ html[data-theme="dark"] {
 
   /* Desktop (1024px and above) */
   @media (min-width: 1024px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-base); /* Base font size for large screens */
       padding: var(--lz-space-3) var(--lz-space-4); /* More padding on larger screens */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-sm); /* Slightly larger font for small badges */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-lg); /* Increase font size for large badges */
       padding: var(--lz-space-3) var(--lz-space-5);
     }
@@ -4930,17 +4930,17 @@ html[data-theme="dark"] {
 
   /* Larger Desktop (1280px and above) */
   @media (min-width: 1280px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-lg); /* Larger font size for very large screens */
       padding: var(--lz-space-3) var(--lz-space-5); /* Even more padding on large screens */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-base); /* Increase size for small badges on large screens */
       padding: var(--lz-space-2);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-xl); /* Larger font size for large badges */
       padding: var(--lz-space-4) var(--lz-space-6);
     }
@@ -4948,29 +4948,29 @@ html[data-theme="dark"] {
 
   /* Ultra Wide Desktop (1600px and above) */
   @media (min-width: 1600px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-xl); /* Very large font for ultra-wide screens */
       padding: var(--lz-space-4) var(--lz-space-6); /* Generous padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-lg); /* Small badges also get larger font size */
       padding: var(--lz-space-2);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-2xl); /* Extra large font for large badges */
       padding: var(--lz-space-5) var(--lz-space-7);
     }
   }
 
   /* Accessibility Improvements */
-  .badge:focus {
+  .lz-badge:focus {
     outline: 2px solid var(--lz-primary); /* Clear focus state for better accessibility */
   }
 
   /* Allow icons within badges */
-  .badge[aria-live="polite"] {
+  .lz-badge[aria-live="polite"] {
     position: relative;
     padding-left: var(--lz-space-6); /* Add space for a potential icon */
   }
@@ -5400,8 +5400,8 @@ html[data-theme="dark"] {
 
 
 /* src/components/breadcrumbs.css */
-@layer components.breadcrumbs {
-  .breadcrumb {
+@layer components.lz-breadcrumbs {
+  .lz-breadcrumb {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -5409,34 +5409,34 @@ html[data-theme="dark"] {
     margin: 0;
     font-size: var(--lz-text-sm);
   }
-  .breadcrumb li + li::before {
+  .lz-breadcrumb li + li::before {
     content: '/';
     margin: 0 var(--lz-space-2);
     color: var(--lz-text-muted);
   }
-  .breadcrumb a {
+  .lz-breadcrumb a {
     text-decoration: none;
     color: var(--lz-primary);
     transition: color var(--lz-transition-fast);
   }
-  .breadcrumb a:hover {
+  .lz-breadcrumb a:hover {
     color: var(--lz-primary-hover);
   }
-  html[data-theme="dark"] .breadcrumb a {
+  html[data-theme="dark"] .lz-breadcrumb a {
     color: var(--lz-text-light);
   }
 
-  @media (max-width: 640px) { .breadcrumb { font-size: var(--lz-text-xs); } }
+  @media (max-width: 640px) { .lz-breadcrumb { font-size: var(--lz-text-xs); } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
-  @media (min-width:1281px) { .breadcrumb { font-size: var(--lz-text-base); } }
+  @media (min-width:1281px) { .lz-breadcrumb { font-size: var(--lz-text-base); } }
 }
 
 /* src/components/button.css */
-@layer components.button {
+@layer components.lz-button {
   /* ─── Flexible Base ─────────────────────────────────────────── */
-  .btn {
+  .lz-btn {
     all: unset;
     display: inline-flex;
     align-items: center;
@@ -5457,90 +5457,90 @@ html[data-theme="dark"] {
   }
 
   /* ─── Size Modifiers ───────────────────────────────────────── */
-  .btn-sm {
+  .lz-btn-sm {
     padding: calc(var(--lz-space-2) * 0.75) calc(var(--lz-space-4) * 0.75);
     font-size: var(--lz-comp-fs-sm);
   }
-  .btn-lg {
+  .lz-btn-lg {
     padding: calc(var(--lz-space-2) * 1.25) calc(var(--lz-space-4) * 1.25);
     font-size: var(--lz-comp-fs-lg);
   }
 
   /* ─── Preset Variants ──────────────────────────────────────── */
-  .btn-primary {
+  .lz-btn-primary {
     background-color: var(--lz-bg-primary);
     color: var(--lz-text-primary);
     border-color: var(--lz-border-primary);
   }
-  .btn-secondary {
+  .lz-btn-secondary {
     background-color: var(--lz-bg-secondary);
     color: var(--lz-text-secondary);
     border-color: var(--lz-border-secondary);
   }
-  .btn-success {
+  .lz-btn-success {
     background-color: var(--lz-bg-success);
     color: var(--lz-text-success);
     border-color: var(--lz-border-success);
   }
-  .btn-warning {
+  .lz-btn-warning {
     background-color: var(--lz-bg-warning);
     color: var(--lz-text-warning);
     border-color: var(--lz-border-warning);
   }
-  .btn-danger {
+  .lz-btn-danger {
     background-color: var(--lz-bg-danger);
     color: var(--lz-text-danger);
     border-color: var(--lz-border-danger);
   }
-  .btn-info {
+  .lz-btn-info {
     background-color: var(--lz-bg-info);
     color: var(--lz-text-info);
     border-color: var(--lz-border-info);
   }
 
   /* ─── Interaction States ───────────────────────────────────── */
-  .btn:hover,
-  .btn:focus-visible {
+  .lz-btn:hover,
+  .lz-btn:focus-visible {
     box-shadow: var(--lz-shadow-md);
   }
-  .btn-primary:hover { background-color: var(--lz-primary-hover); }
-  .btn-secondary:hover { background-color: var(--lz-secondary-hover); }
-  .btn-success:hover { background-color: var(--lz-success-hover); }
-  .btn-warning:hover { background-color: var(--lz-warning-hover); }
-  .btn-danger:hover { background-color: var(--lz-danger-hover); }
-  .btn-info:hover { background-color: var(--lz-info-hover); }
+  .lz-btn-primary:hover { background-color: var(--lz-primary-hover); }
+  .lz-btn-secondary:hover { background-color: var(--lz-secondary-hover); }
+  .lz-btn-success:hover { background-color: var(--lz-success-hover); }
+  .lz-btn-warning:hover { background-color: var(--lz-warning-hover); }
+  .lz-btn-danger:hover { background-color: var(--lz-danger-hover); }
+  .lz-btn-info:hover { background-color: var(--lz-info-hover); }
 
   /* ─── Disabled State ───────────────────────────────────────── */
-  .btn:disabled {
+  .lz-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     box-shadow: none;
   }
 
   /* ─── Dark‑mode Tweaks ─────────────────────────────────────── */
-  html[data-theme="dark"] .btn {
+  html[data-theme="dark"] .lz-btn {
     box-shadow: var(--lz-shadow-lg);
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles are for mobile devices */
-  .btn {
+  .lz-btn {
     font-size: var(--lz-body-size); /* Default font size for mobile */
     padding: var(--lz-space-2) var(--lz-space-4); /* Default padding for mobile */
   }
 
-  .btn-sm {
+  .lz-btn-sm {
     padding: calc(var(--lz-space-2) * 0.75) calc(var(--lz-space-4) * 0.75);
   }
 
-  .btn-lg {
+  .lz-btn-lg {
     padding: calc(var(--lz-space-2) * 1.25) calc(var(--lz-space-4) * 1.25);
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .btn {
+    .lz-btn {
       font-size: var(--lz-body-size-md); /* Adjust font size for small tablets */
       padding: var(--lz-space-3) var(--lz-space-5); /* More padding for small tablets */
     }
@@ -5548,37 +5548,37 @@ html[data-theme="dark"] {
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .btn {
+    .lz-btn {
       font-size: var(--lz-body-size-lg); /* Larger font size on tablets */
       padding: var(--lz-space-3) var(--lz-space-6); /* Adjust padding */
     }
 
-    .btn-sm {
+    .lz-btn-sm {
       padding: calc(var(--lz-space-2) * 0.85) calc(var(--lz-space-4) * 0.85);
     }
-    .btn-lg {
+    .lz-btn-lg {
       padding: calc(var(--lz-space-2) * 1.35) calc(var(--lz-space-4) * 1.35);
     }
   }
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .btn {
+    .lz-btn {
       font-size: var(--lz-body-size-xl); /* Even larger font size for laptops */
       padding: var(--lz-space-4) var(--lz-space-7); /* Increase padding */
     }
 
-    .btn-sm {
+    .lz-btn-sm {
       padding: calc(var(--lz-space-2) * 1) calc(var(--lz-space-4) * 1);
     }
-    .btn-lg {
+    .lz-btn-lg {
       padding: calc(var(--lz-space-2) * 1.5) calc(var(--lz-space-4) * 1.5);
     }
   }
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .btn {
+    .lz-btn {
       font-size: var(--lz-body-size-2xl); /* Extra large font size for large desktops */
       padding: var(--lz-space-5) var(--lz-space-8); /* Larger padding for larger screens */
     }
@@ -5586,17 +5586,17 @@ html[data-theme="dark"] {
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .btn {
+    .lz-btn {
       font-size: var(--lz-body-size-3xl); /* Font size is massive for huge displays */
       padding: var(--lz-space-6) var(--lz-space-9); /* Super large padding */
     }
   }
 }
 
-/* src/components/card.css */
-@layer components.card {
+/* src/components/card.lz-css */
+@layer components.lz-card {
   /* ─── Card Container ───────────────────────────────────────── */
-  .card {
+  .lz-card {
     background-color: var(--lz-bg-default);
     color: var(--lz-text-default);
     border: var(--lz-border-width) solid var(--lz-border-color);
@@ -5610,18 +5610,18 @@ html[data-theme="dark"] {
   }
 
   /* Hover/Focus lift */
-  .card:hover,
-  .card:focus-within {
+  .lz-card:hover,
+  .lz-card:focus-within {
     box-shadow: var(--lz-shadow-md);
   }
 
   /* ─── Dark‑mode shadow boost ───────────────────────────────── */
-  html[data-theme="dark"] .card {
+  html[data-theme="dark"] .lz-card {
     box-shadow: var(--lz-shadow-lg);
   }
 
   /* ─── Card Image ───────────────────────────────────────────── */
-  .card-img-top {
+  .lz-card-img-top {
     width: 100%;
     height: auto;
     border-top-left-radius: var(--lz-rounded);
@@ -5630,7 +5630,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Header ──────────────────────────────────────────── */
-  .card-header {
+  .lz-card-header {
     font-family: var(--lz-font-primary);
     font-size: var(--lz-heading-size);
     line-height: var(--lz-heading-line-height);
@@ -5638,7 +5638,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Body ────────────────────────────────────────────── */
-  .card-body {
+  .lz-card-body {
     font-family: var(--lz-font-secondary);
     font-size: var(--lz-body-size);
     line-height: var(--lz-body-line-height);
@@ -5646,7 +5646,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Footer ──────────────────────────────────────────── */
-  .card-footer {
+  .lz-card-footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -5658,19 +5658,19 @@ html[data-theme="dark"] {
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles for mobile devices */
-  .card {
+  .lz-card {
     padding: var(--lz-space-3);
   }
 
-  .card-header {
+  .lz-card-header {
     font-size: var(--lz-heading-size); /* Use smaller heading size on mobile */
   }
 
-  .card-body {
+  .lz-card-body {
     font-size: var(--lz-body-size); /* Base font size for body on mobile */
   }
 
-  .card-footer {
+  .lz-card-footer {
     padding-top: var(--lz-space-2);
     margin-top: var(--lz-space-2);
     gap: var(--lz-space-2);
@@ -5679,19 +5679,19 @@ html[data-theme="dark"] {
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-4); /* More padding for small tablets */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-md); /* Adjust heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-md); /* Slightly larger body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       padding-top: var(--lz-space-3);
       margin-top: var(--lz-space-3);
     }
@@ -5699,78 +5699,78 @@ html[data-theme="dark"] {
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Align cards in row for tablets and larger */
       gap: var(--lz-space-5); /* Increase gap between card sections */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-lg); /* Larger font size on tablets */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-lg); /* Larger body font size */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-3); /* Adjust footer gap */
     }
   }
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-5); /* Increase padding for laptops */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-xl); /* Even larger heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-xl); /* Larger text size for body */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-4); /* Larger gap in the footer */
     }
   }
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Continue row-based layout on larger screens */
       padding: var(--lz-space-6); /* Even more padding */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-2xl); /* Extra large heading */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-2xl); /* Extra large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-5); /* Even more gap in the footer */
     }
   }
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-7); /* Super large padding for huge screens */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-3xl); /* Huge heading size for very large screens */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-3xl); /* Very large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-6); /* Large gap in footer */
     }
   }
@@ -5985,10 +5985,10 @@ html[data-theme="dark"] {
     }
   }
 }
-/* src/components/card.css */
-@layer components.card {
+/* src/components/card.lz-css */
+@layer components.lz-card {
   /* ─── Card Container ───────────────────────────────────────── */
-  .card {
+  .lz-card {
     background-color: var(--lz-bg-default);
     color: var(--lz-text-default);
     border: var(--lz-border-width) solid var(--lz-border-color);
@@ -6002,18 +6002,18 @@ html[data-theme="dark"] {
   }
 
   /* Hover/Focus lift */
-  .card:hover,
-  .card:focus-within {
+  .lz-card:hover,
+  .lz-card:focus-within {
     box-shadow: var(--lz-shadow-md);
   }
 
   /* ─── Dark‑mode shadow boost ───────────────────────────────── */
-  html[data-theme="dark"] .card {
+  html[data-theme="dark"] .lz-card {
     box-shadow: var(--lz-shadow-lg);
   }
 
   /* ─── Card Image ───────────────────────────────────────────── */
-  .card-img-top {
+  .lz-card-img-top {
     width: 100%;
     height: auto;
     border-top-left-radius: var(--lz-rounded);
@@ -6022,7 +6022,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Header ──────────────────────────────────────────── */
-  .card-header {
+  .lz-card-header {
     font-family: var(--lz-font-primary);
     font-size: var(--lz-heading-size);
     line-height: var(--lz-heading-line-height);
@@ -6030,7 +6030,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Body ────────────────────────────────────────────── */
-  .card-body {
+  .lz-card-body {
     font-family: var(--lz-font-secondary);
     font-size: var(--lz-body-size);
     line-height: var(--lz-body-line-height);
@@ -6038,7 +6038,7 @@ html[data-theme="dark"] {
   }
 
   /* ─── Card Footer ──────────────────────────────────────────── */
-  .card-footer {
+  .lz-card-footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -6050,19 +6050,19 @@ html[data-theme="dark"] {
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles for mobile devices */
-  .card {
+  .lz-card {
     padding: var(--lz-space-3);
   }
 
-  .card-header {
+  .lz-card-header {
     font-size: var(--lz-heading-size); /* Use smaller heading size on mobile */
   }
 
-  .card-body {
+  .lz-card-body {
     font-size: var(--lz-body-size); /* Base font size for body on mobile */
   }
 
-  .card-footer {
+  .lz-card-footer {
     padding-top: var(--lz-space-2);
     margin-top: var(--lz-space-2);
     gap: var(--lz-space-2);
@@ -6071,19 +6071,19 @@ html[data-theme="dark"] {
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-4); /* More padding for small tablets */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-md); /* Adjust heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-md); /* Slightly larger body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       padding-top: var(--lz-space-3);
       margin-top: var(--lz-space-3);
     }
@@ -6091,78 +6091,78 @@ html[data-theme="dark"] {
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Align cards in row for tablets and larger */
       gap: var(--lz-space-5); /* Increase gap between card sections */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-lg); /* Larger font size on tablets */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-lg); /* Larger body font size */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-3); /* Adjust footer gap */
     }
   }
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-5); /* Increase padding for laptops */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-xl); /* Even larger heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-xl); /* Larger text size for body */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-4); /* Larger gap in the footer */
     }
   }
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Continue row-based layout on larger screens */
       padding: var(--lz-space-6); /* Even more padding */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-2xl); /* Extra large heading */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-2xl); /* Extra large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-5); /* Even more gap in the footer */
     }
   }
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-7); /* Super large padding for huge screens */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-3xl); /* Huge heading size for very large screens */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-3xl); /* Very large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-6); /* Large gap in footer */
     }
   }

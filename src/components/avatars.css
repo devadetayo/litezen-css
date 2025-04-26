@@ -1,5 +1,5 @@
 /* src/components/avatars.css */
-@layer components.avatars {
+@layer components.lz-avatars {
   .lz-avatar {
     display: inline-block;
     width: var(--lz-space-8);

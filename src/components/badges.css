@@ -1,6 +1,6 @@
 /* src/components/badges.css */
-@layer components.badges {
-  .badge {
+@layer components.lz-badges {
+  .lz-badge {
     display: inline-block;
     padding: var(--lz-space-1) var(--lz-space-2);
     font-size: var(--lz-text-xs);
@@ -15,68 +15,68 @@
   }
 
   /* Badge Sizes */
-  .badge-sm {
+  .lz-badge-sm {
     font-size: var(--lz-text-xxs);
     padding: var(--lz-space-1);
   }
 
-  .badge-lg {
+  .lz-badge-lg {
     font-size: var(--lz-text-sm);
     padding: var(--lz-space-2) var(--lz-space-4);
   }
 
   /* Variants */
-  .badge-primary {
+  .lz-badge-primary {
     background-color: var(--lz-bg-primary);
     color: var(--lz-text-primary);
   }
-  .badge-secondary {
+  .lz-badge-secondary {
     background-color: var(--lz-bg-secondary);
     color: var(--lz-text-secondary);
   }
-  .badge-success {
+  .lz-badge-success {
     background-color: var(--lz-bg-success);
     color: var(--lz-text-success);
   }
-  .badge-warning {
+  .lz-badge-warning {
     background-color: var(--lz-bg-warning);
     color: var(--lz-text-warning);
   }
-  .badge-danger {
+  .lz-badge-danger {
     background-color: var(--lz-bg-danger);
     color: var(--lz-text-danger);
   }
-  .badge-info {
+  .lz-badge-info {
     background-color: var(--lz-bg-info);
     color: var(--lz-text-info);
   }
 
   /* Dark Mode */
-  html[data-theme="dark"] .badge {
+  html[data-theme="dark"] .lz-badge {
     background-color: var(--lz-bg-emphasis);
     color: var(--lz-text-default);
   }
-  html[data-theme="dark"] .badge-primary {
+  html[data-theme="dark"] .lz-badge-primary {
     background-color: var(--lz-primary-hover);
     color: var(--lz-text-primary);
   }
-  html[data-theme="dark"] .badge-secondary {
+  html[data-theme="dark"] .lz-badge-secondary {
     background-color: var(--lz-secondary-hover);
     color: var(--lz-text-secondary);
   }
-  html[data-theme="dark"] .badge-success {
+  html[data-theme="dark"] .lz-badge-success {
     background-color: var(--lz-success-hover);
     color: var(--lz-text-success);
   }
-  html[data-theme="dark"] .badge-warning {
+  html[data-theme="dark"] .lz-badge-warning {
     background-color: var(--lz-warning-hover);
     color: var(--lz-text-warning);
   }
-  html[data-theme="dark"] .badge-danger {
+  html[data-theme="dark"] .lz-badge-danger {
     background-color: var(--lz-danger-hover);
     color: var(--lz-text-danger);
   }
-  html[data-theme="dark"] .badge-info {
+  html[data-theme="dark"] .lz-badge-info {
     background-color: var(--lz-info-hover);
     color: var(--lz-text-info);
   }
@@ -84,17 +84,17 @@
   /* Responsive Breakpoints */
   /* Mobile first approach */
   @media (max-width: 767px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-xs); /* Adjust font size on small screens */
       padding: var(--lz-space-1) var(--lz-space-2); /* Adjust padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-xxs); /* Small badge adjustments for mobile */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-sm); /* Large badge adjustments for mobile */
       padding: var(--lz-space-2);
     }
@@ -102,17 +102,17 @@
 
   /* Tablets (768px and above) */
   @media (min-width: 768px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-sm); /* Slightly larger font for tablets */
       padding: var(--lz-space-2) var(--lz-space-3); /* Slightly larger padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-xs); /* Small badge adjustments for tablets */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-md); /* Larger font for larger badges */
       padding: var(--lz-space-2) var(--lz-space-4);
     }
@@ -120,17 +120,17 @@
 
   /* Desktop (1024px and above) */
   @media (min-width: 1024px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-base); /* Base font size for large screens */
       padding: var(--lz-space-3) var(--lz-space-4); /* More padding on larger screens */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-sm); /* Slightly larger font for small badges */
       padding: var(--lz-space-1);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-lg); /* Increase font size for large badges */
       padding: var(--lz-space-3) var(--lz-space-5);
     }
@@ -138,17 +138,17 @@
 
   /* Larger Desktop (1280px and above) */
   @media (min-width: 1280px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-lg); /* Larger font size for very large screens */
       padding: var(--lz-space-3) var(--lz-space-5); /* Even more padding on large screens */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-base); /* Increase size for small badges on large screens */
       padding: var(--lz-space-2);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-xl); /* Larger font size for large badges */
       padding: var(--lz-space-4) var(--lz-space-6);
     }
@@ -156,29 +156,29 @@
 
   /* Ultra Wide Desktop (1600px and above) */
   @media (min-width: 1600px) {
-    .badge {
+    .lz-badge {
       font-size: var(--lz-text-xl); /* Very large font for ultra-wide screens */
       padding: var(--lz-space-4) var(--lz-space-6); /* Generous padding */
     }
 
-    .badge-sm {
+    .lz-badge-sm {
       font-size: var(--lz-text-lg); /* Small badges also get larger font size */
       padding: var(--lz-space-2);
     }
 
-    .badge-lg {
+    .lz-badge-lg {
       font-size: var(--lz-text-2xl); /* Extra large font for large badges */
       padding: var(--lz-space-5) var(--lz-space-7);
     }
   }
 
   /* Accessibility Improvements */
-  .badge:focus {
+  .lz-badge:focus {
     outline: 2px solid var(--lz-primary); /* Clear focus state for better accessibility */
   }
 
   /* Allow icons within badges */
-  .badge[aria-live="polite"] {
+  .lz-badge[aria-live="polite"] {
     position: relative;
     padding-left: var(--lz-space-6); /* Add space for a potential icon */
   }

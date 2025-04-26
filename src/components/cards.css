@@ -1,7 +1,7 @@
-/* src/components/card.css */
-@layer components.card {
+/* src/components/card.lz-css */
+@layer components.lz-card {
   /* ─── Card Container ───────────────────────────────────────── */
-  .card {
+  .lz-card {
     background-color: var(--lz-bg-default);
     color: var(--lz-text-default);
     border: var(--lz-border-width) solid var(--lz-border-color);
@@ -15,18 +15,18 @@
   }
 
   /* Hover/Focus lift */
-  .card:hover,
-  .card:focus-within {
+  .lz-card:hover,
+  .lz-card:focus-within {
     box-shadow: var(--lz-shadow-md);
   }
 
   /* ─── Dark‑mode shadow boost ───────────────────────────────── */
-  html[data-theme="dark"] .card {
+  html[data-theme="dark"] .lz-card {
     box-shadow: var(--lz-shadow-lg);
   }
 
   /* ─── Card Image ───────────────────────────────────────────── */
-  .card-img-top {
+  .lz-card-img-top {
     width: 100%;
     height: auto;
     border-top-left-radius: var(--lz-rounded);
@@ -35,7 +35,7 @@
   }
 
   /* ─── Card Header ──────────────────────────────────────────── */
-  .card-header {
+  .lz-card-header {
     font-family: var(--lz-font-primary);
     font-size: var(--lz-heading-size);
     line-height: var(--lz-heading-line-height);
@@ -43,7 +43,7 @@
   }
 
   /* ─── Card Body ────────────────────────────────────────────── */
-  .card-body {
+  .lz-card-body {
     font-family: var(--lz-font-secondary);
     font-size: var(--lz-body-size);
     line-height: var(--lz-body-line-height);
@@ -51,7 +51,7 @@
   }
 
   /* ─── Card Footer ──────────────────────────────────────────── */
-  .card-footer {
+  .lz-card-footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -63,19 +63,19 @@
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles for mobile devices */
-  .card {
+  .lz-card {
     padding: var(--lz-space-3);
   }
 
-  .card-header {
+  .lz-card-header {
     font-size: var(--lz-heading-size); /* Use smaller heading size on mobile */
   }
 
-  .card-body {
+  .lz-card-body {
     font-size: var(--lz-body-size); /* Base font size for body on mobile */
   }
 
-  .card-footer {
+  .lz-card-footer {
     padding-top: var(--lz-space-2);
     margin-top: var(--lz-space-2);
     gap: var(--lz-space-2);
@@ -84,19 +84,19 @@
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-4); /* More padding for small tablets */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-md); /* Adjust heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-md); /* Slightly larger body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       padding-top: var(--lz-space-3);
       margin-top: var(--lz-space-3);
     }
@@ -104,78 +104,78 @@
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Align cards in row for tablets and larger */
       gap: var(--lz-space-5); /* Increase gap between card sections */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-lg); /* Larger font size on tablets */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-lg); /* Larger body font size */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-3); /* Adjust footer gap */
     }
   }
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-5); /* Increase padding for laptops */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-xl); /* Even larger heading size */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-xl); /* Larger text size for body */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-4); /* Larger gap in the footer */
     }
   }
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .card {
+    .lz-card {
       flex-direction: row; /* Continue row-based layout on larger screens */
       padding: var(--lz-space-6); /* Even more padding */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-2xl); /* Extra large heading */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-2xl); /* Extra large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-5); /* Even more gap in the footer */
     }
   }
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .card {
+    .lz-card {
       padding: var(--lz-space-7); /* Super large padding for huge screens */
     }
 
-    .card-header {
+    .lz-card-header {
       font-size: var(--lz-heading-size-3xl); /* Huge heading size for very large screens */
     }
 
-    .card-body {
+    .lz-card-body {
       font-size: var(--lz-body-size-3xl); /* Very large body text */
     }
 
-    .card-footer {
+    .lz-card-footer {
       gap: var(--lz-space-6); /* Large gap in footer */
     }
   }

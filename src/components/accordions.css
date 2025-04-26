@@ -1,7 +1,7 @@
 /* src/components/accordion.css */
-@layer components.accordion {
+@layer components.lz-accordion {
   /* ─── Accordion Container ─────────────────────────────────── */
-  .accordion {
+  .lz-accordion {
     display: flex;
     flex-direction: column;
     gap: var(--lz-space-2);
@@ -9,7 +9,7 @@
   }
 
   /* ─── Accordion Item ──────────────────────────────────────── */
-  .accordion-item {
+  .lz-accordion-item {
     border: var(--lz-border-width) solid var(--lz-border-color);
     border-radius: var(--lz-rounded);
     overflow: hidden;
@@ -17,7 +17,7 @@
   }
 
   /* ─── Accordion Header ────────────────────────────────────── */
-  .accordion-header {
+  .lz-accordion-header {
     background-color: var(--lz-bg-surface);
     color: var(--lz-text-default);
     padding: var(--lz-space-3) var(--lz-space-4); /* Mobile-first padding */
@@ -32,12 +32,12 @@
     width: 100%;
   }
 
-  .accordion-header:hover {
+  .lz-accordion-header:hover {
     background-color: var(--lz-bg-emphasis);
   }
 
   /* ─── Accordion Content ───────────────────────────────────── */
-  .accordion-content {
+  .lz-accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--lz-transition-normal), padding var(--lz-transition-fast);
@@ -45,108 +45,108 @@
     background-color: var(--lz-bg-default);
   }
 
-  .accordion-content.open {
+  .lz-accordion-content.open {
     padding: var(--lz-space-3) var(--lz-space-4);
     max-height: 100vh; /* large enough to show content */
   }
 
   /* ─── Icon Toggles ─────────────────────────────────────────── */
-  .accordion-header .icon {
+  .lz-accordion-header .icon {
     transition: transform var(--lz-transition-fast);
   }
 
-  .accordion-header.active .icon {
+  .lz-accordion-header.lz-active .icon {
     transform: rotate(180deg);
   }
 
   /* ─── Dark Mode Tweaks ─────────────────────────────────────── */
-  html[data-theme="dark"] .accordion-header {
+  html[data-theme="dark"] .lz-accordion-header {
     background-color: var(--lz-bg-surface);
     color: var(--lz-text-default);
   }
 
-  html[data-theme="dark"] .accordion-content {
+  html[data-theme="dark"] .lz-accordion-content {
     background-color: var(--lz-bg-default);
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles are for mobile devices */
-  .accordion-header {
+  .lz-accordion-header {
     font-size: var(--lz-body-size); /* Default font size for mobile */
     padding: var(--lz-space-3) var(--lz-space-4); /* Padding for mobile */
   }
 
-  .accordion-content {
+  .lz-accordion-content {
     padding: 0 var(--lz-space-4); /* Padding for mobile */
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* Tablet and larger screens (min-width: 768px) */
   @media (min-width: 768px) {
-    .accordion-header {
+    .lz-accordion-header {
       padding: var(--lz-space-3) var(--lz-space-5); /* Larger padding for tablets */
       font-size: var(--lz-body-size-md); /* Slightly larger font on tablets */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-3) var(--lz-space-5); /* Increase padding on larger screens */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-3); /* Larger space between accordion items */
     }
   }
 
   /* Larger screens (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .accordion-header {
+    .lz-accordion-header {
       font-size: var(--lz-body-size-lg); /* Increase font size on large screens */
       padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding on larger screens */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-4); /* More space on larger screens */
     }
   }
 
   /* Extra Large screens (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .accordion-header {
+    .lz-accordion-header {
       font-size: var(--lz-body-size-xl); /* Even larger font size on extra large screens */
       padding: var(--lz-space-5) var(--lz-space-8); /* Adjust padding for larger screens */
     }
 
-    .accordion-content.open {
+    .lz-accordion-content.open {
       padding: var(--lz-space-5) var(--lz-space-8); /* More padding for larger screens */
     }
 
-    .accordion-item {
+    .lz-accordion-item {
       margin-bottom: var(--lz-space-5); /* Larger space on extra large screens */
     }
   }
 
   /* ─── Accessibility & Usability Enhancements ───────────────── */
-  .accordion-header:focus {
+  .lz-accordion-header:focus {
     outline: 2px solid var(--lz-primary); /* Focus state for accessibility */
     background-color: var(--lz-bg-emphasis);
   }
 
-  .accordion-header[aria-expanded="true"] {
+  .lz-accordion-header[aria-expanded="true"] {
     background-color: var(--lz-bg-emphasis);
   }
 
   /* ─── Additional Utility Support ──────────────────────────── */
   /* Allow utility-based control for padding and margins */
-  .accordion-header {
+  .lz-accordion-header {
     @apply p-4; /* Utility class for padding */
     @apply mb-2; /* Margin-bottom utility */
   }
 
-  .accordion-content {
+  .lz-accordion-content {
     @apply p-4; /* Utility class for padding */
   }
 }
