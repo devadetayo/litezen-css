@@ -1,0 +1,192 @@
+/* src/components/dropdowns.css */
+@layer components.dropdowns {
+  /* ─── Base Dropdown Styling ──────────────────────────────────── */
+  .lz-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .lz-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: var(--lz-bg-emphasis);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    box-shadow: var(--lz-shadow-lg);
+    padding: var(--lz-space-2) 0;
+    transition: opacity var(--lz-transition-fast), transform var(--lz-transition-fast);
+  }
+
+  .lz-dropdown-item {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    font-family: var(--lz-font-secondary);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    cursor: pointer;
+    transition: background-color var(--lz-transition-fast), color var(--lz-transition-fast);
+  }
+
+  .lz-dropdown-item:hover,
+  .lz-dropdown-item:focus {
+    background-color: var(--lz-bg-hover);
+    color: var(--lz-text-light);
+  }
+
+  .lz-dropdown-item:active {
+    background-color: var(--lz-bg-active);
+  }
+
+  /* ─── Dark Mode Support ───────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-dropdown-menu {
+      background-color: var(--lz-bg-dark-emphasis);
+      border-color: var(--lz-border-dark-color);
+    }
+
+    .lz-dropdown-item {
+      color: var(--lz-text-dark);
+    }
+
+    .lz-dropdown-item:hover,
+    .lz-dropdown-item:focus {
+      background-color: var(--lz-bg-dark-hover);
+      color: var(--lz-text-light);
+    }
+
+    .lz-dropdown-item:active {
+      background-color: var(--lz-bg-dark-active);
+    }
+  }
+
+  /* ─── Responsive Media Queries ──────────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-dropdown-menu {
+      min-width: 140px;
+    }
+
+    .lz-dropdown-item {
+      padding: var(--lz-space-1) var(--lz-space-3);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-dropdown-menu {
+      min-width: 160px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-dropdown-menu {
+      min-width: 180px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-dropdown-menu {
+      min-width: 200px;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-dropdown-menu {
+      min-width: 220px;
+    }
+  }
+
+  /* ─── Hover Dropdown ────────────────────────────────────── */
+  .lz-dropdown-hover .lz-dropdown-menu {
+    display: none; /* Hidden by default */
+  }
+
+  .lz-dropdown-hover:hover .lz-dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(8px);
+  }
+
+  /* ─── Click Dropdown ────────────────────────────────────── */
+  .lz-dropdown-click .lz-dropdown-menu {
+    display: none; /* Hidden by default */
+  }
+
+  .lz-dropdown-click.show .lz-dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(8px);
+  }
+
+  /* ─── Hover Dropdown Menu Styling ─────────────────────────── */
+  .lz-dropdown-hover-item {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    font-family: var(--lz-font-secondary);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    cursor: pointer;
+    transition: background-color var(--lz-transition-fast), color var(--lz-transition-fast);
+  }
+
+  .lz-dropdown-hover-item:hover,
+  .lz-dropdown-hover-item:focus {
+    background-color: var(--lz-bg-hover);
+    color: var(--lz-text-light);
+  }
+
+  .lz-dropdown-hover-item:active {
+    background-color: var(--lz-bg-active);
+  }
+
+  /* ─── Click Dropdown Menu Styling ──────────────────────────── */
+  .lz-dropdown-click-item {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    font-family: var(--lz-font-secondary);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    cursor: pointer;
+    transition: background-color var(--lz-transition-fast), color var(--lz-transition-fast);
+  }
+
+  .lz-dropdown-click-item:hover,
+  .lz-dropdown-click-item:focus {
+    background-color: var(--lz-bg-hover);
+    color: var(--lz-text-light);
+  }
+
+  .lz-dropdown-click-item:active {
+    background-color: var(--lz-bg-active);
+  }
+
+  /* ─── Dark Mode Support for Dropdowns ──────────────────────── */
+  html[data-theme="dark"] {
+    .lz-dropdown-hover-menu {
+      background-color: var(--lz-bg-dark-emphasis);
+      border-color: var(--lz-border-dark-color);
+    }
+
+    .lz-dropdown-click-menu {
+      background-color: var(--lz-bg-dark-emphasis);
+      border-color: var(--lz-border-dark-color);
+    }
+
+    .lz-dropdown-hover-item,
+    .lz-dropdown-click-item {
+      color: var(--lz-text-dark);
+    }
+
+    .lz-dropdown-hover-item:hover,
+    .lz-dropdown-click-item:hover,
+    .lz-dropdown-hover-item:focus,
+    .lz-dropdown-click-item:focus {
+      background-color: var(--lz-bg-dark-hover);
+      color: var(--lz-text-light);
+    }
+
+    .lz-dropdown-hover-item:active,
+    .lz-dropdown-click-item:active {
+      background-color: var(--lz-bg-dark-active);
+    }
+  }
+}

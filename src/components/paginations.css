@@ -1,0 +1,205 @@
+/* src/components/pagination.css */
+@layer components.pagination {
+  /* ─── Base Pagination Styling ──────────────────────────────────── */
+  .lz-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Center pagination by default */
+    flex-wrap: wrap;
+  }
+
+  .lz-pagination-item {
+    margin: var(--lz-space-1);
+  }
+
+  .lz-pagination-link {
+    display: inline-block;
+    padding: var(--lz-space-2) var(--lz-space-4);
+    background-color: var(--lz-bg-default);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    color: var(--lz-text-default);
+    text-decoration: none;
+    font-size: var(--lz-text-base);
+    transition: background-color var(--lz-transition-fast), color var(--lz-transition-fast);
+    cursor: pointer;
+  }
+
+  .lz-pagination-link:hover,
+  .lz-pagination-link:focus {
+    background-color: var(--lz-bg-hover);
+    color: var(--lz-text-light);
+  }
+
+  .lz-pagination-link:active {
+    background-color: var(--lz-bg-active);
+  }
+
+  /* ─── Pagination Disabled Styling ───────────────────────────────── */
+  .lz-pagination-link.disabled,
+  .lz-pagination-item.disabled .lz-pagination-link {
+    background-color: var(--lz-bg-disabled);
+    color: var(--lz-text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* ─── Pagination Active Link Styling ────────────────────────────── */
+  .lz-pagination-link.active {
+    background-color: var(--lz-bg-emphasis);
+    color: var(--lz-text-light);
+    font-weight: var(--lz-font-weight-bold);
+  }
+
+  /* ─── Pagination First, Last, Previous, Next Styling ───────────── */
+  .lz-pagination-first,
+  .lz-pagination-last,
+  .lz-pagination-prev,
+  .lz-pagination-next {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    font-weight: var(--lz-font-weight-medium);
+  }
+
+  /* ─── Pagination Icons ─────────────────────────────────────────── */
+  .lz-pagination-first .lz-pagination-link,
+  .lz-pagination-prev .lz-pagination-link,
+  .lz-pagination-next .lz-pagination-link,
+  .lz-pagination-last .lz-pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ─── Dark Mode Support ────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-pagination-link {
+      background-color: var(--lz-bg-dark-default);
+      border-color: var(--lz-border-dark-color);
+      color: var(--lz-text-dark);
+    }
+
+    .lz-pagination-link:hover,
+    .lz-pagination-link:focus {
+      background-color: var(--lz-bg-dark-hover);
+      color: var(--lz-text-light);
+    }
+
+    .lz-pagination-link:active {
+      background-color: var(--lz-bg-dark-active);
+    }
+
+    .lz-pagination-link.disabled {
+      background-color: var(--lz-bg-dark-disabled);
+      color: var(--lz-text-dark-disabled);
+    }
+
+    .lz-pagination-link.active {
+      background-color: var(--lz-bg-dark-emphasis);
+      color: var(--lz-text-light);
+    }
+  }
+
+  /* ─── Responsive Design (5 Breakpoints) ────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-pagination {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lz-pagination-item {
+      margin: var(--lz-space-1);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-pagination {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-pagination {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-pagination {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-pagination {
+      flex-direction: row;
+    }
+  }
+
+  /* ─── Utility Classes for Pagination ──────────────────────────── */
+  /* Flexibility for pagination alignment and styling */
+  .lz-pagination-center {
+    justify-content: center;
+  }
+
+  .lz-pagination-start {
+    justify-content: flex-start;
+  }
+
+  .lz-pagination-end {
+    justify-content: flex-end;
+  }
+
+  .lz-pagination-space-between {
+    justify-content: space-between;
+  }
+
+  .lz-pagination-space-around {
+    justify-content: space-around;
+  }
+
+  .lz-pagination-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  .lz-pagination-no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  .lz-pagination-wrap {
+    flex-wrap: wrap;
+  }
+
+  /* Responsive Wrapping */
+  @media (max-width: 640px) {
+    .lz-pagination-wrap {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* Pagination Size Utility Classes */
+  .lz-pagination-small .lz-pagination-link {
+    padding: var(--lz-space-1) var(--lz-space-2);
+    font-size: var(--lz-text-sm);
+  }
+
+  .lz-pagination-large .lz-pagination-link {
+    padding: var(--lz-space-3) var(--lz-space-6);
+    font-size: var(--lz-text-lg);
+  }
+
+  /* ─── Icon Styles for Pagination (for First, Previous, Next, Last) ─── */
+  .lz-pagination-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lz-pagination-prev-icon,
+  .lz-pagination-next-icon,
+  .lz-pagination-first-icon,
+  .lz-pagination-last-icon {
+    font-size: var(--lz-text-base);
+    margin: 0 var(--lz-space-1);
+  }
+}

@@ -1,0 +1,131 @@
+/* src/components/tabs.css */
+@layer components.tabs {
+  /* ─── Tabs Container ───────────────────────────────────────── */
+  .tabs {
+    display: flex;
+    flex-direction: column; /* Mobile-first: stack vertically */
+    border-bottom: var(--lz-border-width) solid var(--lz-border-color);
+    gap: var(--lz-space-4);
+    width: 100%;
+  }
+
+  /* ─── Individual Tab ───────────────────────────────────────── */
+  .tabs .tab {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    margin-bottom: -var(--lz-border-width);
+    font-family: var(--lz-font-primary);
+    font-size: var(--lz-body-size);
+    color: var(--lz-text-muted);
+    cursor: pointer;
+    transition: color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+    border-bottom: var(--lz-border-width) solid transparent;
+    width: 100%; /* Ensure tabs are full-width on mobile */
+    text-align: center; /* Center the tab labels on mobile */
+  }
+
+  .tabs .tab:hover {
+    color: var(--lz-text-default);
+  }
+
+  /* ─── Active State ─────────────────────────────────────────── */
+  .tabs .tab.active {
+    color: var(--lz-text-default);
+    border-color: var(--lz-primary);
+    font-weight: 600;
+  }
+
+  /* ─── Tab Content Panels ───────────────────────────────────── */
+  .tab-content {
+    padding: var(--lz-space-4) 0;
+    width: 100%;
+  }
+  
+  .tab-panel {
+    display: none;
+  }
+  
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* ─── Mobile-First Styles ──────────────────────────────────── */
+  /* Base styles are for mobile devices */
+  .tabs {
+    flex-direction: column; /* Stack tabs vertically on mobile */
+  }
+
+  .tabs .tab {
+    font-size: var(--lz-body-size); /* Default font size for mobile */
+    padding: var(--lz-space-2) var(--lz-space-4); /* Padding for mobile */
+  }
+
+  .tab-content {
+    padding: var(--lz-space-4) 0; /* Padding for mobile */
+  }
+
+  /* ─── Responsive Adjustments ─────────────────────────────────── */
+  /* Tablet and larger screens (min-width: 768px) */
+  @media (min-width: 768px) {
+    .tabs {
+      flex-direction: row; /* Display tabs horizontally on tablets and larger screens */
+      gap: var(--lz-space-6); /* Increase gap between tabs */
+    }
+
+    .tabs .tab {
+      font-size: var(--lz-body-size-md); /* Slightly larger font on tablets */
+      padding: var(--lz-space-3) var(--lz-space-5); /* Adjust padding */
+    }
+
+    .tab-content {
+      padding: var(--lz-space-5) 0; /* Add more padding on tablets */
+    }
+  }
+
+  /* Larger screens (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .tabs {
+      gap: var(--lz-space-8); /* More gap between tabs on larger screens */
+    }
+
+    .tabs .tab {
+      font-size: var(--lz-body-size-lg); /* Increase font size on desktop */
+      padding: var(--lz-space-4) var(--lz-space-6); /* Increase padding on large screens */
+    }
+
+    .tab-content {
+      padding: var(--lz-space-6) 0; /* More padding for content on desktop */
+    }
+  }
+
+  /* ─── Dark Mode Tweaks ─────────────────────────────────────── */
+  html[data-theme="dark"] .tabs {
+    border-color: var(--lz-border-color);
+  }
+
+  html[data-theme="dark"] .tabs .tab.active {
+    border-color: var(--lz-primary);
+    color: var(--lz-text-default);
+  }
+
+  /* ─── Accessibility & Usability Enhancements ───────────────── */
+  .tabs .tab:focus {
+    outline: 2px solid var(--lz-primary); /* Focus state for accessibility */
+  }
+
+  .tabs .tab[aria-selected="true"] {
+    color: var(--lz-text-default);
+    border-color: var(--lz-primary);
+    font-weight: 600;
+  }
+
+  /* ─── Utility Support ──────────────────────────────────────── */
+  /* Allow utility-based control for padding and margins */
+  .tabs .tab {
+    @apply p-4; /* Utility class for padding */
+    @apply mb-2; /* Margin-bottom utility */
+  }
+
+  .tab-content {
+    @apply p-4; /* Utility class for padding */
+  }
+}
