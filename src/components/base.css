@@ -180,7 +180,6 @@ html[data-theme="dark"] {
   /* Small Devices */
   .p-4 { padding: 1rem; }
   .m-2 { margin: 0.5rem; }
-  .d-flex { display: block; }
   .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
 }
 
