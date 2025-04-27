@@ -8092,5 +8092,59 @@
     "height": "auto",
     "overflow": "visible",
     "clip": "auto"
+  },
+  "bg_primary": {
+    "backgroundColor": "var(--lz-primary)"
+  },
+  "bg_secondary": {
+    "backgroundColor": "var(--lz-bg-secondary)"
+  },
+  "bg_success": {
+    "backgroundColor": "var(--lz-bg-success)"
+  },
+  "bg_warning": {
+    "backgroundColor": "var(--lz-bg-warning)"
+  },
+  "bg_danger": {
+    "backgroundColor": "var(--lz-bg-danger)"
+  },
+  "bg_info": {
+    "backgroundColor": "var(--lz-bg-info)"
+  },
+  "text_primary": {
+    "color": "var(--lz-primary)"
+  },
+  "text_secondary": {
+    "color": "var(--lz-text-secondary)"
+  },
+  "text_success": {
+    "color": "var(--lz-text-success)"
+  },
+  "text_warning": {
+    "color": "var(--lz-text-warning)"
+  },
+  "text_danger": {
+    "color": "var(--lz-text-danger)"
+  },
+  "text_info": {
+    "color": "var(--lz-text-info)"
+  },
+  "border_primary": {
+    "borderColor": "var(--lz-primary)"
+  },
+  "border_secondary": {
+    "borderColor": "var(--lz-border-secondary)"
+  },
+  "border_success": {
+    "borderColor": "var(--lz-border-success)"
+  },
+  "border_warning": {
+    "borderColor": "var(--lz-border-warning)"
+  },
+  "border_danger": {
+    "borderColor": "var(--lz-border-danger)"
+  },
+  "border_info": {
+    "borderColor": "var(--lz-border-info)"
   }
 }

@@ -10,7 +10,6 @@ const utilityFiles = [
   'src/utilities/normalize.css',
   'src/utilities/variables.css',
   'src/utilities/base.css',
-  'src/utilities/states.css',
   'src/utilities/litezen-variants.css',
 ];
 

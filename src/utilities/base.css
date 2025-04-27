@@ -3542,3 +3542,27 @@
 .will-change-scroll    { will-change: scroll-position; }
 .will-change-transform { will-change: transform; }
 .will-change-opacity   { will-change: opacity; }
+
+/* ─── Semantic Backgrounds ─────────────────────────── */
+.bg-primary      { background-color: var(--lz-primary); }
+.bg-secondary    { background-color: var(--lz-bg-secondary); }
+.bg-success      { background-color: var(--lz-bg-success); }
+.bg-warning      { background-color: var(--lz-bg-warning); }
+.bg-danger       { background-color: var(--lz-bg-danger); }
+.bg-info         { background-color: var(--lz-bg-info); }
+
+/* ─── Semantic Text Colors ─────────────────────────── */
+.text-primary    { color: var(--lz-primary); }
+.text-secondary  { color: var(--lz-text-secondary); }
+.text-success    { color: var(--lz-text-success); }
+.text-warning    { color: var(--lz-text-warning); }
+.text-danger     { color: var(--lz-text-danger); }
+.text-info       { color: var(--lz-text-info); }
+
+/* ─── Semantic Border Colors ───────────────────────── */
+.border-primary      { border-color: var(--lz-primary); }
+.border-secondary    { border-color: var(--lz-border-secondary); }
+.border-success      { border-color: var(--lz-border-success); }
+.border-warning      { border-color: var(--lz-border-warning); }
+.border-danger       { border-color: var(--lz-border-danger); }
+.border-info         { border-color: var(--lz-border-info); }
