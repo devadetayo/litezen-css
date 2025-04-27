@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputPath = path.resolve(__dirname, '../src/utilities/base.css'); // change to your base file
+const inputPath = path.resolve(__dirname, '../src/utilities/base.css');
 const outputCSS = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
 const outputJSON = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
 
@@ -10,14 +10,14 @@ const responsivePrefixes = {
   md: '@media (min-width: 768px)',
   lg: '@media (min-width: 1024px)',
   xl: '@media (min-width: 1280px)',
-  uw: '@media (min-width: 1536px)'
+  uw: '@media (min-width: 1536px)',
 };
 
 const statePrefixes = {
   hover: ':hover',
   focus: ':focus',
   active: ':active',
-  disabled: ':disabled'
+  disabled: ':disabled',
 };
 
 const darkPrefix = '[data-theme="dark"]';
@@ -25,43 +25,64 @@ const groupHoverPrefix = '.group:hover';
 
 const inputCSS = fs.readFileSync(inputPath, 'utf8');
 const lines = inputCSS.split(/\r?\n/);
+
 const cssVariants = [];
 const jsonStyles = {};
 
 lines.forEach(line => {
-  line = line.trim();
-  if (line.startsWith('.') && line.includes('{') && line.includes('}')) {
-    const className = line.slice(1, line.indexOf(' '));
-    const rule = line.slice(line.indexOf('{'), line.indexOf('}') + 1);
-
-    // base json style
-    const styleProps = rule.slice(1, -1).split(';').reduce((acc, curr) => {
-      const [prop, value] = curr.split(':').map(s => s && s.trim());
-      if (prop && value) {
-        acc[prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase())] = value;
-      }
-      return acc;
-    }, {});
-    jsonStyles[className.replace(/-/g, '_')] = styleProps;
-
-    // responsive
-    for (const [prefix, media] of Object.entries(responsivePrefixes)) {
-      cssVariants.push(`${media} { .${prefix}-${className} ${rule} }`);
-    }
-
-    // state variants
-    for (const [state, pseudo] of Object.entries(statePrefixes)) {
-      cssVariants.push(`.${state}-${className}${pseudo} ${rule}`);
-    }
-
-    // dark mode
-    cssVariants.push(`${darkPrefix} .dark-${className} ${rule}`);
-
-    // group hover
-    cssVariants.push(`${groupHoverPrefix} .group-hover-${className} ${rule}`);
+  const trimmed = line.trim();
+  // only process simple single-line class rules
+  if (!trimmed.startsWith('.') || !trimmed.includes('{') || !trimmed.includes('}')) {
+    return;
   }
+
+  // regex to pull class name up to { or whitespace
+  const nameMatch = trimmed.match(/^\.([^{\s]+)/);
+  if (!nameMatch) return;
+  const className = nameMatch[1]; // e.g. “will-change-transform”
+
+  // extract only the inside of the braces
+  const ruleBody = trimmed
+    .slice(trimmed.indexOf('{') + 1, trimmed.lastIndexOf('}'))
+    .trim(); // e.g. "will-change: transform;"
+
+  // build JSON version
+  const styleProps = ruleBody.split(';').reduce((acc, curr) => {
+    const [prop, value] = curr.split(':').map(s => s.trim());
+    if (prop && value) {
+      const jsKey = prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase());
+      acc[jsKey] = value;
+    }
+    return acc;
+  }, {});
+  jsonStyles[className.replace(/-/g, '_')] = styleProps;
+
+  // responsive
+  for (const [prefix, media] of Object.entries(responsivePrefixes)) {
+    cssVariants.push(
+      `${media} { .${prefix}-${className} { ${ruleBody} } }`
+    );
+  }
+
+  // state variants
+  for (const [state, pseudo] of Object.entries(statePrefixes)) {
+    cssVariants.push(
+      `.${state}-${className}${pseudo} { ${ruleBody} }`
+    );
+  }
+
+  // dark mode
+  cssVariants.push(
+    `${darkPrefix} .dark-${className} { ${ruleBody} }`
+  );
+
+  // group-hover
+  cssVariants.push(
+    `${groupHoverPrefix} .group-hover-${className} { ${ruleBody} }`
+  );
 });
 
+// write files
 fs.writeFileSync(outputCSS, cssVariants.join('\n'), 'utf8');
 fs.writeFileSync(outputJSON, JSON.stringify(jsonStyles, null, 2), 'utf8');
 
