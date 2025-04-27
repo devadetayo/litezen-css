@@ -1639,6 +1639,111 @@
   "text_justify": {
     "textAlign": "justify"
   },
+  "justify_start": {
+    "justifyContent": "flex-start"
+  },
+  "justify_center": {
+    "justifyContent": "center"
+  },
+  "justify_end": {
+    "justifyContent": "flex-end"
+  },
+  "justify_between": {
+    "justifyContent": "space-between"
+  },
+  "justify_around": {
+    "justifyContent": "space-around"
+  },
+  "justify_evenly": {
+    "justifyContent": "space-evenly"
+  },
+  "items_start": {
+    "alignItems": "flex-start"
+  },
+  "items_center": {
+    "alignItems": "center"
+  },
+  "items_end": {
+    "alignItems": "flex-end"
+  },
+  "items_baseline": {
+    "alignItems": "baseline"
+  },
+  "items_stretch": {
+    "alignItems": "stretch"
+  },
+  "content_start": {
+    "alignContent": "flex-start"
+  },
+  "content_center": {
+    "alignContent": "center"
+  },
+  "content_end": {
+    "alignContent": "flex-end"
+  },
+  "content_between": {
+    "alignContent": "space-between"
+  },
+  "content_around": {
+    "alignContent": "space-around"
+  },
+  "content_evenly": {
+    "alignContent": "space-evenly"
+  },
+  "self_auto": {
+    "alignSelf": "auto"
+  },
+  "self_start": {
+    "alignSelf": "flex-start"
+  },
+  "self_center": {
+    "alignSelf": "center"
+  },
+  "self_end": {
+    "alignSelf": "flex-end"
+  },
+  "self_stretch": {
+    "alignSelf": "stretch"
+  },
+  "place_items_start": {
+    "placeItems": "start"
+  },
+  "place_items_center": {
+    "placeItems": "center"
+  },
+  "place_items_end": {
+    "placeItems": "end"
+  },
+  "place_items_stretch": {
+    "placeItems": "stretch"
+  },
+  "place_content_start": {
+    "placeContent": "start"
+  },
+  "place_content_center": {
+    "placeContent": "center"
+  },
+  "place_content_end": {
+    "placeContent": "end"
+  },
+  "place_content_between": {
+    "placeContent": "space-between"
+  },
+  "place_content_around": {
+    "placeContent": "space-around"
+  },
+  "place_self_auto": {
+    "placeSelf": "auto"
+  },
+  "place_self_start": {
+    "placeSelf": "start"
+  },
+  "place_self_center": {
+    "placeSelf": "center"
+  },
+  "place_self_end": {
+    "placeSelf": "end"
+  },
   "text_uppercase": {
     "textTransform": "uppercase"
   },

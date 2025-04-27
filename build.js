@@ -5,15 +5,18 @@ const outDir = 'dist';
 
 // Utility files (add all utility files here)
 const utilityFiles = [
+  'src/tokens/color-tokens.css',
   'src/utilities/reset.css',
   'src/utilities/normalize.css',
   'src/utilities/variables.css',
   'src/utilities/base.css',
-  'src/utilities/responsive.css',
+  'src/utilities/states.css',
+  'src/utilities/litezen-variants.css',
 ];
 
 // Component files (add all component files here)
 const componentFiles = [
+  'src/tokens/color-tokens.css',
   'src/components/reset.css',
   'src/components/variables.css',
   'src/components/base.css',
@@ -36,7 +39,6 @@ const componentFiles = [
   'src/components/gallery.css',
   'src/components/hero.css',
   'src/components/list.css',
-  'src/components/index.css',
   'src/components/megamenu.css',
   'src/components/modals.css',
   'src/components/navbar.css',

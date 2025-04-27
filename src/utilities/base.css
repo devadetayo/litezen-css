@@ -648,6 +648,55 @@
 .text-right     { text-align: right; }
 .text-justify   { text-align: justify; }
 
+/* ─── Justify Content ──────────────────────────────────── */
+.justify-start     { justify-content: flex-start; }
+.justify-center    { justify-content: center; }
+.justify-end       { justify-content: flex-end; }
+.justify-between   { justify-content: space-between; }
+.justify-around    { justify-content: space-around; }
+.justify-evenly    { justify-content: space-evenly; }
+
+/* ─── Align Items ─────────────────────────────────────── */
+.items-start       { align-items: flex-start; }
+.items-center      { align-items: center; }
+.items-end         { align-items: flex-end; }
+.items-baseline    { align-items: baseline; }
+.items-stretch     { align-items: stretch; }
+
+/* ─── Align Content (Grid) ───────────────────────────── */
+.content-start     { align-content: flex-start; }
+.content-center    { align-content: center; }
+.content-end       { align-content: flex-end; }
+.content-between   { align-content: space-between; }
+.content-around    { align-content: space-around; }
+.content-evenly    { align-content: space-evenly; }
+
+/* ─── Align Self ──────────────────────────────────────── */
+.self-auto         { align-self: auto; }
+.self-start        { align-self: flex-start; }
+.self-center       { align-self: center; }
+.self-end          { align-self: flex-end; }
+.self-stretch      { align-self: stretch; }
+
+/* ─── Place Items (Grid shorthand) ───────────────────── */
+.place-items-start   { place-items: start; }
+.place-items-center  { place-items: center; }
+.place-items-end     { place-items: end; }
+.place-items-stretch { place-items: stretch; }
+
+/* ─── Place Content (Grid shorthand) ─────────────────── */
+.place-content-start     { place-content: start; }
+.place-content-center    { place-content: center; }
+.place-content-end       { place-content: end; }
+.place-content-between   { place-content: space-between; }
+.place-content-around    { place-content: space-around; }
+
+/* ─── Place Self (Grid shorthand) ────────────────────── */
+.place-self-auto      { place-self: auto; }
+.place-self-start     { place-self: start; }
+.place-self-center    { place-self: center; }
+.place-self-end       { place-self: end; }
+
 /* ----------------------------------------
    Text Transform
 ---------------------------------------- */
