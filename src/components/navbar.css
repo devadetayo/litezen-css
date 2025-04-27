@@ -1,0 +1,31 @@
+/* src/components/navbar.css */
+@layer components.navbar {
+  .lz-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--lz-space-4);
+    background: var(--lz-bg-default);
+    box-shadow: var(--lz-shadow-sm);
+  }
+  .lz-navbar .lz-brand { font-size: var(--lz-text-lg); font-weight: bold; }
+  .lz-navbar .lz-nav {
+    display: flex;
+    gap: var(--lz-space-4);
+  }
+  .lz-navbar .lz-nav-link {
+    text-decoration: none;
+    color: var(--lz-text-default);
+    transition: color var(--lz-transition-fast);
+  }
+  .lz-navbar .lz-nav-link:hover { color: var(--lz-primary); }
+
+  html[data-theme="dark"] .lz-navbar { background: var(--lz-bg-emphasis); }
+  html[data-theme="dark"] .lz-nav-link { color: var(--lz-text-light); }
+
+  @media (max-width:640px) { .lz-navbar .lz-nav { display: none; } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}

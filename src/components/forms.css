@@ -1,0 +1,211 @@
+@layer components.form {
+  /* ─── Form Layout ─────────────────────────────────────────── */
+  .lz-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lz-space-5);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .lz-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lz-space-2);
+  }
+
+  .lz-form-label {
+    font-family: var(--lz-font-primary);
+    font-size: var(--lz-text-sm);
+    color: var(--lz-text-default);
+    font-weight: 500;
+  }
+
+  /* ─── Inputs & Textarea ───────────────────────────────────── */
+  .lz-form-input,
+  .lz-form-textarea,
+  .lz-form-select {
+    display: block;
+    width: 100%;
+    padding: var(--lz-space-2) var(--lz-space-3);
+    font-family: var(--lz-font-secondary);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    background-color: var(--lz-bg-default);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    transition: all var(--lz-transition-fast);
+  }
+
+  .lz-form-input:focus,
+  .lz-form-textarea:focus,
+  .lz-form-select:focus {
+    outline: none;
+    border-color: var(--lz-primary);
+    box-shadow: 0 0 0 3px var(--lz-primary-light, rgba(59,130,246,0.5));
+  }
+
+  .lz-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  /* ─── Select Styling ─────────────────────────────────────── */
+  .lz-form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg fill='%236B7280' height='16' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M5 8l5 5 5-5H5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right var(--lz-space-3) center;
+    background-size: var(--lz-space-4) var(--lz-space-4);
+    padding-right: var(--lz-space-10);
+  }
+
+  /* ─── Checkbox ─────────────────────────────────────────── */
+  .lz-checkbox-input {
+    appearance: none;
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-sm);
+    background-color: var(--lz-bg-default);
+    cursor: pointer;
+    position: relative;
+    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+  }
+  .lz-checkbox-input:checked {
+    background-color: var(--lz-primary);
+    border-color: var(--lz-primary);
+  }
+  .lz-checkbox-input:checked::after {
+    content: "";
+    position: absolute;
+    top: 2px; left: 6px;
+    width: 4px; height: 8px;
+    border: solid var(--lz-bg-default);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* ─── Radio ─────────────────────────────────────────────── */
+  .lz-radio-input {
+    appearance: none;
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: 9999px;
+    background-color: var(--lz-bg-default);
+    cursor: pointer;
+    position: relative;
+    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+  }
+  .lz-radio-input:checked {
+    background-color: var(--lz-primary);
+    border-color: var(--lz-primary);
+  }
+  .lz-radio-input:checked::after {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px;
+    width: 8px; height: 8px;
+    background-color: var(--lz-bg-default);
+    border-radius: 50%;
+  }
+
+  /* ─── Switch ────────────────────────────────────────────── */
+  .lz-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px; height: 24px;
+  }
+  .lz-switch input {
+    opacity: 0; width: 0; height: 0;
+  }
+  .lz-slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--lz-border-color);
+    border-radius: var(--lz-rounded-full);
+    transition: background-color var(--lz-transition-fast);
+  }
+  .lz-slider::before {
+    content: "";
+    position: absolute;
+    height: 18px; width: 18px;
+    left: 3px; bottom: 3px;
+    background-color: var(--lz-bg-default);
+    border-radius: 50%;
+    transition: transform var(--lz-transition-fast);
+  }
+  .lz-switch input:checked + .lz-slider {
+    background-color: var(--lz-primary);
+  }
+  .lz-switch input:checked + .lz-slider::before {
+    transform: translateX(18px);
+  }
+
+  /* ─── Dark Mode ─────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-form-input,
+    .lz-form-textarea,
+    .lz-form-select {
+      background-color: var(--lz-bg-emphasis);
+      color: var(--lz-text-default);
+      border-color: var(--lz-border-color);
+    }
+
+    .lz-checkbox-label,
+    .lz-radio-label,
+    .lz-form-label {
+      color: var(--lz-text-default);
+    }
+
+    .lz-slider {
+      background-color: var(--lz-grey-600);
+    }
+
+    .lz-switch input:checked + .lz-slider {
+      background-color: var(--lz-primary);
+    }
+  }
+
+  /* ─── Responsive Media Queries ───────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-form {
+      padding-inline: var(--lz-space-3);
+    }
+
+    .lz-form-label {
+      font-size: var(--lz-text-xs);
+    }
+
+    .lz-form-input,
+    .lz-form-textarea,
+    .lz-form-select {
+      font-size: var(--lz-text-sm);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-form {
+      max-width: 500px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-form {
+      max-width: 550px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-form {
+      max-width: 600px;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-form {
+      max-width: 640px;
+    }
+  }
+}

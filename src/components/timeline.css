@@ -1,0 +1,39 @@
+/* src/components/timeline.css */
+@layer components.timeline {
+  .lz-timeline {
+    position: relative;
+    margin: var(--lz-space-4) 0;
+    padding-left: var(--lz-space-6);
+    border-left: var(--lz-border-width) solid var(--lz-border-color);
+  }
+  .lz-timeline-item {
+    position: relative;
+    margin-bottom: var(--lz-space-6);
+  }
+  .lz-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -var(--lz-space-6);
+    top: 0;
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    background: var(--lz-primary);
+    border-radius: 50%;
+  }
+  .lz-timeline-item .lz-time {
+    font-size: var(--lz-text-xs);
+    color: var(--lz-text-muted);
+  }
+  .lz-timeline-item .lz-content {
+    padding-bottom: var(--lz-space-2);
+  }
+
+  html[data-theme="dark"] .lz-timeline { border-color: var(--lz-border-dark); }
+  html[data-theme="dark"] .lz-timeline-item::before { background: var(--lz-primary); }
+
+  @media (max-width:640px) { .lz-timeline { padding-left: var(--lz-space-4); } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}

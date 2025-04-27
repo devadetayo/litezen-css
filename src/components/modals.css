@@ -1,0 +1,201 @@
+/* src/components/modal.css */
+@layer components.modal {
+  /* ─── Modal Overlay ────────────────────────────────────────── */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 50;
+    display: none;
+  }
+
+  .modal-backdrop.active {
+    display: block;
+  }
+
+  /* ─── Modal Container ──────────────────────────────────────── */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--lz-bg-default);
+    color: var(--lz-text-default);
+    border-radius: var(--lz-rounded);
+    box-shadow: var(--lz-shadow-xl);
+    width: 90%;
+    max-width: 32rem;
+    z-index: 60;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    transition: opacity var(--lz-transition-normal) ease;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  /* ─── Modal Header ─────────────────────────────────────────── */
+  .modal-header {
+    padding: var(--lz-space-4);
+    border-bottom: var(--lz-border-width) solid var(--lz-border-color);
+    font-family: var(--lz-font-primary);
+    font-size: var(--lz-heading-size);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ─── Modal Body ───────────────────────────────────────────── */
+  .modal-body {
+    padding: var(--lz-space-4);
+    font-size: var(--lz-body-size);
+    font-family: var(--lz-font-secondary);
+    line-height: var(--lz-body-line-height);
+  }
+
+  /* ─── Modal Footer ─────────────────────────────────────────── */
+  .modal-footer {
+    padding: var(--lz-space-4);
+    border-top: var(--lz-border-width) solid var(--lz-border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--lz-space-2);
+  }
+
+  /* ─── Modal Close Button ───────────────────────────────────── */
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: var(--lz-text-lg);
+    cursor: pointer;
+    color: var(--lz-text-default);
+  }
+
+  .modal-close:hover {
+    color: var(--lz-primary);
+  }
+
+  /* ─── Dark Mode Adjustments ────────────────────────────────── */
+  html[data-theme="dark"] .modal {
+    box-shadow: var(--lz-shadow-2xl);
+  }
+
+  /* ─── Mobile-First Styles ──────────────────────────────────── */
+  /* Base styles for mobile devices */
+  .modal {
+    width: 90%; /* Full width for smaller devices */
+    max-width: 32rem;
+    padding: var(--lz-space-3); /* Adjust padding for mobile */
+  }
+
+  .modal-header {
+    font-size: var(--lz-heading-size); /* Default smaller font-size on mobile */
+  }
+
+  .modal-body {
+    font-size: var(--lz-body-size); /* Default font size for body */
+  }
+
+  .modal-footer {
+    padding-top: var(--lz-space-3); /* Reduced footer padding */
+  }
+
+  /* ─── Responsive Adjustments ─────────────────────────────────── */
+  /* 1. Small Tablets (min-width: 600px) */
+  @media (min-width: 600px) {
+    .modal {
+      width: 85%; /* Slightly narrower on small tablets */
+    }
+
+    .modal-header {
+      font-size: var(--lz-heading-size-md); /* Slightly larger heading */
+    }
+
+    .modal-body {
+      font-size: var(--lz-body-size-md); /* Slightly larger body text */
+    }
+
+    .modal-footer {
+      padding-top: var(--lz-space-4); /* Slightly more padding */
+    }
+  }
+
+  /* 2. Tablets (min-width: 768px) */
+  @media (min-width: 768px) {
+    .modal {
+      width: 75%; /* More space on larger tablets */
+      padding: var(--lz-space-4); /* More padding on tablets */
+    }
+
+    .modal-header {
+      font-size: var(--lz-heading-size-lg); /* Larger heading on tablets */
+    }
+
+    .modal-body {
+      font-size: var(--lz-body-size-lg); /* Larger text for body */
+    }
+
+    .modal-footer {
+      padding-top: var(--lz-space-5); /* Adjust footer padding */
+    }
+  }
+
+  /* 3. Laptops (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .modal {
+      width: 50%; /* Even more space on laptops */
+    }
+
+    .modal-header {
+      font-size: var(--lz-heading-size-xl); /* Extra large heading */
+    }
+
+    .modal-body {
+      font-size: var(--lz-body-size-xl); /* Larger body text */
+    }
+
+    .modal-footer {
+      gap: var(--lz-space-3); /* Increase footer gap */
+    }
+  }
+
+  /* 4. Large Desktops (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .modal {
+      width: 40%; /* Larger screens get more space */
+    }
+
+    .modal-header {
+      font-size: var(--lz-heading-size-2xl); /* Huge heading */
+    }
+
+    .modal-body {
+      font-size: var(--lz-body-size-2xl); /* Very large body text */
+    }
+
+    .modal-footer {
+      gap: var(--lz-space-4); /* Larger gap in footer */
+    }
+  }
+
+  /* 5. Huge Displays (min-width: 1600px) */
+  @media (min-width: 1600px) {
+    .modal {
+      width: 35%; /* Ultra-wide screens get even more space */
+    }
+
+    .modal-header {
+      font-size: var(--lz-heading-size-3xl); /* Extra huge heading */
+    }
+
+    .modal-body {
+      font-size: var(--lz-body-size-3xl); /* Extra large body text */
+    }
+
+    .modal-footer {
+      gap: var(--lz-space-5); /* Large gap in footer */
+    }
+  }
+}

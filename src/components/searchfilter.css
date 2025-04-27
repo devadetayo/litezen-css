@@ -1,0 +1,35 @@
+/* src/components/search-filter.css */
+@layer components.searchfilter {
+  .lz-searchbar {
+    display: flex;
+    gap: var(--lz-space-2);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .lz-searchbar input,
+  .lz-searchbar select {
+    padding: var(--lz-space-2) var(--lz-space-3);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    flex: 1 1 200px;
+  }
+  .lz-searchbar button {
+    padding: var(--lz-space-2) var(--lz-space-4);
+    background: var(--lz-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--lz-rounded-md);
+    cursor: pointer;
+  }
+  html[data-theme="dark"] .lz-searchbar input,
+  html[data-theme="dark"] .lz-searchbar select {
+    background: var(--lz-bg-emphasis);
+    color: var(--lz-text-light);
+  }
+
+  @media (max-width:640px) { .lz-searchbar { flex-direction: column; } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}
