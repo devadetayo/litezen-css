@@ -1,6 +1,6 @@
 {
   "name": "litezen-css",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Litezen CSS — a component + utility-first CSS framework with built-in dark mode and theming.",
   "main": "dist/litezen.css",
   "style": "dist/litezen.min.css",
