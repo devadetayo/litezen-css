@@ -142,16 +142,17 @@
     --lz-rose-800: #980348;
     --lz-rose-900: #5f0026;
 
-    --lz-slate-50: #f7f7f7;
-    --lz-slate-100: #d7dae0;
-    --lz-slate-200: #b3b9c6;
-    --lz-slate-300: #8a94a6;
-    --lz-slate-400: #667085;
-    --lz-slate-500: #565e73;
-    --lz-slate-600: #464c5e;
-    --lz-slate-700: #3d424f;
-    --lz-slate-800: #363a44;
-    --lz-slate-900: #24262d;
+    /* Tailwind CSS Slate Palette */
+    --lz-slate-50:  #f8fafc;
+    --lz-slate-100: #f1f5f9;
+    --lz-slate-200: #e2e8f0;
+    --lz-slate-300: #cbd5e1;
+    --lz-slate-400: #94a3b8;
+    --lz-slate-500: #64748b;
+    --lz-slate-600: #475569;
+    --lz-slate-700: #334155;
+    --lz-slate-800: #1e293b;
+    --lz-slate-900: #0f172a;
 
     --lz-blue-50: #d7eaff;
     --lz-blue-100: #b9dcff;
@@ -39466,16 +39467,17 @@ input[type="text"], input[type="password"], textarea {
     --lz-rose-800: #980348;
     --lz-rose-900: #5f0026;
 
-    --lz-slate-50: #f7f7f7;
-    --lz-slate-100: #d7dae0;
-    --lz-slate-200: #b3b9c6;
-    --lz-slate-300: #8a94a6;
-    --lz-slate-400: #667085;
-    --lz-slate-500: #565e73;
-    --lz-slate-600: #464c5e;
-    --lz-slate-700: #3d424f;
-    --lz-slate-800: #363a44;
-    --lz-slate-900: #24262d;
+    /* Tailwind CSS Slate Palette */
+    --lz-slate-50:  #f8fafc;
+    --lz-slate-100: #f1f5f9;
+    --lz-slate-200: #e2e8f0;
+    --lz-slate-300: #cbd5e1;
+    --lz-slate-400: #94a3b8;
+    --lz-slate-500: #64748b;
+    --lz-slate-600: #475569;
+    --lz-slate-700: #334155;
+    --lz-slate-800: #1e293b;
+    --lz-slate-900: #0f172a;
 
     --lz-blue-50: #d7eaff;
     --lz-blue-100: #b9dcff;
