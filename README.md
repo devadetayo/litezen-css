@@ -65,7 +65,7 @@ npm install litezen-css
 ### Via CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litezen-css@1.0.0/litezen.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litezencss@1.0.0/dist/litezen.css">
 ```
 
 ---
