@@ -1,0 +1,205 @@
+/* src/components/lists.css */
+@layer components.lists {
+  /* ─── Base List Styles ──────────────────────────────────────────── */
+  .lz-list {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default bullet points for all lists */
+  }
+
+  /* ─── Unordered Lists (Bullets) ──────────────────────────────────── */
+  .lz-list-bullets {
+    list-style-type: disc;
+    padding-left: var(--lz-space-4);
+  }
+
+  .lz-list-bullets li {
+    margin-bottom: var(--lz-space-2);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+  }
+
+  /* Custom Bullets (For advanced users) */
+  .lz-list-bullets.custom-bullet li {
+    list-style-type: none;
+    position: relative;
+  }
+
+  .lz-list-bullets.custom-bullet li::before {
+    content: '•'; /* Change the bullet symbol */
+    position: absolute;
+    left: -1.5em;
+    color: var(--lz-accent-color);
+    font-size: 1.2em;
+  }
+
+  /* ─── Ordered Lists (Numbers) ────────────────────────────────────── */
+  .lz-list-numbers {
+    list-style-type: decimal;
+    padding-left: var(--lz-space-4);
+  }
+
+  .lz-list-numbers li {
+    margin-bottom: var(--lz-space-2);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+  }
+
+  /* Custom Ordered List (Roman numerals, letters) */
+  .lz-list-numbers.roman {
+    list-style-type: upper-roman;
+  }
+
+  .lz-list-numbers.alpha {
+    list-style-type: upper-alpha;
+  }
+
+  /* ─── List Groups ────────────────────────────────────────────────── */
+  .lz-list-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    background-color: var(--lz-bg-default);
+  }
+
+  .lz-list-group-item {
+    padding: var(--lz-space-3) var(--lz-space-4);
+    border-bottom: var(--lz-border-width) solid var(--lz-border-color);
+    display: flex;
+    align-items: center;
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+  }
+
+  .lz-list-group-item:last-child {
+    border-bottom: none;
+  }
+
+  /* List Group Hover Effects */
+  .lz-list-group-item:hover {
+    background-color: var(--lz-bg-hover);
+    cursor: pointer;
+  }
+
+  .lz-list-group-item:active {
+    background-color: var(--lz-bg-active);
+  }
+
+  /* ─── Dark Mode Support ─────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-list-bullets,
+    .lz-list-numbers,
+    .lz-list-group {
+      color: var(--lz-text-dark);
+    }
+
+    .lz-list-group-item {
+      background-color: var(--lz-bg-dark-default);
+      border-color: var(--lz-border-dark-color);
+    }
+
+    .lz-list-group-item:hover {
+      background-color: var(--lz-bg-dark-hover);
+    }
+
+    .lz-list-group-item:active {
+      background-color: var(--lz-bg-dark-active);
+    }
+
+    .lz-list-group-item:last-child {
+      background-color: var(--lz-bg-dark-emphasis);
+    }
+  }
+
+  /* ─── Responsive Design (5 Breakpoints) ────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-list-group {
+      flex-direction: column;
+    }
+
+    .lz-list-group-item {
+      padding: var(--lz-space-2) var(--lz-space-3);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-list-group {
+      flex-direction: column;
+    }
+
+    .lz-list-group-item {
+      padding: var(--lz-space-2) var(--lz-space-4);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-list-group {
+      flex-direction: column;
+    }
+
+    .lz-list-group-item {
+      padding: var(--lz-space-3) var(--lz-space-5);
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-list-group {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .lz-list-group-item {
+      padding: var(--lz-space-3) var(--lz-space-6);
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-list-group {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .lz-list-group-item {
+      padding: var(--lz-space-3) var(--lz-space-6);
+    }
+  }
+
+  /* ─── Utility Classes for Lists ─────────────────────────────────── */
+  .lz-list-indent-1 {
+    padding-left: var(--lz-space-5);
+  }
+
+  .lz-list-indent-2 {
+    padding-left: var(--lz-space-6);
+  }
+
+  .lz-list-indent-3 {
+    padding-left: var(--lz-space-7);
+  }
+
+  .lz-list-no-margin {
+    margin: 0;
+  }
+
+  .lz-list-no-padding {
+    padding: 0;
+  }
+
+  .lz-list-rounded {
+    border-radius: var(--lz-rounded-md);
+  }
+
+  /* Custom Styles for List Items (Icon support, etc.) */
+  .lz-list-item-icon {
+    margin-right: var(--lz-space-2);
+  }
+
+  .lz-list-item-icon svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: var(--lz-accent-color);
+  }
+}

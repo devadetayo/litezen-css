@@ -1,0 +1,30 @@
+/* src/components/hero.css */
+@layer components.hero {
+  .lz-hero {
+    position: relative;
+    padding: var(--lz-space-12) var(--lz-space-4);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--lz-text-light);
+  }
+  .lz-hero-title { font-size: var(--lz-text-4xl); margin-bottom: var(--lz-space-4); }
+  .lz-hero-sub { font-size: var(--lz-text-xl); margin-bottom: var(--lz-space-6); }
+  .lz-hero-cta {
+    display: inline-block;
+    padding: var(--lz-space-3) var(--lz-space-6);
+    background: var(--lz-primary);
+    border-radius: var(--lz-rounded-md);
+  }
+
+  html[data-theme="dark"] .lz-hero { color: var(--lz-text-light); }
+
+  @media (max-width:640px) {
+    .lz-hero-title { font-size: var(--lz-text-2xl); }
+    .lz-hero-sub { font-size: var(--lz-text-lg); }
+  }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}

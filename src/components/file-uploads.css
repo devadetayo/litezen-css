@@ -1,0 +1,156 @@
+/* src/components/file-uploads.css */
+@layer components.file-uploads {
+
+  /* ─── Base Styles for Normal File Upload Input ──────────────────── */
+  .lz-file-upload {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--lz-bg-muted);
+    border: 2px solid var(--lz-border-default);
+    border-radius: var(--lz-rounded-sm);
+    font-size: var(--lz-text-sm);
+    color: var(--lz-text-dark);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  .lz-file-upload:hover {
+    background-color: var(--lz-bg-hover);
+    border-color: var(--lz-border-hover);
+  }
+
+  .lz-file-upload:focus {
+    outline: none;
+    border-color: var(--lz-border-focus);
+  }
+
+  .lz-file-upload input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+
+  .lz-file-upload span {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  /* ─── Modern Styled File Upload ────────────────────────────────── */
+  .lz-file-upload-modern {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    background-color: var(--lz-bg-light);
+    border: 2px dashed var(--lz-border-default);
+    border-radius: var(--lz-rounded-sm);
+    font-size: var(--lz-text-md);
+    color: var(--lz-text-muted);
+    text-align: center;
+    line-height: 150px; /* Center text vertically */
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .lz-file-upload-modern:hover {
+    background-color: var(--lz-bg-hover);
+    border-color: var(--lz-border-hover);
+    color: var(--lz-text-dark);
+  }
+
+  .lz-file-upload-modern:focus {
+    outline: none;
+    border-color: var(--lz-border-focus);
+  }
+
+  /* Hidden file input for Modern Upload */
+  .lz-file-upload-modern input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .lz-file-upload-modern .lz-file-upload-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .lz-file-upload-modern .lz-file-upload-icon {
+    font-size: 3rem;
+    color: var(--lz-text-muted);
+  }
+
+  /* Dark Mode Support for both styles */
+  html[data-theme="dark"] {
+    .lz-file-upload {
+      background-color: var(--lz-bg-dark-muted);
+      border-color: var(--lz-border-dark);
+    }
+
+    .lz-file-upload:hover {
+      background-color: var(--lz-bg-dark-hover);
+      border-color: var(--lz-border-dark-hover);
+    }
+
+    .lz-file-upload-modern {
+      background-color: var(--lz-bg-dark-light);
+      border-color: var(--lz-border-dark);
+    }
+
+    .lz-file-upload-modern:hover {
+      background-color: var(--lz-bg-dark-hover);
+      border-color: var(--lz-border-dark-hover);
+      color: var(--lz-text-dark);
+    }
+
+    .lz-file-upload-modern .lz-file-upload-icon {
+      color: var(--lz-text-muted);
+    }
+  }
+
+  /* ─── Responsive Design for File Uploads (5 Breakpoints) ─────────── */
+  @media (max-width: 640px) {
+    .lz-file-upload,
+    .lz-file-upload-modern {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-file-upload,
+    .lz-file-upload-modern {
+      width: 100%;
+      height: 120px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-file-upload,
+    .lz-file-upload-modern {
+      width: 100%;
+      height: 140px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-file-upload,
+    .lz-file-upload-modern {
+      width: 100%;
+      height: 160px;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-file-upload,
+    .lz-file-upload-modern {
+      width: 100%;
+      height: 180px;
+    }
+  }
+}

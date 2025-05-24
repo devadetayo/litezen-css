@@ -1,0 +1,130 @@
+/* src/components/range-slider.css */
+@layer components.rangeslider {
+
+  /* ─── Base Range Slider Styles ──────────────────────────────────── */
+  .lz-range-slider {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background-color: var(--lz-bg-light);
+    border-radius: var(--lz-rounded-sm);
+    overflow: hidden;
+    margin: 20px 0;
+  }
+
+  /* Slider Track */
+  .lz-range-slider .lz-track {
+    width: 100%;
+    height: 100%;
+    background-color: var(--lz-bg-muted);
+    border-radius: var(--lz-rounded-sm);
+  }
+
+  /* Range Slider Thumb */
+  .lz-range-slider .lz-thumb {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--lz-bg-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+  }
+
+  /* Hover State for Thumb */
+  .lz-range-slider .lz-thumb:hover {
+    background-color: var(--lz-bg-secondary);
+  }
+
+  /* Active State for Thumb */
+  .lz-range-slider .lz-thumb:active {
+    transform: scale(1.2);
+  }
+
+  /* Slider Value Display */
+  .lz-range-slider .lz-value {
+    position: absolute;
+    top: -30px;
+    font-size: var(--lz-font-size-sm);
+    font-weight: bold;
+    color: var(--lz-text-primary);
+    text-align: center;
+    width: 100%;
+  }
+
+  /* ─── Dark Mode Support ─────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-range-slider .lz-track {
+      background-color: var(--lz-bg-dark-muted);
+    }
+
+    .lz-range-slider .lz-thumb {
+      background-color: var(--lz-bg-dark-primary);
+    }
+
+    .lz-range-slider .lz-thumb:hover {
+      background-color: var(--lz-bg-dark-secondary);
+    }
+
+    .lz-range-slider .lz-value {
+      color: var(--lz-text-light);
+    }
+  }
+
+  /* ─── Responsive Design (5 Breakpoints) ──────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-range-slider {
+      height: 6px;
+    }
+
+    .lz-range-slider .lz-thumb {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-range-slider {
+      height: 7px;
+    }
+
+    .lz-range-slider .lz-thumb {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-range-slider {
+      height: 8px;
+    }
+
+    .lz-range-slider .lz-thumb {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-range-slider {
+      height: 8px;
+    }
+
+    .lz-range-slider .lz-thumb {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-range-slider {
+      height: 8px;
+    }
+
+    .lz-range-slider .lz-thumb {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

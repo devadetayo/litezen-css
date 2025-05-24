@@ -1,0 +1,27 @@
+/* src/components/megamenu.css */
+@layer components.megamenu {
+  .lz-megamenu {
+    position: relative;
+  }
+  .lz-megamenu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: var(--lz-bg-default);
+    padding: var(--lz-space-6);
+    box-shadow: var(--lz-shadow-lg);
+  }
+  .lz-megamenu:hover .lz-megamenu-content,
+  .lz-megamenu.show .lz-megamenu-content {
+    display: block;
+  }
+  html[data-theme="dark"] .lz-megamenu-content { background: var(--lz-bg-emphasis); }
+
+  @media (max-width:640px) { .lz-megamenu-content { position: static; width: auto; } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}

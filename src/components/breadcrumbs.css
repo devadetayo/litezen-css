@@ -1,0 +1,33 @@
+/* src/components/breadcrumbs.css */
+@layer components.lz-breadcrumbs {
+  .lz-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--lz-text-sm);
+  }
+  .lz-breadcrumb li + li::before {
+    content: '/';
+    margin: 0 var(--lz-space-2);
+    color: var(--lz-text-muted);
+  }
+  .lz-breadcrumb a {
+    text-decoration: none;
+    color: var(--lz-primary);
+    transition: color var(--lz-transition-fast);
+  }
+  .lz-breadcrumb a:hover {
+    color: var(--lz-primary-hover);
+  }
+  html[data-theme="dark"] .lz-breadcrumb a {
+    color: var(--lz-text-light);
+  }
+
+  @media (max-width: 640px) { .lz-breadcrumb { font-size: var(--lz-text-xs); } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { .lz-breadcrumb { font-size: var(--lz-text-base); } }
+}

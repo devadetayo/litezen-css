@@ -1,0 +1,19 @@
+# Source files you don’t want published
+src/
+tools/
+docs/
+playground.html
+documentation.html
+index.html
+
+# Configuration
+.github/
+.gitignore
+.npmignore
+.eslintrc.js
+stylelint.config.js
+postcss.config.js
+
+# Tests and misc
+tests/
+examples/

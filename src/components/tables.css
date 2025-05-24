@@ -1,0 +1,200 @@
+/* src/components/tables.css */
+@layer components.tables {
+
+  /* ─── Base Table Styles ─────────────────────────────────────────── */
+  .lz-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: var(--lz-text-sm);
+    color: var(--lz-text-dark);
+  }
+
+  .lz-table th, .lz-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--lz-border-muted);
+  }
+
+  .lz-table th {
+    background-color: var(--lz-bg-muted);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .lz-table tr:hover {
+    background-color: var(--lz-bg-hover);
+  }
+
+  .lz-table-striped tr:nth-child(odd) {
+    background-color: var(--lz-bg-light-muted);
+  }
+
+  /* Hoverable Rows */
+  .lz-table-hover tbody tr:hover {
+    background-color: var(--lz-bg-hover);
+  }
+
+  /* ─── Responsive Table ─────────────────────────────────────────── */
+  .lz-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+  }
+
+  .lz-table th, .lz-table td {
+    padding: 10px;
+    font-size: var(--lz-text-xs);
+  }
+
+  @media (min-width: 640px) {
+    .lz-table th, .lz-table td {
+      padding: 12px;
+      font-size: var(--lz-text-sm);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .lz-table th, .lz-table td {
+      padding: 15px;
+      font-size: var(--lz-text-md);
+    }
+  }
+
+  /* ─── Sorting Functionality (Visual Only, Add JavaScript for Full Functionality) ── */
+  .lz-table th.sortable {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .lz-table th.sortable::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--lz-text-muted);
+    opacity: 0.5;
+    transition: transform 0.3s;
+  }
+
+  .lz-table th.sortable.sorted-asc::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .lz-table th.sortable.sorted-desc::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  /* ─── Pagination Styles ──────────────────────────────────────────── */
+  .lz-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .lz-pagination .lz-pagination-button {
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid var(--lz-border-muted);
+    background-color: var(--lz-bg-muted);
+    color: var(--lz-text-dark);
+    cursor: pointer;
+    font-size: var(--lz-text-sm);
+    border-radius: var(--lz-rounded-sm);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .lz-pagination .lz-pagination-button:hover {
+    background-color: var(--lz-bg-hover);
+    color: var(--lz-text-light);
+  }
+
+  .lz-pagination .lz-pagination-button:disabled {
+    background-color: var(--lz-bg-disabled);
+    color: var(--lz-text-muted);
+    cursor: not-allowed;
+  }
+
+  .lz-pagination .lz-pagination-button.active {
+    background-color: var(--lz-bg-primary);
+    color: var(--lz-text-light);
+  }
+
+  /* ─── Dark Mode Support ─────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-table {
+      border-color: var(--lz-border-dark);
+    }
+
+    .lz-table th {
+      background-color: var(--lz-bg-dark-muted);
+      color: var(--lz-text-light);
+    }
+
+    .lz-table tr:hover {
+      background-color: var(--lz-bg-dark-hover);
+    }
+
+    .lz-table-striped tr:nth-child(odd) {
+      background-color: var(--lz-bg-dark-light-muted);
+    }
+
+    .lz-pagination .lz-pagination-button {
+      border-color: var(--lz-border-dark);
+      background-color: var(--lz-bg-dark-muted);
+      color: var(--lz-text-light);
+    }
+
+    .lz-pagination .lz-pagination-button:hover {
+      background-color: var(--lz-bg-dark-hover);
+      color: var(--lz-text-dark);
+    }
+
+    .lz-pagination .lz-pagination-button.active {
+      background-color: var(--lz-bg-dark-primary);
+      color: var(--lz-text-light);
+    }
+  }
+
+  /* ─── Responsive Design (5 Breakpoints) ────────────── */
+  @media (max-width: 640px) {
+    .lz-table th, .lz-table td {
+      padding: 8px;
+      font-size: var(--lz-text-xs);
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-table th, .lz-table td {
+      padding: 10px;
+      font-size: var(--lz-text-sm);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-table th, .lz-table td {
+      padding: 12px;
+      font-size: var(--lz-text-sm);
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-table th, .lz-table td {
+      padding: 14px;
+      font-size: var(--lz-text-md);
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-table th, .lz-table td {
+      padding: 16px;
+      font-size: var(--lz-text-lg);
+    }
+  }
+}

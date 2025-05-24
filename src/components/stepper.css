@@ -1,0 +1,47 @@
+/* src/components/stepper.css */
+@layer components.stepper {
+  .lz-stepper {
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+  }
+  .lz-step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+  }
+  .lz-step::before {
+    counter-increment: step;
+    content: counter(step);
+    display: inline-block;
+    width: var(--lz-space-6);
+    height: var(--lz-space-6);
+    line-height: var(--lz-space-6);
+    background: var(--lz-bg-muted);
+    border-radius: 50%;
+    margin-bottom: var(--lz-space-2);
+  }
+  .lz-step::after {
+    content: '';
+    position: absolute;
+    top: var(--lz-space-3);
+    left: 50%;
+    width: 100%;
+    height: var(--lz-border-width);
+    background: var(--lz-border-color);
+    z-index: -1;
+  }
+  .lz-step:first-child::after { left: 50%; width: 50%; }
+  .lz-step:last-child::after { width: 50%; }
+  .lz-step.active::before { background: var(--lz-primary); color: #fff; }
+  .lz-step.completed::before { background: var(--lz-success); color: #fff; }
+
+  html[data-theme="dark"] .lz-step::before { background: var(--lz-bg-emphasis); }
+  html[data-theme="dark"] .lz-step.active::before { background: var(--lz-primary); }
+
+  @media (max-width:640px) { .lz-stepper { flex-direction: column; } }
+  @media (min-width:641px) and (max-width:768px) { /* no change */ }
+  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
+  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
+  @media (min-width:1281px) { /* no change */ }
+}

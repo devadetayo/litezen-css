@@ -1,0 +1,145 @@
+/* src/components/progress-bars.css */
+@layer components.progress-bars {
+  /* ─── Base Progress Bar Styles ─────────────────────────────────── */
+  .lz-progress-bar {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    background-color: var(--lz-bg-muted);
+    border-radius: var(--lz-rounded-sm);
+    overflow: hidden;
+    box-shadow: var(--lz-shadow-sm);
+  }
+
+  .lz-progress-bar-inner {
+    height: 100%;
+    width: 0; /* Default to 0% progress */
+    background-color: var(--lz-bg-primary);
+    border-radius: var(--lz-rounded-sm);
+    transition: width 0.3s ease-in-out;
+  }
+
+  .lz-progress-bar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--lz-text-xs);
+    font-weight: bold;
+    color: var(--lz-text-white);
+  }
+
+  /* ─── Success Progress Bar ─────────────────────────────────────── */
+  .lz-progress-bar-success .lz-progress-bar-inner {
+    background-color: var(--lz-bg-success);
+  }
+
+  /* ─── Info Progress Bar ────────────────────────────────────────── */
+  .lz-progress-bar-info .lz-progress-bar-inner {
+    background-color: var(--lz-bg-info);
+  }
+
+  /* ─── Warning Progress Bar ─────────────────────────────────────── */
+  .lz-progress-bar-warning .lz-progress-bar-inner {
+    background-color: var(--lz-bg-warning);
+  }
+
+  /* ─── Danger Progress Bar ──────────────────────────────────────── */
+  .lz-progress-bar-danger .lz-progress-bar-inner {
+    background-color: var(--lz-bg-danger);
+  }
+
+  /* ─── Animated Progress Bar ────────────────────────────────────── */
+  .lz-progress-bar-animated .lz-progress-bar-inner {
+    animation: progress-bar-animate 1.5s linear infinite;
+  }
+
+  @keyframes progress-bar-animate {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* ─── Dark Mode Support ─────────────────────────────────────────── */
+  html[data-theme="dark"] {
+    .lz-progress-bar {
+      background-color: var(--lz-bg-dark-muted);
+    }
+
+    .lz-progress-bar-inner {
+      background-color: var(--lz-bg-dark-primary);
+    }
+
+    .lz-progress-bar-success .lz-progress-bar-inner {
+      background-color: var(--lz-bg-dark-success);
+    }
+
+    .lz-progress-bar-info .lz-progress-bar-inner {
+      background-color: var(--lz-bg-dark-info);
+    }
+
+    .lz-progress-bar-warning .lz-progress-bar-inner {
+      background-color: var(--lz-bg-dark-warning);
+    }
+
+    .lz-progress-bar-danger .lz-progress-bar-inner {
+      background-color: var(--lz-bg-dark-danger);
+    }
+  }
+
+  /* ─── Responsive Design (5 Breakpoints) ─────────────────────────── */
+  @media (max-width: 640px) {
+    .lz-progress-bar {
+      height: 15px;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .lz-progress-bar {
+      height: 18px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .lz-progress-bar {
+      height: 20px;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .lz-progress-bar {
+      height: 22px;
+    }
+  }
+
+  @media (min-width: 1281px) {
+    .lz-progress-bar {
+      height: 25px;
+    }
+  }
+
+  /* ─── Utility Classes ───────────────────────────────────────────── */
+  .lz-progress-bar-striped .lz-progress-bar-inner {
+    background-size: 40px 40px;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  }
+
+  /* Customizable width for progress */
+  .lz-progress-bar-half .lz-progress-bar-inner {
+    width: 50%;
+  }
+
+  .lz-progress-bar-three-quarters .lz-progress-bar-inner {
+    width: 75%;
+  }
+
+  .lz-progress-bar-full .lz-progress-bar-inner {
+    width: 100%;
+  }
+}

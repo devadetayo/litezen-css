@@ -1,0 +1,247 @@
+/* src/components/form.css */
+@layer components.form {
+  /* ─── Form Layout ─────────────────────────────────────────── */
+  .lz-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lz-space-5);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .lz-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lz-space-2);
+  }
+
+  .lz-form-label {
+    font-family: var(--lz-font-primary);
+    font-size: var(--lz-text-sm);
+    color: var(--lz-text-default);
+    font-weight: 500;
+  }
+
+  /* ─── Text Inputs & Textarea & Select ────────────────────── */
+  .lz-form-input,
+  .lz-form-textarea,
+  .lz-form-select {
+    display: block;
+    width: 100%;
+    padding: var(--lz-space-2) var(--lz-space-3);
+    font-family: var(--lz-font-secondary);
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    background: var(--lz-bg-default);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    transition: border-color var(--lz-transition-fast), background-color var(--lz-transition-fast);
+  }
+  .lz-form-input:focus,
+  .lz-form-textarea:focus,
+  .lz-form-select:focus {
+    outline: none;
+    border-color: var(--lz-primary);
+  }
+  .lz-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .lz-form-select {
+    appearance: none;
+    background-image:
+      url("data:image/svg+xml,%3Csvg fill='%236B7280' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5H5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--lz-space-3) center;
+    background-size: var(--lz-space-4) var(--lz-space-4);
+    padding-right: var(--lz-space-10);
+  }
+
+  /* ─── Search Variant ─────────────────────────────────────── */
+  .lz-form-search {
+    position: relative;
+  }
+  .lz-form-search .lz-form-input {
+    padding-left: calc(var(--lz-space-10) + var(--lz-space-1));
+  }
+  .lz-form-search::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: var(--lz-space-3);
+    transform: translateY(-50%);
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    background-image:
+      url("data:image/svg+xml,%3Csvg stroke='%236B7280' stroke-width='4' viewBox='0 0 24 24'%3E%3Cpath d='M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+  }
+
+  /* ─── Checkbox ───────────────────────────────────────────── */
+  .lz-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--lz-space-2);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  .lz-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .lz-checkbox-box {
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-rounded-md);
+    background: var(--lz-bg-default);
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+  }
+  .lz-checkbox-box::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: var(--lz-space-3);
+    height: var(--lz-space-3);
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4l10-10'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: var(--lz-space-3) var(--lz-space-3);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity var(--lz-transition-fast);
+  }
+  .lz-checkbox-input:checked + .lz-checkbox-box {
+    background: var(--lz-primary);
+    border-color: var(--lz-primary);
+  }
+  .lz-checkbox-input:checked + .lz-checkbox-box::after {
+    opacity: 1;
+  }
+  .lz-checkbox-label {
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* ─── Radio ─────────────────────────────────────────────── */
+  .lz-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--lz-space-2);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  .lz-radio-input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+  }
+  .lz-radio-box {
+    width: var(--lz-space-4);
+    height: var(--lz-space-4);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: 50%;
+    background: var(--lz-bg-default);
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+  }
+  .lz-radio-box::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: var(--lz-space-2);
+    height: var(--lz-space-2);
+    background: var(--lz-bg-default);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform var(--lz-transition-fast);
+  }
+  .lz-radio-input:checked + .lz-radio-box {
+    background: var(--lz-primary);
+    border-color: var(--lz-primary);
+  }
+  .lz-radio-input:checked + .lz-radio-box::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .lz-radio-label {
+    font-size: var(--lz-text-base);
+    color: var(--lz-text-default);
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* ─── Switch ─────────────────────────────────────────────── */
+  .lz-switch {
+    display: inline-block;
+    position: relative;
+    width: 42px;
+    height: 24px;
+  }
+  .lz-switch-input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .lz-switch-slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--lz-slate-100);
+    border-radius: var(--lz-rounded-full);
+    transition: background-color var(--lz-transition-fast);
+  }
+  .lz-switch-slider::before {
+    content: "";
+    position: absolute;
+    width: 18px; height: 18px;
+    left: 3px; bottom: 3px;
+    background: var(--lz-bg-default);
+    border-radius: 50%;
+    transition: transform var(--lz-transition-fast);
+  }
+  .lz-switch-input:checked + .lz-switch-slider {
+    background: var(--lz-primary);
+  }
+  .lz-switch-input:checked + .lz-switch-slider::before {
+    transform: translateX(18px);
+  }
+
+  /* ─── Dark Mode Overrides ───────────────────────────────── */
+  html[data-theme="dark"] .lz-form-input,
+  html[data-theme="dark"] .lz-form-textarea,
+  html[data-theme="dark"] .lz-form-select,
+  html[data-theme="dark"] .lz-form-search .lz-form-input {
+    background: var(--lz-bg-emphasis);
+    color: var(--lz-text-default);
+    border-color: var(--lz-border-color);
+  }
+  html[data-theme="dark"] .lz-checkbox-box,
+  html[data-theme="dark"] .lz-radio-box {
+    background: var(--lz-bg-emphasis);
+    border-color: var(--lz-border-color);
+  }
+  html[data-theme="dark"] .lz-checkbox-input:checked + .lz-checkbox-box,
+  html[data-theme="dark"] .lz-radio-input:checked + .lz-radio-box,
+  html[data-theme="dark"] .lz-switch-input:checked + .lz-switch-slider {
+    background: var(--lz-primary);
+    border-color: var(--lz-primary);
+  }
+  html[data-theme="dark"] .lz-switch-slider {
+    background: var(--lz-grey-600);
+  }
+  html[data-theme="dark"] .lz-form-search::before {
+    filter: brightness(0.85);
+  }
+}

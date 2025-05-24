@@ -1,0 +1,159 @@
+/* src/components/button.css */
+@layer components.lz-button {
+  /* ─── Flexible Base ─────────────────────────────────────────── */
+  .lz-btn {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--lz-space-2) var(--lz-space-4);
+    font-family: var(--lz-font-primary);
+    font-size: var(--lz-body-size);
+    line-height: var(--lz-body-line-height);
+    border: var(--lz-border-width) solid var(--lz-border-color);
+    border-radius: var(--lz-comp-radius);
+    box-shadow: var(--lz-shadow-sm);
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color var(--lz-transition-normal),
+      color var(--lz-transition-normal),
+      box-shadow var(--lz-transition-fast);
+  }
+
+  /* ─── Size Modifiers ───────────────────────────────────────── */
+  .lz-btn-sm {
+    padding: calc(var(--lz-space-2) * 0.75) calc(var(--lz-space-4) * 0.75);
+    font-size: var(--lz-comp-fs-sm);
+  }
+  .lz-btn-lg {
+    padding: calc(var(--lz-space-2) * 1.25) calc(var(--lz-space-4) * 1.25);
+    font-size: var(--lz-comp-fs-lg);
+  }
+
+  /* ─── Preset Variants ──────────────────────────────────────── */
+  .lz-btn-primary {
+    background-color: var(--lz-bg-primary);
+    color: var(--lz-text-primary);
+    border-color: var(--lz-border-primary);
+  }
+  .lz-btn-secondary {
+    background-color: var(--lz-bg-secondary);
+    color: var(--lz-text-secondary);
+    border-color: var(--lz-border-secondary);
+  }
+  .lz-btn-success {
+    background-color: var(--lz-bg-success);
+    color: var(--lz-text-success);
+    border-color: var(--lz-border-success);
+  }
+  .lz-btn-warning {
+    background-color: var(--lz-bg-warning);
+    color: var(--lz-text-warning);
+    border-color: var(--lz-border-warning);
+  }
+  .lz-btn-danger {
+    background-color: var(--lz-bg-danger);
+    color: var(--lz-text-danger);
+    border-color: var(--lz-border-danger);
+  }
+  .lz-btn-info {
+    background-color: var(--lz-bg-info);
+    color: var(--lz-text-info);
+    border-color: var(--lz-border-info);
+  }
+
+  /* ─── Interaction States ───────────────────────────────────── */
+  .lz-btn:hover,
+  .lz-btn:focus-visible {
+    box-shadow: var(--lz-shadow-md);
+  }
+  .lz-btn-primary:hover { background-color: var(--lz-primary-hover); }
+  .lz-btn-secondary:hover { background-color: var(--lz-secondary-hover); }
+  .lz-btn-success:hover { background-color: var(--lz-success-hover); }
+  .lz-btn-warning:hover { background-color: var(--lz-warning-hover); }
+  .lz-btn-danger:hover { background-color: var(--lz-danger-hover); }
+  .lz-btn-info:hover { background-color: var(--lz-info-hover); }
+
+  /* ─── Disabled State ───────────────────────────────────────── */
+  .lz-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* ─── Dark‑mode Tweaks ─────────────────────────────────────── */
+  html[data-theme="dark"] .lz-btn {
+    box-shadow: var(--lz-shadow-lg);
+  }
+
+  /* ─── Mobile-First Styles ──────────────────────────────────── */
+  /* Base styles are for mobile devices */
+  .lz-btn {
+    font-size: var(--lz-body-size); /* Default font size for mobile */
+    padding: var(--lz-space-2) var(--lz-space-4); /* Default padding for mobile */
+  }
+
+  .lz-btn-sm {
+    padding: calc(var(--lz-space-2) * 0.75) calc(var(--lz-space-4) * 0.75);
+  }
+
+  .lz-btn-lg {
+    padding: calc(var(--lz-space-2) * 1.25) calc(var(--lz-space-4) * 1.25);
+  }
+
+  /* ─── Responsive Adjustments ─────────────────────────────────── */
+  /* 1. Small Tablets (min-width: 600px) */
+  @media (min-width: 600px) {
+    .lz-btn {
+      font-size: var(--lz-body-size-md); /* Adjust font size for small tablets */
+      padding: var(--lz-space-3) var(--lz-space-5); /* More padding for small tablets */
+    }
+  }
+
+  /* 2. Tablets (min-width: 768px) */
+  @media (min-width: 768px) {
+    .lz-btn {
+      font-size: var(--lz-body-size-lg); /* Larger font size on tablets */
+      padding: var(--lz-space-3) var(--lz-space-6); /* Adjust padding */
+    }
+
+    .lz-btn-sm {
+      padding: calc(var(--lz-space-2) * 0.85) calc(var(--lz-space-4) * 0.85);
+    }
+    .lz-btn-lg {
+      padding: calc(var(--lz-space-2) * 1.35) calc(var(--lz-space-4) * 1.35);
+    }
+  }
+
+  /* 3. Laptops (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .lz-btn {
+      font-size: var(--lz-body-size-xl); /* Even larger font size for laptops */
+      padding: var(--lz-space-4) var(--lz-space-7); /* Increase padding */
+    }
+
+    .lz-btn-sm {
+      padding: calc(var(--lz-space-2) * 1) calc(var(--lz-space-4) * 1);
+    }
+    .lz-btn-lg {
+      padding: calc(var(--lz-space-2) * 1.5) calc(var(--lz-space-4) * 1.5);
+    }
+  }
+
+  /* 4. Large Desktops (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .lz-btn {
+      font-size: var(--lz-body-size-2xl); /* Extra large font size for large desktops */
+      padding: var(--lz-space-5) var(--lz-space-8); /* Larger padding for larger screens */
+    }
+  }
+
+  /* 5. Huge Displays (min-width: 1600px) */
+  @media (min-width: 1600px) {
+    .lz-btn {
+      font-size: var(--lz-body-size-3xl); /* Font size is massive for huge displays */
+      padding: var(--lz-space-6) var(--lz-space-9); /* Super large padding */
+    }
+  }
+}

@@ -1,0 +1,124 @@
+/* src/components/alerts.css */
+@layer components.lz-alerts {
+  .lz-alert {
+    display: flex;
+    align-items: center;
+    gap: var(--lz-space-3);
+    padding: var(--lz-space-3) var(--lz-space-4);
+    border-radius: var(--lz-rounded-md);
+    font-size: var(--lz-text-sm);
+    font-family: var(--lz-font-secondary);
+    font-weight: 500;
+    line-height: var(--lz-leading-normal);
+    border: var(--lz-border-width) solid transparent;
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  .lz-alert svg {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .lz-alert-info {
+    background-color: var(--lz-blue-50);
+    color: var(--lz-blue-800);
+    border-color: var(--lz-blue-300);
+  }
+
+  .lz-alert-success {
+    background-color: var(--lz-green-50);
+    color: var(--lz-green-800);
+    border-color: var(--lz-green-300);
+  }
+
+  .lz-alert-warning {
+    background-color: var(--lz-yellow-50);
+    color: var(--lz-yellow-800);
+    border-color: var(--lz-yellow-300);
+  }
+
+  .lz-alert-error {
+    background-color: var(--lz-red-50);
+    color: var(--lz-red-800);
+    border-color: var(--lz-red-300);
+  }
+
+  /* Dark Mode Variants */
+  html[data-theme="dark"] .lz-alert-info {
+    background-color: var(--lz-blue-900);
+    color: var(--lz-blue-100);
+    border-color: var(--lz-blue-700);
+  }
+
+  html[data-theme="dark"] .lz-alert-success {
+    background-color: var(--lz-green-900);
+    color: var(--lz-green-100);
+    border-color: var(--lz-green-700);
+  }
+
+  html[data-theme="dark"] .lz-alert-warning {
+    background-color: var(--lz-yellow-900);
+    color: var(--lz-yellow-100);
+    border-color: var(--lz-yellow-700);
+  }
+
+  html[data-theme="dark"] .lz-alert-error {
+    background-color: var(--lz-red-900);
+    color: var(--lz-red-100);
+    border-color: var(--lz-red-700);
+  }
+
+  /* ─── Mobile-First Styles ──────────────────────────────────── */
+  /* Base styles for mobile devices */
+  .lz-alert {
+    font-size: var(--lz-text-sm); /* Default smaller font-size on mobile */
+    padding: var(--lz-space-3) var(--lz-space-4); /* Adjust padding for mobile */
+    width: 100%; /* Ensure alerts span full width on small screens */
+  }
+
+  /* ─── Responsive Adjustments ─────────────────────────────────── */
+  /* 1. Small Tablets (min-width: 600px) */
+  @media (min-width: 600px) {
+    .lz-alert {
+      padding: var(--lz-space-4) var(--lz-space-5); /* More padding on small tablets */
+      font-size: var(--lz-text-base); /* Larger font size for small tablets */
+    }
+  }
+
+  /* 2. Tablets (min-width: 768px) */
+  @media (min-width: 768px) {
+    .lz-alert {
+      width: 90%; /* Slightly narrower on larger tablets */
+      padding: var(--lz-space-4) var(--lz-space-6); /* Even more padding on tablets */
+      font-size: var(--lz-text-lg); /* Larger font size */
+    }
+  }
+
+  /* 3. Laptops (min-width: 1024px) */
+  @media (min-width: 1024px) {
+    .lz-alert {
+      width: 80%; /* More space on larger screens */
+      padding: var(--lz-space-5) var(--lz-space-7); /* Adjust padding */
+      font-size: var(--lz-text-xl); /* Larger font size */
+    }
+  }
+
+  /* 4. Large Desktops (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .lz-alert {
+      width: 70%; /* Even more space on large desktops */
+      padding: var(--lz-space-6) var(--lz-space-8); /* Adjust padding for larger screens */
+      font-size: var(--lz-text-2xl); /* Extra large font size */
+    }
+  }
+
+  /* 5. Huge Displays (min-width: 1600px) */
+  @media (min-width: 1600px) {
+    .lz-alert {
+      width: 60%; /* Ultra-wide screens get even more space */
+      padding: var(--lz-space-7) var(--lz-space-9); /* Ultra-wide screen padding */
+      font-size: var(--lz-text-3xl); /* Extra large text for huge displays */
+    }
+  }
+}
