@@ -1,10 +1,12 @@
-const fs = require('fs');
+const fs   = require('fs');
 const path = require('path');
 
-const inputPath = path.resolve(__dirname, '../src/utilities/base.css');
-const outputCSS = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
-const outputJSON = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
+// Paths – adjust if needed
+const inputPath   = path.resolve(__dirname, '../src/utilities/base.css');
+const outputCSS   = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
+const outputJSON  = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
 
+// Breakpoints and pseudo-state maps
 const responsivePrefixes = {
   sm: '@media (min-width: 480px)',
   md: '@media (min-width: 768px)',
@@ -14,71 +16,73 @@ const responsivePrefixes = {
 };
 
 const statePrefixes = {
-  hover: ':hover',
-  focus: ':focus',
-  active: ':active',
+  hover:    ':hover',
+  focus:    ':focus',
+  active:   ':active',
   disabled: ':disabled',
 };
 
-const darkPrefix = '[data-theme="dark"]';
+const darkPrefix       = '[data-theme="dark"]';
 const groupHoverPrefix = '.group:hover';
 
-const inputCSS = fs.readFileSync(inputPath, 'utf8');
-const lines = inputCSS.split(/\r?\n/);
-
+const inputCSS  = fs.readFileSync(inputPath, 'utf8');
 const cssVariants = [];
-const jsonStyles = {};
+const jsonStyles  = {};
 
-lines.forEach(line => {
-  const trimmed = line.trim();
-  if (!trimmed.startsWith('.') || !trimmed.includes('{') || !trimmed.includes('}')) return;
+// Regex that matches .className { … } including multi-line bodies
+const blockRegex = /\.([^{\s]+)\s*\{([^}]+)\}/gs;
+let match;
 
-  const nameMatch = trimmed.match(/^\.([^{\s]+)/);
-  if (!nameMatch) return;
-  const className = nameMatch[1];
+while ((match = blockRegex.exec(inputCSS))) {
+  const className = match[1];           // e.g. "d-flex"
+  const ruleBody  = match[2].trim();    // everything between { and }
 
-  const ruleBody = trimmed
-    .slice(trimmed.indexOf('{') + 1, trimmed.lastIndexOf('}'))
-    .trim();
-
-  // JSON style export
-  const styleProps = ruleBody.split(';').reduce((acc, curr) => {
-    const [prop, value] = curr.split(':').map(s => s.trim());
-    if (prop && value) {
-      const jsKey = prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase());
-      acc[jsKey] = value;
-    }
-    return acc;
-  }, {});
+  // Build JSON style object
+  const styleProps = ruleBody
+    .split(';')
+    .map(s => s.trim())
+    .filter(Boolean)
+    .reduce((acc, curr) => {
+      const [prop, value] = curr.split(':').map(s => s.trim());
+      if (prop && value) {
+        // convert kebab-case to camelCase
+        const jsKey = prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase());
+        acc[jsKey] = value;
+      }
+      return acc;
+    }, {});
   jsonStyles[className.replace(/-/g, '_')] = styleProps;
 
-  // Helper to push variant and its dark counterpart
+  // helper to push variant + its dark mode version
   function pushVariant(selector) {
     cssVariants.push(`${selector} { ${ruleBody} }`);
-    // dark mode for this variant
     cssVariants.push(`${darkPrefix} ${selector} { ${ruleBody} }`);
   }
 
-  // Base class
+  // 1) Base
   pushVariant(`.${className}`);
 
-  // Responsive variants
+  // 2) Responsive
   for (const [prefix, media] of Object.entries(responsivePrefixes)) {
-    const sel = `.${prefix}-${className}`;
-    cssVariants.push(`${media} { ${sel} { ${ruleBody} } ${darkPrefix} ${sel} { ${ruleBody} } }`);
+    cssVariants.push(
+`${media} {
+  .${prefix}-${className} { ${ruleBody} }
+  ${darkPrefix} .${prefix}-${className} { ${ruleBody} }
+}`
+    );
   }
 
-  // State variants
+  // 3) State pseudos
   for (const [state, pseudo] of Object.entries(statePrefixes)) {
     pushVariant(`.${state}-${className}${pseudo}`);
   }
 
-  // Group-hover variant
+  // 4) Group-hover
   pushVariant(`${groupHoverPrefix} .group-hover-${className}`);
-});
+}
 
-// write files
-fs.writeFileSync(outputCSS, cssVariants.join('\n'), 'utf8');
+// Write out files
+fs.writeFileSync(outputCSS,  cssVariants.join('\n'), 'utf8');
 fs.writeFileSync(outputJSON, JSON.stringify(jsonStyles, null, 2), 'utf8');
 
 console.log('✅ Variants generated for CSS & JSON style objects including dark mode for pseudo and responsive.');
