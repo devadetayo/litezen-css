@@ -4,7 +4,7 @@
 
 > Built with utility-first flexibility and component-based elegance — without the bloat.
 
-![npm version](https://img.shields.io/npm/v/litezen-css)
+![npm version](https://img.shields.io/npm/v/litezencss)
 ![build status](https://github.com/devadetayo/litezen-css/actions/workflows/ci.yml/badge.svg)
 ![license](https://img.shields.io/github/license/devadetayo/litezen-css)
 
@@ -65,7 +65,7 @@ npm install litezen-css
 ### Via CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litezencss@1.0.0/dist/litezen.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litezencss@1.0.2/dist/litezen.css">
 ```
 
 ---

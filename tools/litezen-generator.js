@@ -1,12 +1,10 @@
-const fs   = require('fs');
+const fs = require('fs');
 const path = require('path');
 
-// Paths – adjust if needed
-const inputPath   = path.resolve(__dirname, '../src/utilities/base.css');
-const outputCSS   = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
-const outputJSON  = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
+const inputPath = path.resolve(__dirname, '../src/utilities/base.css');
+const outputCSS = path.resolve(__dirname, '../src/utilities/litezen-variants.css');
+const outputJSON = path.resolve(__dirname, '../src/utilities/litezen-styles.json');
 
-// Breakpoints and pseudo-state maps
 const responsivePrefixes = {
   sm: '@media (min-width: 480px)',
   md: '@media (min-width: 768px)',
@@ -16,73 +14,80 @@ const responsivePrefixes = {
 };
 
 const statePrefixes = {
-  hover:    ':hover',
-  focus:    ':focus',
-  active:   ':active',
+  hover: ':hover',
+  focus: ':focus',
+  active: ':active',
   disabled: ':disabled',
 };
 
-const darkPrefix       = '[data-theme="dark"]';
+const darkPrefix = '[data-theme="dark"]';
 const groupHoverPrefix = '.group:hover';
 
-const inputCSS  = fs.readFileSync(inputPath, 'utf8');
-const cssVariants = [];
-const jsonStyles  = {};
+const inputCSS = fs.readFileSync(inputPath, 'utf8');
+const lines = inputCSS.split(/\r?\n/);
 
-// Regex that matches .className { … } including multi-line bodies
-const blockRegex = /\.([^{\s]+)\s*\{([^}]+)\}/gs;
-let match;
+const baseVariants = [];
+const responsiveVariantsMap = {}; // store per breakpoint
+const jsonStyles = {};
 
-while ((match = blockRegex.exec(inputCSS))) {
-  const className = match[1];           // e.g. "d-flex"
-  const ruleBody  = match[2].trim();    // everything between { and }
+Object.keys(responsivePrefixes).forEach(key => {
+  responsiveVariantsMap[key] = [];
+});
 
-  // Build JSON style object
-  const styleProps = ruleBody
-    .split(';')
-    .map(s => s.trim())
-    .filter(Boolean)
-    .reduce((acc, curr) => {
-      const [prop, value] = curr.split(':').map(s => s.trim());
-      if (prop && value) {
-        // convert kebab-case to camelCase
-        const jsKey = prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase());
-        acc[jsKey] = value;
-      }
-      return acc;
-    }, {});
+lines.forEach(line => {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith('.') || !trimmed.includes('{') || !trimmed.includes('}')) return;
+
+  const nameMatch = trimmed.match(/^\.([^{\s]+)/);
+  if (!nameMatch) return;
+  const className = nameMatch[1];
+
+  const ruleBody = trimmed
+    .slice(trimmed.indexOf('{') + 1, trimmed.lastIndexOf('}'))
+    .trim();
+
+  // JSON export
+  const styleProps = ruleBody.split(';').reduce((acc, curr) => {
+    const [prop, value] = curr.split(':').map(s => s.trim());
+    if (prop && value) {
+      const jsKey = prop.replace(/-([a-z])/g, (_, g) => g.toUpperCase());
+      acc[jsKey] = value;
+    }
+    return acc;
+  }, {});
   jsonStyles[className.replace(/-/g, '_')] = styleProps;
 
-  // helper to push variant + its dark mode version
-  function pushVariant(selector) {
-    cssVariants.push(`${selector} { ${ruleBody} }`);
-    cssVariants.push(`${darkPrefix} ${selector} { ${ruleBody} }`);
-  }
+  // Base class + dark
+  baseVariants.push(`.${className} { ${ruleBody} }`);
+  baseVariants.push(`${darkPrefix} .${className} { ${ruleBody} }`);
 
-  // 1) Base
-  pushVariant(`.${className}`);
-
-  // 2) Responsive
-  for (const [prefix, media] of Object.entries(responsivePrefixes)) {
-    cssVariants.push(
-`${media} {
-  .${prefix}-${className} { ${ruleBody} }
-  ${darkPrefix} .${prefix}-${className} { ${ruleBody} }
-}`
-    );
-  }
-
-  // 3) State pseudos
+  // State variants + dark
   for (const [state, pseudo] of Object.entries(statePrefixes)) {
-    pushVariant(`.${state}-${className}${pseudo}`);
+    baseVariants.push(`.${state}-${className}${pseudo} { ${ruleBody} }`);
+    baseVariants.push(`${darkPrefix} .${state}-${className}${pseudo} { ${ruleBody} }`);
   }
 
-  // 4) Group-hover
-  pushVariant(`${groupHoverPrefix} .group-hover-${className}`);
-}
+  // Group hover + dark
+  baseVariants.push(`${groupHoverPrefix} .group-hover-${className} { ${ruleBody} }`);
+  baseVariants.push(`${darkPrefix} ${groupHoverPrefix} .group-hover-${className} { ${ruleBody} }`);
 
-// Write out files
-fs.writeFileSync(outputCSS,  cssVariants.join('\n'), 'utf8');
+  // Responsive variants
+  for (const [prefix, media] of Object.entries(responsivePrefixes)) {
+    const sel = `.${prefix}-${className}`;
+    const variant = `${sel} { ${ruleBody} }\n${darkPrefix} ${sel} { ${ruleBody} }`;
+    responsiveVariantsMap[prefix].push(variant);
+  }
+});
+
+// Stitch together responsive CSS
+const responsiveVariants = Object.entries(responsiveVariantsMap).map(
+  ([prefix, rules]) => `${responsivePrefixes[prefix]} {\n${rules.join('\n')}\n}`
+);
+
+// Final output
+const finalCSS = [...baseVariants, ...responsiveVariants].join('\n');
+
+fs.writeFileSync(outputCSS, finalCSS, 'utf8');
 fs.writeFileSync(outputJSON, JSON.stringify(jsonStyles, null, 2), 'utf8');
 
-console.log('✅ Variants generated for CSS & JSON style objects including dark mode for pseudo and responsive.');
+console.log('✅ Mobile-first CSS variants with proper cascade order generated.');
