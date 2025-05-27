@@ -1,6 +1,6 @@
 # Code of Conduct
 
-All participants in the Litezen CSS project are expected to uphold this Code of Conduct. We aim to foster an open, welcoming, and inclusive community.
+All participants in the Quanta CSS project are expected to uphold this Code of Conduct. We aim to foster an open, welcoming, and inclusive community.
 
 ## Our Pledge
 

@@ -1,29 +1,29 @@
 /* src/components/chips.css */
 @layer components.chips {
-  .lz-chip {
+  .quanta-chip {
     display: inline-flex;
     align-items: center;
-    gap: var(--lz-space-2);
-    padding: var(--lz-space-1) var(--lz-space-2);
-    font-size: var(--lz-text-sm);
-    background: var(--lz-bg-muted);
-    border-radius: var(--lz-rounded-full);
+    gap: var(--quanta-space-2);
+    padding: var(--quanta-space-1) var(--quanta-space-2);
+    font-size: var(--quanta-text-sm);
+    background: var(--quanta-bg-muted);
+    border-radius: var(--quanta-rounded-full);
   }
-  .lz-chip .lz-chip-close {
+  .quanta-chip .quanta-chip-close {
     cursor: pointer;
-    font-size: var(--lz-text-xs);
+    font-size: var(--quanta-text-xs);
   }
-  .lz-chip-input {
+  .quanta-chip-input {
     border: none;
     outline: none;
-    padding: var(--lz-space-1);
-    font-size: var(--lz-text-sm);
+    padding: var(--quanta-space-1);
+    font-size: var(--quanta-text-sm);
     min-width: 4ch;
   }
 
-  html[data-theme="dark"] .lz-chip { background: var(--lz-bg-emphasis); }
+  html[data-theme="dark"] .quanta-chip { background: var(--quanta-bg-emphasis); }
 
-  @media (max-width:640px) { .lz-chip { font-size: var(--lz-text-xs); } }
+  @media (max-width:640px) { .quanta-chip { font-size: var(--quanta-text-xs); } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }

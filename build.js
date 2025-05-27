@@ -6,16 +6,17 @@ const outDir = 'dist';
 // Utility files (add all utility files here)
 const utilityFiles = [
   'src/tokens/color-tokens.css',
-  'src/utilities/reset.css',
-  'src/utilities/normalize.css',
   'src/utilities/variables.css',
   'src/utilities/base.css',
-  'src/utilities/litezen-variants.css',
+  'src/utilities/reset.css',
+  'src/utilities/normalize.css',
+  'src/utilities/quanta-css-variants.css',
 ];
 
 // Component files (add all component files here)
 const componentFiles = [
   'src/tokens/color-tokens.css',
+  'src/components/variables.css',
   'src/components/reset.css',
   'src/components/variables.css',
   'src/components/base.css',
@@ -58,12 +59,11 @@ const componentFiles = [
   'src/components/tables.css',
   'src/components/tabs.css',
   'src/components/timeline.css',
-  'src/components/tooltips.css',
-  'src/components/variables.css'
+  'src/components/tooltips.css'
 ];
 
 // Full bundle (combined utilities + components)
-const litezenFiles = [...utilityFiles, ...componentFiles];
+const quantaFiles = [...utilityFiles, ...componentFiles];
 
 // Ensure dist folder exists
 if (!fs.existsSync(outDir)) {
@@ -82,13 +82,13 @@ fs.writeFileSync(
   componentFiles.map(f => fs.readFileSync(f)).join('\n')
 );
 
-// Full build (compiles both utilities and components into dist/litezen.css)
+// Full build (compiles both utilities and components into dist/quanta.css)
 fs.writeFileSync(
-  `${outDir}/litezen.css`,
-  litezenFiles.map(f => fs.readFileSync(f)).join('\n')
+  `${outDir}/quanta.css`,
+  quantaFiles.map(f => fs.readFileSync(f)).join('\n')
 );
 
 // Minify using PostCSS for full bundle
-execSync(`npx postcss ${outDir}/litezen.css -o ${outDir}/litezen.min.css`);
+execSync(`npx postcss ${outDir}/quanta.css -o ${outDir}/quanta.min.css`);
 
-console.log('✅ Build complete: utilities.css, components.css, litezen.css, litezen.min.css');
+console.log('✅ Build complete: utilities.css, components.css, quanta.css, quanta.min.css');

@@ -1,76 +1,76 @@
 /* src/components/form.css */
 @layer components.form {
   /* ─── Form Layout ─────────────────────────────────────────── */
-  .lz-form {
+  .quanta-form {
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-5);
+    gap: var(--quanta-space-5);
     max-width: 600px;
     margin-inline: auto;
   }
 
-  .lz-form-group {
+  .quanta-form-group {
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
   }
 
-  .lz-form-label {
-    font-family: var(--lz-font-primary);
-    font-size: var(--lz-text-sm);
-    color: var(--lz-text-default);
+  .quanta-form-label {
+    font-family: var(--quanta-font-primary);
+    font-size: var(--quanta-text-sm);
+    color: var(--quanta-text-default);
     font-weight: 500;
   }
 
   /* ─── Text Inputs & Textarea & Select ────────────────────── */
-  .lz-form-input,
-  .lz-form-textarea,
-  .lz-form-select {
+  .quanta-form-input,
+  .quanta-form-textarea,
+  .quanta-form-select {
     display: block;
     width: 100%;
-    padding: var(--lz-space-2) var(--lz-space-3);
-    font-family: var(--lz-font-secondary);
-    font-size: var(--lz-text-base);
-    color: var(--lz-text-default);
-    background: var(--lz-bg-default);
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded-md);
-    transition: border-color var(--lz-transition-fast), background-color var(--lz-transition-fast);
+    padding: var(--quanta-space-2) var(--quanta-space-3);
+    font-family: var(--quanta-font-secondary);
+    font-size: var(--quanta-text-base);
+    color: var(--quanta-text-default);
+    background: var(--quanta-bg-default);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded-md);
+    transition: border-color var(--quanta-transition-fast), background-color var(--quanta-transition-fast);
   }
-  .lz-form-input:focus,
-  .lz-form-textarea:focus,
-  .lz-form-select:focus {
+  .quanta-form-input:focus,
+  .quanta-form-textarea:focus,
+  .quanta-form-select:focus {
     outline: none;
-    border-color: var(--lz-primary);
+    border-color: var(--quanta-primary);
   }
-  .lz-form-textarea {
+  .quanta-form-textarea {
     resize: vertical;
     min-height: 120px;
   }
-  .lz-form-select {
+  .quanta-form-select {
     appearance: none;
     background-image:
       url("data:image/svg+xml,%3Csvg fill='%236B7280' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5H5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right var(--lz-space-3) center;
-    background-size: var(--lz-space-4) var(--lz-space-4);
-    padding-right: var(--lz-space-10);
+    background-position: right var(--quanta-space-3) center;
+    background-size: var(--quanta-space-4) var(--quanta-space-4);
+    padding-right: var(--quanta-space-10);
   }
 
   /* ─── Search Variant ─────────────────────────────────────── */
-  .lz-form-search {
+  .quanta-form-search {
     position: relative;
   }
-  .lz-form-search .lz-form-input {
-    padding-left: calc(var(--lz-space-10) + var(--lz-space-1));
+  .quanta-form-search .quanta-form-input {
+    padding-left: calc(var(--quanta-space-10) + var(--quanta-space-1));
   }
-  .lz-form-search::before {
+  .quanta-form-search::before {
     content: "";
     position: absolute;
-    top: 50%; left: var(--lz-space-3);
+    top: 50%; left: var(--quanta-space-3);
     transform: translateY(-50%);
-    width: var(--lz-space-4);
-    height: var(--lz-space-4);
+    width: var(--quanta-space-4);
+    height: var(--quanta-space-4);
     background-image:
       url("data:image/svg+xml,%3Csvg stroke='%236B7280' stroke-width='4' viewBox='0 0 24 24'%3E%3Cpath d='M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -79,115 +79,115 @@
   }
 
   /* ─── Checkbox ───────────────────────────────────────────── */
-  .lz-checkbox {
+  .quanta-checkbox {
     display: inline-flex;
     align-items: center;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
     cursor: pointer;
     user-select: none;
     position: relative;
   }
-  .lz-checkbox-input {
+  .quanta-checkbox-input {
     position: absolute;
     opacity: 0;
     width: 0; height: 0;
   }
-  .lz-checkbox-box {
-    width: var(--lz-space-4);
-    height: var(--lz-space-4);
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded-md);
-    background: var(--lz-bg-default);
+  .quanta-checkbox-box {
+    width: var(--quanta-space-4);
+    height: var(--quanta-space-4);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded-md);
+    background: var(--quanta-bg-default);
     position: relative;
     overflow: hidden;
-    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+    transition: background-color var(--quanta-transition-fast), border-color var(--quanta-transition-fast);
   }
-  .lz-checkbox-box::after {
+  .quanta-checkbox-box::after {
     content: "";
     position: absolute;
     top: 50%; left: 50%;
-    width: var(--lz-space-3);
-    height: var(--lz-space-3);
+    width: var(--quanta-space-3);
+    height: var(--quanta-space-3);
     background-image:
       url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4l10-10'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: var(--lz-space-3) var(--lz-space-3);
+    background-size: var(--quanta-space-3) var(--quanta-space-3);
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity var(--lz-transition-fast);
+    transition: opacity var(--quanta-transition-fast);
   }
-  .lz-checkbox-input:checked + .lz-checkbox-box {
-    background: var(--lz-primary);
-    border-color: var(--lz-primary);
+  .quanta-checkbox-input:checked + .quanta-checkbox-box {
+    background: var(--quanta-primary);
+    border-color: var(--quanta-primary);
   }
-  .lz-checkbox-input:checked + .lz-checkbox-box::after {
+  .quanta-checkbox-input:checked + .quanta-checkbox-box::after {
     opacity: 1;
   }
-  .lz-checkbox-label {
-    font-size: var(--lz-text-base);
-    color: var(--lz-text-default);
+  .quanta-checkbox-label {
+    font-size: var(--quanta-text-base);
+    color: var(--quanta-text-default);
     cursor: pointer;
     margin: 0;
   }
 
   /* ─── Radio ─────────────────────────────────────────────── */
-  .lz-radio {
+  .quanta-radio {
     display: inline-flex;
     align-items: center;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
     cursor: pointer;
     user-select: none;
     position: relative;
   }
-  .lz-radio-input {
+  .quanta-radio-input {
     position: absolute;
     opacity: 0;
     width: 0; height: 0;
   }
-  .lz-radio-box {
-    width: var(--lz-space-4);
-    height: var(--lz-space-4);
-    border: var(--lz-border-width) solid var(--lz-border-color);
+  .quanta-radio-box {
+    width: var(--quanta-space-4);
+    height: var(--quanta-space-4);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
     border-radius: 50%;
-    background: var(--lz-bg-default);
+    background: var(--quanta-bg-default);
     position: relative;
     overflow: hidden;
-    transition: background-color var(--lz-transition-fast), border-color var(--lz-transition-fast);
+    transition: background-color var(--quanta-transition-fast), border-color var(--quanta-transition-fast);
   }
-  .lz-radio-box::after {
+  .quanta-radio-box::after {
     content: "";
     position: absolute;
     top: 50%; left: 50%;
-    width: var(--lz-space-2);
-    height: var(--lz-space-2);
-    background: var(--lz-bg-default);
+    width: var(--quanta-space-2);
+    height: var(--quanta-space-2);
+    background: var(--quanta-bg-default);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: transform var(--lz-transition-fast);
+    transition: transform var(--quanta-transition-fast);
   }
-  .lz-radio-input:checked + .lz-radio-box {
-    background: var(--lz-primary);
-    border-color: var(--lz-primary);
+  .quanta-radio-input:checked + .quanta-radio-box {
+    background: var(--quanta-primary);
+    border-color: var(--quanta-primary);
   }
-  .lz-radio-input:checked + .lz-radio-box::after {
+  .quanta-radio-input:checked + .quanta-radio-box::after {
     transform: translate(-50%, -50%) scale(1);
   }
-  .lz-radio-label {
-    font-size: var(--lz-text-base);
-    color: var(--lz-text-default);
+  .quanta-radio-label {
+    font-size: var(--quanta-text-base);
+    color: var(--quanta-text-default);
     cursor: pointer;
     margin: 0;
   }
 
   /* ─── Switch ─────────────────────────────────────────────── */
-  .lz-switch {
+  .quanta-switch {
     display: inline-block;
     position: relative;
     width: 42px;
     height: 24px;
   }
-  .lz-switch-input {
+  .quanta-switch-input {
     position: absolute;
     inset: 0;
     margin: 0;
@@ -195,53 +195,53 @@
     cursor: pointer;
     z-index: 2;
   }
-  .lz-switch-slider {
+  .quanta-switch-slider {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--lz-slate-100);
-    border-radius: var(--lz-rounded-full);
-    transition: background-color var(--lz-transition-fast);
+    background: var(--quanta-slate-100);
+    border-radius: var(--quanta-rounded-full);
+    transition: background-color var(--quanta-transition-fast);
   }
-  .lz-switch-slider::before {
+  .quanta-switch-slider::before {
     content: "";
     position: absolute;
     width: 18px; height: 18px;
     left: 3px; bottom: 3px;
-    background: var(--lz-bg-default);
+    background: var(--quanta-bg-default);
     border-radius: 50%;
-    transition: transform var(--lz-transition-fast);
+    transition: transform var(--quanta-transition-fast);
   }
-  .lz-switch-input:checked + .lz-switch-slider {
-    background: var(--lz-primary);
+  .quanta-switch-input:checked + .quanta-switch-slider {
+    background: var(--quanta-primary);
   }
-  .lz-switch-input:checked + .lz-switch-slider::before {
+  .quanta-switch-input:checked + .quanta-switch-slider::before {
     transform: translateX(18px);
   }
 
   /* ─── Dark Mode Overrides ───────────────────────────────── */
-  html[data-theme="dark"] .lz-form-input,
-  html[data-theme="dark"] .lz-form-textarea,
-  html[data-theme="dark"] .lz-form-select,
-  html[data-theme="dark"] .lz-form-search .lz-form-input {
-    background: var(--lz-bg-emphasis);
-    color: var(--lz-text-default);
-    border-color: var(--lz-border-color);
+  html[data-theme="dark"] .quanta-form-input,
+  html[data-theme="dark"] .quanta-form-textarea,
+  html[data-theme="dark"] .quanta-form-select,
+  html[data-theme="dark"] .quanta-form-search .quanta-form-input {
+    background: var(--quanta-bg-emphasis);
+    color: var(--quanta-text-default);
+    border-color: var(--quanta-border-color);
   }
-  html[data-theme="dark"] .lz-checkbox-box,
-  html[data-theme="dark"] .lz-radio-box {
-    background: var(--lz-bg-emphasis);
-    border-color: var(--lz-border-color);
+  html[data-theme="dark"] .quanta-checkbox-box,
+  html[data-theme="dark"] .quanta-radio-box {
+    background: var(--quanta-bg-emphasis);
+    border-color: var(--quanta-border-color);
   }
-  html[data-theme="dark"] .lz-checkbox-input:checked + .lz-checkbox-box,
-  html[data-theme="dark"] .lz-radio-input:checked + .lz-radio-box,
-  html[data-theme="dark"] .lz-switch-input:checked + .lz-switch-slider {
-    background: var(--lz-primary);
-    border-color: var(--lz-primary);
+  html[data-theme="dark"] .quanta-checkbox-input:checked + .quanta-checkbox-box,
+  html[data-theme="dark"] .quanta-radio-input:checked + .quanta-radio-box,
+  html[data-theme="dark"] .quanta-switch-input:checked + .quanta-switch-slider {
+    background: var(--quanta-primary);
+    border-color: var(--quanta-primary);
   }
-  html[data-theme="dark"] .lz-switch-slider {
-    background: var(--lz-grey-600);
+  html[data-theme="dark"] .quanta-switch-slider {
+    background: var(--quanta-grey-600);
   }
-  html[data-theme="dark"] .lz-form-search::before {
+  html[data-theme="dark"] .quanta-form-search::before {
     filter: brightness(0.85);
   }
 }

@@ -2,45 +2,45 @@
 @layer components.spinners {
 
   /* ─── Base Spinner Styles ──────────────────────────────────────── */
-  .lz-spinner {
+  .quanta-spinner {
     display: inline-block;
-    border: 3px solid var(--lz-border-muted);
-    border-top: 3px solid var(--lz-bg-primary);
+    border: 3px solid var(--quanta-border-muted);
+    border-top: 3px solid var(--quanta-bg-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
 
   /* Spinner sizes */
-  .lz-spinner.sm {
+  .quanta-spinner.sm {
     width: 30px;
     height: 30px;
   }
 
-  .lz-spinner.md {
+  .quanta-spinner.md {
     width: 50px;
     height: 50px;
   }
 
-  .lz-spinner.lg {
+  .quanta-spinner.lg {
     width: 70px;
     height: 70px;
   }
 
   /* Loading Bar Spinner */
-  .lz-spinner-bar {
+  .quanta-spinner-bar {
     width: 100%;
     height: 8px;
-    background-color: var(--lz-bg-muted);
-    border-radius: var(--lz-rounded-sm);
+    background-color: var(--quanta-bg-muted);
+    border-radius: var(--quanta-rounded-sm);
     position: relative;
     overflow: hidden;
   }
 
-  .lz-spinner-bar .lz-bar {
+  .quanta-spinner-bar .quanta-bar {
     position: absolute;
     width: 0%;
     height: 100%;
-    background-color: var(--lz-bg-primary);
+    background-color: var(--quanta-bg-primary);
     animation: loading 2s infinite;
   }
 
@@ -68,101 +68,101 @@
 
   /* ─── Dark Mode Support ───────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-spinner {
-      border-color: var(--lz-border-dark);
-      border-top-color: var(--lz-bg-dark-primary);
+    .quanta-spinner {
+      border-color: var(--quanta-border-dark);
+      border-top-color: var(--quanta-bg-dark-primary);
     }
 
-    .lz-spinner-bar {
-      background-color: var(--lz-bg-dark-muted);
+    .quanta-spinner-bar {
+      background-color: var(--quanta-bg-dark-muted);
     }
 
-    .lz-spinner-bar .lz-bar {
-      background-color: var(--lz-bg-dark-primary);
+    .quanta-spinner-bar .quanta-bar {
+      background-color: var(--quanta-bg-dark-primary);
     }
   }
 
   /* ─── Responsive Design (5 Breakpoints) ──────────────────────────── */
   @media (max-width: 640px) {
-    .lz-spinner.sm {
+    .quanta-spinner.sm {
       width: 20px;
       height: 20px;
     }
 
-    .lz-spinner.md {
+    .quanta-spinner.md {
       width: 35px;
       height: 35px;
     }
 
-    .lz-spinner.lg {
+    .quanta-spinner.lg {
       width: 50px;
       height: 50px;
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-spinner.sm {
+    .quanta-spinner.sm {
       width: 25px;
       height: 25px;
     }
 
-    .lz-spinner.md {
+    .quanta-spinner.md {
       width: 45px;
       height: 45px;
     }
 
-    .lz-spinner.lg {
+    .quanta-spinner.lg {
       width: 60px;
       height: 60px;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-spinner.sm {
+    .quanta-spinner.sm {
       width: 30px;
       height: 30px;
     }
 
-    .lz-spinner.md {
+    .quanta-spinner.md {
       width: 50px;
       height: 50px;
     }
 
-    .lz-spinner.lg {
+    .quanta-spinner.lg {
       width: 70px;
       height: 70px;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-spinner.sm {
+    .quanta-spinner.sm {
       width: 35px;
       height: 35px;
     }
 
-    .lz-spinner.md {
+    .quanta-spinner.md {
       width: 55px;
       height: 55px;
     }
 
-    .lz-spinner.lg {
+    .quanta-spinner.lg {
       width: 80px;
       height: 80px;
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-spinner.sm {
+    .quanta-spinner.sm {
       width: 40px;
       height: 40px;
     }
 
-    .lz-spinner.md {
+    .quanta-spinner.md {
       width: 60px;
       height: 60px;
     }
 
-    .lz-spinner.lg {
+    .quanta-spinner.lg {
       width: 90px;
       height: 90px;
     }

@@ -1,131 +1,131 @@
 /* src/components/tabs.css */
-@layer components.tabs {
+@layer components.quanta-tabs {
   /* ─── Tabs Container ───────────────────────────────────────── */
-  .tabs {
+  .quanta-tabs {
     display: flex;
     flex-direction: column; /* Mobile-first: stack vertically */
-    border-bottom: var(--lz-border-width) solid var(--lz-border-color);
-    gap: var(--lz-space-4);
+    border-bottom: var(--quanta-border-width) solid var(--quanta-border-color);
+    gap: var(--quanta-space-4);
     width: 100%;
   }
 
   /* ─── Individual Tab ───────────────────────────────────────── */
-  .tabs .tab {
-    padding: var(--lz-space-2) var(--lz-space-4);
-    margin-bottom: -var(--lz-border-width);
-    font-family: var(--lz-font-primary);
-    font-size: var(--lz-body-size);
-    color: var(--lz-text-muted);
+  .quanta-tabs .quanta-tab {
+    padding: var(--quanta-space-2) var(--quanta-space-4);
+    margin-bottom: -var(--quanta-border-width);
+    font-family: var(--quanta-font-primary);
+    font-size: var(--quanta-body-size);
+    color: var(--quanta-text-muted);
     cursor: pointer;
-    transition: color var(--lz-transition-fast), border-color var(--lz-transition-fast);
-    border-bottom: var(--lz-border-width) solid transparent;
+    transition: color var(--quanta-transition-fast), border-color var(--quanta-transition-fast);
+    border-bottom: var(--quanta-border-width) solid transparent;
     width: 100%; /* Ensure tabs are full-width on mobile */
     text-align: center; /* Center the tab labels on mobile */
   }
 
-  .tabs .tab:hover {
-    color: var(--lz-text-default);
+  .quanta-tabs .quanta-tab:hover {
+    color: var(--quanta-text-default);
   }
 
   /* ─── Active State ─────────────────────────────────────────── */
-  .tabs .tab.active {
-    color: var(--lz-text-default);
-    border-color: var(--lz-primary);
+  .quanta-tabs .quanta-tab.active {
+    color: var(--quanta-text-default);
+    border-color: var(--quanta-primary);
     font-weight: 600;
   }
 
   /* ─── Tab Content Panels ───────────────────────────────────── */
-  .tab-content {
-    padding: var(--lz-space-4) 0;
+  .quanta-tab-content {
+    padding: var(--quanta-space-4) 0;
     width: 100%;
   }
   
-  .tab-panel {
+  .quanta-tab-panel {
     display: none;
   }
   
-  .tab-panel.active {
+  .quanta-tab-panel.active {
     display: block;
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles are for mobile devices */
-  .tabs {
+  .quanta-tabs {
     flex-direction: column; /* Stack tabs vertically on mobile */
   }
 
-  .tabs .tab {
-    font-size: var(--lz-body-size); /* Default font size for mobile */
-    padding: var(--lz-space-2) var(--lz-space-4); /* Padding for mobile */
+  .quanta-tabs .quanta-tab {
+    font-size: var(--quanta-body-size); /* Default font size for mobile */
+    padding: var(--quanta-space-2) var(--quanta-space-4); /* Padding for mobile */
   }
 
-  .tab-content {
-    padding: var(--lz-space-4) 0; /* Padding for mobile */
+  .quanta-tab-content {
+    padding: var(--quanta-space-4) 0; /* Padding for mobile */
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* Tablet and larger screens (min-width: 768px) */
   @media (min-width: 768px) {
-    .tabs {
+    .quanta-tabs {
       flex-direction: row; /* Display tabs horizontally on tablets and larger screens */
-      gap: var(--lz-space-6); /* Increase gap between tabs */
+      gap: var(--quanta-space-6); /* Increase gap between tabs */
     }
 
-    .tabs .tab {
-      font-size: var(--lz-body-size-md); /* Slightly larger font on tablets */
-      padding: var(--lz-space-3) var(--lz-space-5); /* Adjust padding */
+    .quanta-tabs .quanta-tab {
+      font-size: var(--quanta-body-size-md); /* Slightly larger font on tablets */
+      padding: var(--quanta-space-3) var(--quanta-space-5); /* Adjust padding */
     }
 
-    .tab-content {
-      padding: var(--lz-space-5) 0; /* Add more padding on tablets */
+    .quanta-tab-content {
+      padding: var(--quanta-space-5) 0; /* Add more padding on tablets */
     }
   }
 
   /* Larger screens (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .tabs {
-      gap: var(--lz-space-8); /* More gap between tabs on larger screens */
+    .quanta-tabs {
+      gap: var(--quanta-space-8); /* More gap between tabs on larger screens */
     }
 
-    .tabs .tab {
-      font-size: var(--lz-body-size-lg); /* Increase font size on desktop */
-      padding: var(--lz-space-4) var(--lz-space-6); /* Increase padding on large screens */
+    .quanta-tabs .quanta-tab {
+      font-size: var(--quanta-body-size-lg); /* Increase font size on desktop */
+      padding: var(--quanta-space-4) var(--quanta-space-6); /* Increase padding on large screens */
     }
 
-    .tab-content {
-      padding: var(--lz-space-6) 0; /* More padding for content on desktop */
+    .quanta-tab-content {
+      padding: var(--quanta-space-6) 0; /* More padding for content on desktop */
     }
   }
 
   /* ─── Dark Mode Tweaks ─────────────────────────────────────── */
-  html[data-theme="dark"] .tabs {
-    border-color: var(--lz-border-color);
+  html[data-theme="dark"] .quanta-tabs {
+    border-color: var(--quanta-border-color);
   }
 
-  html[data-theme="dark"] .tabs .tab.active {
-    border-color: var(--lz-primary);
-    color: var(--lz-text-default);
+  html[data-theme="dark"] .quanta-tabs .quanta-tab.active {
+    border-color: var(--quanta-primary);
+    color: var(--quanta-text-default);
   }
 
   /* ─── Accessibility & Usability Enhancements ───────────────── */
-  .tabs .tab:focus {
-    outline: 2px solid var(--lz-primary); /* Focus state for accessibility */
+  .quanta-tabs .quanta-tab:focus {
+    outline: 2px solid var(--quanta-primary); /* Focus state for accessibility */
   }
 
-  .tabs .tab[aria-selected="true"] {
-    color: var(--lz-text-default);
-    border-color: var(--lz-primary);
+  .quanta-tabs .quanta-tab[aria-selected="true"] {
+    color: var(--quanta-text-default);
+    border-color: var(--quanta-primary);
     font-weight: 600;
   }
 
   /* ─── Utility Support ──────────────────────────────────────── */
   /* Allow utility-based control for padding and margins */
-  .tabs .tab {
+  .quanta-tabs .quanta-tab {
     @apply p-4; /* Utility class for padding */
     @apply mb-2; /* Margin-bottom utility */
   }
 
-  .tab-content {
+  .quanta-tab-content {
     @apply p-4; /* Utility class for padding */
   }
 }

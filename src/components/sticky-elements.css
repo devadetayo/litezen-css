@@ -1,47 +1,47 @@
 /* src/components/sticky-elements.css */
 @layer components.sticky {
   /* ─── Sticky Header ─────────────────────────────────────── */
-  .lz-sticky-top {
+  .quanta-sticky-top {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--lz-bg-default);
-    box-shadow: var(--lz-shadow-md);
-    padding: var(--lz-space-3);
+    background-color: var(--quanta-bg-default);
+    box-shadow: var(--quanta-shadow-md);
+    padding: var(--quanta-space-3);
   }
 
   /* ─── Sticky Footer ─────────────────────────────────────── */
-  .lz-sticky-bottom {
+  .quanta-sticky-bottom {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     bottom: 0;
     z-index: 1000;
-    background-color: var(--lz-bg-default);
-    box-shadow: var(--lz-shadow-md);
-    padding: var(--lz-space-3);
+    background-color: var(--quanta-bg-default);
+    box-shadow: var(--quanta-shadow-md);
+    padding: var(--quanta-space-3);
   }
 
   /* ─── Sticky Sidebar ─────────────────────────────────────── */
-  .lz-sticky-sidebar {
+  .quanta-sticky-sidebar {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: var(--lz-space-4);
+    top: var(--quanta-space-4);
     z-index: 1000;
   }
 
   /* ─── Sticky Navigation ─────────────────────────────────── */
-  .lz-sticky-nav {
+  .quanta-sticky-nav {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 0;
-    background-color: var(--lz-bg-default);
-    box-shadow: var(--lz-shadow-lg);
+    background-color: var(--quanta-bg-default);
+    box-shadow: var(--quanta-shadow-lg);
     z-index: 999;
   }
 
   /* ─── Sticky Elements with Transitions ─────────────────── */
-  .lz-sticky-transition {
+  .quanta-sticky-transition {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -50,90 +50,90 @@
   }
 
   /* ─── Sticky Elements Customization ─────────────────────── */
-  .lz-sticky {
-    background-color: var(--lz-bg-muted);
-    padding: var(--lz-space-4);
-    border-radius: var(--lz-rounded-md);
-    box-shadow: var(--lz-shadow-sm);
+  .quanta-sticky {
+    background-color: var(--quanta-bg-muted);
+    padding: var(--quanta-space-4);
+    border-radius: var(--quanta-rounded-md);
+    box-shadow: var(--quanta-shadow-sm);
   }
 
-  .lz-sticky:hover {
-    background-color: var(--lz-bg-default);
-    box-shadow: var(--lz-shadow-lg);
+  .quanta-sticky:hover {
+    background-color: var(--quanta-bg-default);
+    box-shadow: var(--quanta-shadow-lg);
   }
 
   /* ─── Dark Mode ─────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-sticky-top,
-    .lz-sticky-bottom,
-    .lz-sticky-sidebar,
-    .lz-sticky-nav {
-      background-color: var(--lz-bg-emphasis);
-      box-shadow: var(--lz-shadow-md);
+    .quanta-sticky-top,
+    .quanta-sticky-bottom,
+    .quanta-sticky-sidebar,
+    .quanta-sticky-nav {
+      background-color: var(--quanta-bg-emphasis);
+      box-shadow: var(--quanta-shadow-md);
     }
 
-    .lz-sticky {
-      background-color: var(--lz-bg-muted);
-      color: var(--lz-text-light);
+    .quanta-sticky {
+      background-color: var(--quanta-bg-muted);
+      color: var(--quanta-text-light);
     }
 
-    .lz-sticky:hover {
-      background-color: var(--lz-bg-emphasis);
+    .quanta-sticky:hover {
+      background-color: var(--quanta-bg-emphasis);
     }
   }
 
   /* ─── Responsive Media Queries ──────────────────────────── */
   @media (max-width: 640px) {
-    .lz-sticky-top {
-      padding: var(--lz-space-2);
+    .quanta-sticky-top {
+      padding: var(--quanta-space-2);
     }
 
-    .lz-sticky-bottom {
-      padding: var(--lz-space-2);
+    .quanta-sticky-bottom {
+      padding: var(--quanta-space-2);
     }
 
-    .lz-sticky-sidebar {
-      top: var(--lz-space-3);
+    .quanta-sticky-sidebar {
+      top: var(--quanta-space-3);
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-sticky-top {
-      padding: var(--lz-space-3);
+    .quanta-sticky-top {
+      padding: var(--quanta-space-3);
     }
 
-    .lz-sticky-bottom {
-      padding: var(--lz-space-3);
+    .quanta-sticky-bottom {
+      padding: var(--quanta-space-3);
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-sticky-top {
-      padding: var(--lz-space-4);
+    .quanta-sticky-top {
+      padding: var(--quanta-space-4);
     }
 
-    .lz-sticky-bottom {
-      padding: var(--lz-space-4);
+    .quanta-sticky-bottom {
+      padding: var(--quanta-space-4);
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-sticky-top {
-      padding: var(--lz-space-4);
+    .quanta-sticky-top {
+      padding: var(--quanta-space-4);
     }
 
-    .lz-sticky-bottom {
-      padding: var(--lz-space-4);
+    .quanta-sticky-bottom {
+      padding: var(--quanta-space-4);
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-sticky-top {
-      padding: var(--lz-space-5);
+    .quanta-sticky-top {
+      padding: var(--quanta-space-5);
     }
 
-    .lz-sticky-bottom {
-      padding: var(--lz-space-5);
+    .quanta-sticky-bottom {
+      padding: var(--quanta-space-5);
     }
   }
 }

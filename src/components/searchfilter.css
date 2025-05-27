@@ -1,35 +1,31 @@
 /* src/components/search-filter.css */
 @layer components.searchfilter {
-  .lz-searchbar {
+  .quanta-searchbar {
     display: flex;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
     flex-wrap: wrap;
     align-items: center;
   }
-  .lz-searchbar input,
-  .lz-searchbar select {
-    padding: var(--lz-space-2) var(--lz-space-3);
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded-md);
+  .quanta-searchbar input,
+  .quanta-searchbar select {
+    padding: var(--quanta-space-2) var(--quanta-space-3);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded-md);
     flex: 1 1 200px;
   }
-  .lz-searchbar button {
-    padding: var(--lz-space-2) var(--lz-space-4);
-    background: var(--lz-primary);
+  .quanta-searchbar button {
+    padding: var(--quanta-space-2) var(--quanta-space-4);
+    background: var(--quanta-primary);
     color: #fff;
     border: none;
-    border-radius: var(--lz-rounded-md);
+    border-radius: var(--quanta-rounded-md);
     cursor: pointer;
   }
-  html[data-theme="dark"] .lz-searchbar input,
-  html[data-theme="dark"] .lz-searchbar select {
-    background: var(--lz-bg-emphasis);
-    color: var(--lz-text-light);
+  html[data-theme="dark"] .quanta-searchbar input,
+  html[data-theme="dark"] .quanta-searchbar select {
+    background: var(--quanta-bg-emphasis);
+    color: var(--quanta-text-light);
   }
 
-  @media (max-width:640px) { .lz-searchbar { flex-direction: column; } }
-  @media (min-width:641px) and (max-width:768px) { /* no change */ }
-  @media (min-width:769px) and (max-width:1024px) { /* no change */ }
-  @media (min-width:1025px) and (max-width:1280px) { /* no change */ }
-  @media (min-width:1281px) { /* no change */ }
+  @media (max-width:640px) { .quanta-searchbar { flex-direction: column; } }
 }

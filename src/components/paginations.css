@@ -1,7 +1,7 @@
 /* src/components/pagination.css */
 @layer components.pagination {
   /* ─── Base Pagination Styling ──────────────────────────────────── */
-  .lz-pagination {
+  .quanta-pagination {
     display: flex;
     list-style: none;
     padding: 0;
@@ -10,62 +10,62 @@
     flex-wrap: wrap;
   }
 
-  .lz-pagination-item {
-    margin: var(--lz-space-1);
+  .quanta-pagination-item {
+    margin: var(--quanta-space-1);
   }
 
-  .lz-pagination-link {
+  .quanta-pagination-link {
     display: inline-block;
-    padding: var(--lz-space-2) var(--lz-space-4);
-    background-color: var(--lz-bg-default);
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded-md);
-    color: var(--lz-text-default);
+    padding: var(--quanta-space-2) var(--quanta-space-4);
+    background-color: var(--quanta-bg-default);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded-md);
+    color: var(--quanta-text-default);
     text-decoration: none;
-    font-size: var(--lz-text-base);
-    transition: background-color var(--lz-transition-fast), color var(--lz-transition-fast);
+    font-size: var(--quanta-text-base);
+    transition: background-color var(--quanta-transition-fast), color var(--quanta-transition-fast);
     cursor: pointer;
   }
 
-  .lz-pagination-link:hover,
-  .lz-pagination-link:focus {
-    background-color: var(--lz-bg-hover);
-    color: var(--lz-text-light);
+  .quanta-pagination-link:hover,
+  .quanta-pagination-link:focus {
+    background-color: var(--quanta-bg-hover);
+    color: var(--quanta-text-light);
   }
 
-  .lz-pagination-link:active {
-    background-color: var(--lz-bg-active);
+  .quanta-pagination-link:active {
+    background-color: var(--quanta-bg-active);
   }
 
   /* ─── Pagination Disabled Styling ───────────────────────────────── */
-  .lz-pagination-link.disabled,
-  .lz-pagination-item.disabled .lz-pagination-link {
-    background-color: var(--lz-bg-disabled);
-    color: var(--lz-text-disabled);
+  .quanta-pagination-link.disabled,
+  .quanta-pagination-item.disabled .quanta-pagination-link {
+    background-color: var(--quanta-bg-disabled);
+    color: var(--quanta-text-disabled);
     cursor: not-allowed;
   }
 
   /* ─── Pagination Active Link Styling ────────────────────────────── */
-  .lz-pagination-link.active {
-    background-color: var(--lz-bg-emphasis);
-    color: var(--lz-text-light);
-    font-weight: var(--lz-font-weight-bold);
+  .quanta-pagination-link.active {
+    background-color: var(--quanta-bg-emphasis);
+    color: var(--quanta-text-light);
+    font-weight: var(--quanta-font-weight-bold);
   }
 
   /* ─── Pagination First, Last, Previous, Next Styling ───────────── */
-  .lz-pagination-first,
-  .lz-pagination-last,
-  .lz-pagination-prev,
-  .lz-pagination-next {
-    padding: var(--lz-space-2) var(--lz-space-4);
-    font-weight: var(--lz-font-weight-medium);
+  .quanta-pagination-first,
+  .quanta-pagination-last,
+  .quanta-pagination-prev,
+  .quanta-pagination-next {
+    padding: var(--quanta-space-2) var(--quanta-space-4);
+    font-weight: var(--quanta-font-weight-medium);
   }
 
   /* ─── Pagination Icons ─────────────────────────────────────────── */
-  .lz-pagination-first .lz-pagination-link,
-  .lz-pagination-prev .lz-pagination-link,
-  .lz-pagination-next .lz-pagination-link,
-  .lz-pagination-last .lz-pagination-link {
+  .quanta-pagination-first .quanta-pagination-link,
+  .quanta-pagination-prev .quanta-pagination-link,
+  .quanta-pagination-next .quanta-pagination-link,
+  .quanta-pagination-last .quanta-pagination-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -73,133 +73,133 @@
 
   /* ─── Dark Mode Support ────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-pagination-link {
-      background-color: var(--lz-bg-dark-default);
-      border-color: var(--lz-border-dark-color);
-      color: var(--lz-text-dark);
+    .quanta-pagination-link {
+      background-color: var(--quanta-bg-dark-default);
+      border-color: var(--quanta-border-dark-color);
+      color: var(--quanta-text-dark);
     }
 
-    .lz-pagination-link:hover,
-    .lz-pagination-link:focus {
-      background-color: var(--lz-bg-dark-hover);
-      color: var(--lz-text-light);
+    .quanta-pagination-link:hover,
+    .quanta-pagination-link:focus {
+      background-color: var(--quanta-bg-dark-hover);
+      color: var(--quanta-text-light);
     }
 
-    .lz-pagination-link:active {
-      background-color: var(--lz-bg-dark-active);
+    .quanta-pagination-link:active {
+      background-color: var(--quanta-bg-dark-active);
     }
 
-    .lz-pagination-link.disabled {
-      background-color: var(--lz-bg-dark-disabled);
-      color: var(--lz-text-dark-disabled);
+    .quanta-pagination-link.disabled {
+      background-color: var(--quanta-bg-dark-disabled);
+      color: var(--quanta-text-dark-disabled);
     }
 
-    .lz-pagination-link.active {
-      background-color: var(--lz-bg-dark-emphasis);
-      color: var(--lz-text-light);
+    .quanta-pagination-link.active {
+      background-color: var(--quanta-bg-dark-emphasis);
+      color: var(--quanta-text-light);
     }
   }
 
   /* ─── Responsive Design (5 Breakpoints) ────────────────────────── */
   @media (max-width: 640px) {
-    .lz-pagination {
+    .quanta-pagination {
       flex-direction: column;
       align-items: center;
     }
 
-    .lz-pagination-item {
-      margin: var(--lz-space-1);
+    .quanta-pagination-item {
+      margin: var(--quanta-space-1);
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-pagination {
+    .quanta-pagination {
       flex-direction: row;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-pagination {
+    .quanta-pagination {
       flex-direction: row;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-pagination {
+    .quanta-pagination {
       flex-direction: row;
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-pagination {
+    .quanta-pagination {
       flex-direction: row;
     }
   }
 
   /* ─── Utility Classes for Pagination ──────────────────────────── */
   /* Flexibility for pagination alignment and styling */
-  .lz-pagination-center {
+  .quanta-pagination-center {
     justify-content: center;
   }
 
-  .lz-pagination-start {
+  .quanta-pagination-start {
     justify-content: flex-start;
   }
 
-  .lz-pagination-end {
+  .quanta-pagination-end {
     justify-content: flex-end;
   }
 
-  .lz-pagination-space-between {
+  .quanta-pagination-space-between {
     justify-content: space-between;
   }
 
-  .lz-pagination-space-around {
+  .quanta-pagination-space-around {
     justify-content: space-around;
   }
 
-  .lz-pagination-space-evenly {
+  .quanta-pagination-space-evenly {
     justify-content: space-evenly;
   }
 
-  .lz-pagination-no-wrap {
+  .quanta-pagination-no-wrap {
     flex-wrap: nowrap;
   }
 
-  .lz-pagination-wrap {
+  .quanta-pagination-wrap {
     flex-wrap: wrap;
   }
 
   /* Responsive Wrapping */
   @media (max-width: 640px) {
-    .lz-pagination-wrap {
+    .quanta-pagination-wrap {
       flex-wrap: wrap;
     }
   }
 
   /* Pagination Size Utility Classes */
-  .lz-pagination-small .lz-pagination-link {
-    padding: var(--lz-space-1) var(--lz-space-2);
-    font-size: var(--lz-text-sm);
+  .quanta-pagination-small .quanta-pagination-link {
+    padding: var(--quanta-space-1) var(--quanta-space-2);
+    font-size: var(--quanta-text-sm);
   }
 
-  .lz-pagination-large .lz-pagination-link {
-    padding: var(--lz-space-3) var(--lz-space-6);
-    font-size: var(--lz-text-lg);
+  .quanta-pagination-large .quanta-pagination-link {
+    padding: var(--quanta-space-3) var(--quanta-space-6);
+    font-size: var(--quanta-text-lg);
   }
 
   /* ─── Icon Styles for Pagination (for First, Previous, Next, Last) ─── */
-  .lz-pagination-icon {
+  .quanta-pagination-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  .lz-pagination-prev-icon,
-  .lz-pagination-next-icon,
-  .lz-pagination-first-icon,
-  .lz-pagination-last-icon {
-    font-size: var(--lz-text-base);
-    margin: 0 var(--lz-space-1);
+  .quanta-pagination-prev-icon,
+  .quanta-pagination-next-icon,
+  .quanta-pagination-first-icon,
+  .quanta-pagination-last-icon {
+    font-size: var(--quanta-text-base);
+    margin: 0 var(--quanta-space-1);
   }
 }

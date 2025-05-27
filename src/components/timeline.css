@@ -1,37 +1,37 @@
 /* src/components/timeline.css */
 @layer components.timeline {
-  .lz-timeline {
+  .quanta-timeline {
     position: relative;
-    margin: var(--lz-space-4) 0;
-    padding-left: var(--lz-space-6);
-    border-left: var(--lz-border-width) solid var(--lz-border-color);
+    margin: var(--quanta-space-4) 0;
+    padding-left: var(--quanta-space-6);
+    border-left: var(--quanta-border-width) solid var(--quanta-border-color);
   }
-  .lz-timeline-item {
+  .quanta-timeline-item {
     position: relative;
-    margin-bottom: var(--lz-space-6);
+    margin-bottom: var(--quanta-space-6);
   }
-  .lz-timeline-item::before {
+  .quanta-timeline-item::before {
     content: '';
     position: absolute;
-    left: -var(--lz-space-6);
+    left: -var(--quanta-space-6);
     top: 0;
-    width: var(--lz-space-4);
-    height: var(--lz-space-4);
-    background: var(--lz-primary);
+    width: var(--quanta-space-4);
+    height: var(--quanta-space-4);
+    background: var(--quanta-primary);
     border-radius: 50%;
   }
-  .lz-timeline-item .lz-time {
-    font-size: var(--lz-text-xs);
-    color: var(--lz-text-muted);
+  .quanta-timeline-item .quanta-time {
+    font-size: var(--quanta-text-xs);
+    color: var(--quanta-text-muted);
   }
-  .lz-timeline-item .lz-content {
-    padding-bottom: var(--lz-space-2);
+  .quanta-timeline-item .quanta-content {
+    padding-bottom: var(--quanta-space-2);
   }
 
-  html[data-theme="dark"] .lz-timeline { border-color: var(--lz-border-dark); }
-  html[data-theme="dark"] .lz-timeline-item::before { background: var(--lz-primary); }
+  html[data-theme="dark"] .quanta-timeline { border-color: var(--quanta-border-dark); }
+  html[data-theme="dark"] .quanta-timeline-item::before { background: var(--quanta-primary); }
 
-  @media (max-width:640px) { .lz-timeline { padding-left: var(--lz-space-4); } }
+  @media (max-width:640px) { .quanta-timeline { padding-left: var(--quanta-space-4); } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }

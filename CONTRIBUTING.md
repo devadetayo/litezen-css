@@ -1,6 +1,6 @@
-# Contributing to Litezen CSS
+# Contributing to Quanta CSS
 
-First off, thanks for considering contributing! 🎉 Your help makes Litezen better for everyone.
+First off, thanks for considering contributing! 🎉 Your help makes quanta better for everyone.
 
 ## 📝 Code of Conduct
 
@@ -11,8 +11,8 @@ Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure an 
 1. **Fork** the repo and **clone** locally:
 
    ```bash
-   git clone https://github.com/devadetayo/litezen-css.git
-   cd litezen-css
+   git clone https://github.com/devadetayo/quanta-css.git
+   cd quanta-css
    ```
 2. **Install dependencies**:
 
@@ -80,4 +80,4 @@ Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure an 
 
 ---
 
-Thanks for helping make Litezen CSS rock! 🚀
+Thanks for helping make Quanta CSS rock! 🚀

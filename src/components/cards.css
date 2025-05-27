@@ -1,182 +1,182 @@
-/* src/components/card.lz-css */
-@layer components.lz-card {
+/* src/components/card.quanta-css */
+@layer components.quanta-card {
   /* ─── Card Container ───────────────────────────────────────── */
-  .lz-card {
-    background-color: var(--lz-bg-default);
-    color: var(--lz-text-default);
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded);
-    box-shadow: var(--lz-shadow-sm);
-    padding: var(--lz-space-4);
+  .quanta-card {
+    background-color: var(--quanta-bg-default);
+    color: var(--quanta-text-default);
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded);
+    box-shadow: var(--quanta-shadow-sm);
+    padding: var(--quanta-space-4);
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-4);
-    transition: box-shadow var(--lz-transition-normal);
+    gap: var(--quanta-space-4);
+    transition: box-shadow var(--quanta-transition-normal);
   }
 
   /* Hover/Focus lift */
-  .lz-card:hover,
-  .lz-card:focus-within {
-    box-shadow: var(--lz-shadow-md);
+  .quanta-card:hover,
+  .quanta-card:focus-within {
+    box-shadow: var(--quanta-shadow-md);
   }
 
   /* ─── Dark‑mode shadow boost ───────────────────────────────── */
-  html[data-theme="dark"] .lz-card {
-    box-shadow: var(--lz-shadow-lg);
+  html[data-theme="dark"] .quanta-card {
+    box-shadow: var(--quanta-shadow-lg);
   }
 
   /* ─── Card Image ───────────────────────────────────────────── */
-  .lz-card-img-top {
+  .quanta-card-img-top {
     width: 100%;
     height: auto;
-    border-top-left-radius: var(--lz-rounded);
-    border-top-right-radius: var(--lz-rounded);
+    border-top-left-radius: var(--quanta-rounded);
+    border-top-right-radius: var(--quanta-rounded);
     object-fit: cover;
   }
 
   /* ─── Card Header ──────────────────────────────────────────── */
-  .lz-card-header {
-    font-family: var(--lz-font-primary);
-    font-size: var(--lz-heading-size);
-    line-height: var(--lz-heading-line-height);
-    margin-bottom: var(--lz-space-3);
+  .quanta-card-header {
+    font-family: var(--quanta-font-primary);
+    font-size: var(--quanta-heading-size);
+    line-height: var(--quanta-heading-line-height);
+    margin-bottom: var(--quanta-space-3);
   }
 
   /* ─── Card Body ────────────────────────────────────────────── */
-  .lz-card-body {
-    font-family: var(--lz-font-secondary);
-    font-size: var(--lz-body-size);
-    line-height: var(--lz-body-line-height);
+  .quanta-card-body {
+    font-family: var(--quanta-font-secondary);
+    font-size: var(--quanta-body-size);
+    line-height: var(--quanta-body-line-height);
     flex-grow: 1;
   }
 
   /* ─── Card Footer ──────────────────────────────────────────── */
-  .lz-card-footer {
+  .quanta-card-footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-top: var(--lz-border-width) solid var(--lz-border-color);
-    padding-top: var(--lz-space-3);
-    margin-top: var(--lz-space-3);
-    gap: var(--lz-space-2);
+    border-top: var(--quanta-border-width) solid var(--quanta-border-color);
+    padding-top: var(--quanta-space-3);
+    margin-top: var(--quanta-space-3);
+    gap: var(--quanta-space-2);
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles for mobile devices */
-  .lz-card {
-    padding: var(--lz-space-3);
+  .quanta-card {
+    padding: var(--quanta-space-3);
   }
 
-  .lz-card-header {
-    font-size: var(--lz-heading-size); /* Use smaller heading size on mobile */
+  .quanta-card-header {
+    font-size: var(--quanta-heading-size); /* Use smaller heading size on mobile */
   }
 
-  .lz-card-body {
-    font-size: var(--lz-body-size); /* Base font size for body on mobile */
+  .quanta-card-body {
+    font-size: var(--quanta-body-size); /* Base font size for body on mobile */
   }
 
-  .lz-card-footer {
-    padding-top: var(--lz-space-2);
-    margin-top: var(--lz-space-2);
-    gap: var(--lz-space-2);
+  .quanta-card-footer {
+    padding-top: var(--quanta-space-2);
+    margin-top: var(--quanta-space-2);
+    gap: var(--quanta-space-2);
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* 1. Small Tablets (min-width: 600px) */
   @media (min-width: 600px) {
-    .lz-card {
-      padding: var(--lz-space-4); /* More padding for small tablets */
+    .quanta-card {
+      padding: var(--quanta-space-4); /* More padding for small tablets */
     }
 
-    .lz-card-header {
-      font-size: var(--lz-heading-size-md); /* Adjust heading size */
+    .quanta-card-header {
+      font-size: var(--quanta-heading-size-md); /* Adjust heading size */
     }
 
-    .lz-card-body {
-      font-size: var(--lz-body-size-md); /* Slightly larger body text */
+    .quanta-card-body {
+      font-size: var(--quanta-body-size-md); /* Slightly larger body text */
     }
 
-    .lz-card-footer {
-      padding-top: var(--lz-space-3);
-      margin-top: var(--lz-space-3);
+    .quanta-card-footer {
+      padding-top: var(--quanta-space-3);
+      margin-top: var(--quanta-space-3);
     }
   }
 
   /* 2. Tablets (min-width: 768px) */
   @media (min-width: 768px) {
-    .lz-card {
+    .quanta-card {
       flex-direction: row; /* Align cards in row for tablets and larger */
-      gap: var(--lz-space-5); /* Increase gap between card sections */
+      gap: var(--quanta-space-5); /* Increase gap between card sections */
     }
 
-    .lz-card-header {
-      font-size: var(--lz-heading-size-lg); /* Larger font size on tablets */
+    .quanta-card-header {
+      font-size: var(--quanta-heading-size-lg); /* Larger font size on tablets */
     }
 
-    .lz-card-body {
-      font-size: var(--lz-body-size-lg); /* Larger body font size */
+    .quanta-card-body {
+      font-size: var(--quanta-body-size-lg); /* Larger body font size */
     }
 
-    .lz-card-footer {
-      gap: var(--lz-space-3); /* Adjust footer gap */
+    .quanta-card-footer {
+      gap: var(--quanta-space-3); /* Adjust footer gap */
     }
   }
 
   /* 3. Laptops (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .lz-card {
-      padding: var(--lz-space-5); /* Increase padding for laptops */
+    .quanta-card {
+      padding: var(--quanta-space-5); /* Increase padding for laptops */
     }
 
-    .lz-card-header {
-      font-size: var(--lz-heading-size-xl); /* Even larger heading size */
+    .quanta-card-header {
+      font-size: var(--quanta-heading-size-xl); /* Even larger heading size */
     }
 
-    .lz-card-body {
-      font-size: var(--lz-body-size-xl); /* Larger text size for body */
+    .quanta-card-body {
+      font-size: var(--quanta-body-size-xl); /* Larger text size for body */
     }
 
-    .lz-card-footer {
-      gap: var(--lz-space-4); /* Larger gap in the footer */
+    .quanta-card-footer {
+      gap: var(--quanta-space-4); /* Larger gap in the footer */
     }
   }
 
   /* 4. Large Desktops (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .lz-card {
+    .quanta-card {
       flex-direction: row; /* Continue row-based layout on larger screens */
-      padding: var(--lz-space-6); /* Even more padding */
+      padding: var(--quanta-space-6); /* Even more padding */
     }
 
-    .lz-card-header {
-      font-size: var(--lz-heading-size-2xl); /* Extra large heading */
+    .quanta-card-header {
+      font-size: var(--quanta-heading-size-2xl); /* Extra large heading */
     }
 
-    .lz-card-body {
-      font-size: var(--lz-body-size-2xl); /* Extra large body text */
+    .quanta-card-body {
+      font-size: var(--quanta-body-size-2xl); /* Extra large body text */
     }
 
-    .lz-card-footer {
-      gap: var(--lz-space-5); /* Even more gap in the footer */
+    .quanta-card-footer {
+      gap: var(--quanta-space-5); /* Even more gap in the footer */
     }
   }
 
   /* 5. Huge Displays (min-width: 1600px) */
   @media (min-width: 1600px) {
-    .lz-card {
-      padding: var(--lz-space-7); /* Super large padding for huge screens */
+    .quanta-card {
+      padding: var(--quanta-space-7); /* Super large padding for huge screens */
     }
 
-    .lz-card-header {
-      font-size: var(--lz-heading-size-3xl); /* Huge heading size for very large screens */
+    .quanta-card-header {
+      font-size: var(--quanta-heading-size-3xl); /* Huge heading size for very large screens */
     }
 
-    .lz-card-body {
-      font-size: var(--lz-body-size-3xl); /* Very large body text */
+    .quanta-card-body {
+      font-size: var(--quanta-body-size-3xl); /* Very large body text */
     }
 
-    .lz-card-footer {
-      gap: var(--lz-space-6); /* Large gap in footer */
+    .quanta-card-footer {
+      gap: var(--quanta-space-6); /* Large gap in footer */
     }
   }
 }

@@ -2,72 +2,72 @@
 @layer components.tables {
 
   /* ─── Base Table Styles ─────────────────────────────────────────── */
-  .lz-table {
+  .quanta-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: var(--lz-text-sm);
-    color: var(--lz-text-dark);
+    font-size: var(--quanta-text-sm);
+    color: var(--quanta-text-dark);
   }
 
-  .lz-table th, .lz-table td {
+  .quanta-table th, .quanta-table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid var(--lz-border-muted);
+    border-bottom: 1px solid var(--quanta-border-muted);
   }
 
-  .lz-table th {
-    background-color: var(--lz-bg-muted);
+  .quanta-table th {
+    background-color: var(--quanta-bg-muted);
     font-weight: bold;
     text-transform: uppercase;
   }
 
-  .lz-table tr:hover {
-    background-color: var(--lz-bg-hover);
+  .quanta-table tr:hover {
+    background-color: var(--quanta-bg-hover);
   }
 
-  .lz-table-striped tr:nth-child(odd) {
-    background-color: var(--lz-bg-light-muted);
+  .quanta-table-striped tr:nth-child(odd) {
+    background-color: var(--quanta-bg-light-muted);
   }
 
   /* Hoverable Rows */
-  .lz-table-hover tbody tr:hover {
-    background-color: var(--lz-bg-hover);
+  .quanta-table-hover tbody tr:hover {
+    background-color: var(--quanta-bg-hover);
   }
 
   /* ─── Responsive Table ─────────────────────────────────────────── */
-  .lz-table-responsive {
+  .quanta-table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 20px;
   }
 
-  .lz-table th, .lz-table td {
+  .quanta-table th, .quanta-table td {
     padding: 10px;
-    font-size: var(--lz-text-xs);
+    font-size: var(--quanta-text-xs);
   }
 
   @media (min-width: 640px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 12px;
-      font-size: var(--lz-text-sm);
+      font-size: var(--quanta-text-sm);
     }
   }
 
   @media (min-width: 1280px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 15px;
-      font-size: var(--lz-text-md);
+      font-size: var(--quanta-text-md);
     }
   }
 
   /* ─── Sorting Functionality (Visual Only, Add JavaScript for Full Functionality) ── */
-  .lz-table th.sortable {
+  .quanta-table th.sortable {
     cursor: pointer;
     position: relative;
   }
 
-  .lz-table th.sortable::after {
+  .quanta-table th.sortable::after {
     content: '';
     position: absolute;
     right: 10px;
@@ -77,124 +77,124 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid var(--lz-text-muted);
+    border-top: 5px solid var(--quanta-text-muted);
     opacity: 0.5;
     transition: transform 0.3s;
   }
 
-  .lz-table th.sortable.sorted-asc::after {
+  .quanta-table th.sortable.sorted-asc::after {
     transform: translateY(-50%) rotate(180deg);
   }
 
-  .lz-table th.sortable.sorted-desc::after {
+  .quanta-table th.sortable.sorted-desc::after {
     transform: translateY(-50%) rotate(0deg);
   }
 
   /* ─── Pagination Styles ──────────────────────────────────────────── */
-  .lz-pagination {
+  .quanta-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
   }
 
-  .lz-pagination .lz-pagination-button {
+  .quanta-pagination .quanta-pagination-button {
     padding: 8px 12px;
     margin: 0 4px;
-    border: 1px solid var(--lz-border-muted);
-    background-color: var(--lz-bg-muted);
-    color: var(--lz-text-dark);
+    border: 1px solid var(--quanta-border-muted);
+    background-color: var(--quanta-bg-muted);
+    color: var(--quanta-text-dark);
     cursor: pointer;
-    font-size: var(--lz-text-sm);
-    border-radius: var(--lz-rounded-sm);
+    font-size: var(--quanta-text-sm);
+    border-radius: var(--quanta-rounded-sm);
     transition: background-color 0.3s, color 0.3s;
   }
 
-  .lz-pagination .lz-pagination-button:hover {
-    background-color: var(--lz-bg-hover);
-    color: var(--lz-text-light);
+  .quanta-pagination .quanta-pagination-button:hover {
+    background-color: var(--quanta-bg-hover);
+    color: var(--quanta-text-light);
   }
 
-  .lz-pagination .lz-pagination-button:disabled {
-    background-color: var(--lz-bg-disabled);
-    color: var(--lz-text-muted);
+  .quanta-pagination .quanta-pagination-button:disabled {
+    background-color: var(--quanta-bg-disabled);
+    color: var(--quanta-text-muted);
     cursor: not-allowed;
   }
 
-  .lz-pagination .lz-pagination-button.active {
-    background-color: var(--lz-bg-primary);
-    color: var(--lz-text-light);
+  .quanta-pagination .quanta-pagination-button.active {
+    background-color: var(--quanta-bg-primary);
+    color: var(--quanta-text-light);
   }
 
   /* ─── Dark Mode Support ─────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-table {
-      border-color: var(--lz-border-dark);
+    .quanta-table {
+      border-color: var(--quanta-border-dark);
     }
 
-    .lz-table th {
-      background-color: var(--lz-bg-dark-muted);
-      color: var(--lz-text-light);
+    .quanta-table th {
+      background-color: var(--quanta-bg-dark-muted);
+      color: var(--quanta-text-light);
     }
 
-    .lz-table tr:hover {
-      background-color: var(--lz-bg-dark-hover);
+    .quanta-table tr:hover {
+      background-color: var(--quanta-bg-dark-hover);
     }
 
-    .lz-table-striped tr:nth-child(odd) {
-      background-color: var(--lz-bg-dark-light-muted);
+    .quanta-table-striped tr:nth-child(odd) {
+      background-color: var(--quanta-bg-dark-light-muted);
     }
 
-    .lz-pagination .lz-pagination-button {
-      border-color: var(--lz-border-dark);
-      background-color: var(--lz-bg-dark-muted);
-      color: var(--lz-text-light);
+    .quanta-pagination .quanta-pagination-button {
+      border-color: var(--quanta-border-dark);
+      background-color: var(--quanta-bg-dark-muted);
+      color: var(--quanta-text-light);
     }
 
-    .lz-pagination .lz-pagination-button:hover {
-      background-color: var(--lz-bg-dark-hover);
-      color: var(--lz-text-dark);
+    .quanta-pagination .quanta-pagination-button:hover {
+      background-color: var(--quanta-bg-dark-hover);
+      color: var(--quanta-text-dark);
     }
 
-    .lz-pagination .lz-pagination-button.active {
-      background-color: var(--lz-bg-dark-primary);
-      color: var(--lz-text-light);
+    .quanta-pagination .quanta-pagination-button.active {
+      background-color: var(--quanta-bg-dark-primary);
+      color: var(--quanta-text-light);
     }
   }
 
   /* ─── Responsive Design (5 Breakpoints) ────────────── */
   @media (max-width: 640px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 8px;
-      font-size: var(--lz-text-xs);
+      font-size: var(--quanta-text-xs);
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 10px;
-      font-size: var(--lz-text-sm);
+      font-size: var(--quanta-text-sm);
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 12px;
-      font-size: var(--lz-text-sm);
+      font-size: var(--quanta-text-sm);
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 14px;
-      font-size: var(--lz-text-md);
+      font-size: var(--quanta-text-md);
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-table th, .lz-table td {
+    .quanta-table th, .quanta-table td {
       padding: 16px;
-      font-size: var(--lz-text-lg);
+      font-size: var(--quanta-text-lg);
     }
   }
 }

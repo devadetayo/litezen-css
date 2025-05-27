@@ -1,65 +1,65 @@
 /* src/components/notifications.css */
 @layer components.notifications {
-  .lz-toast-container {
+  .quanta-toast-container {
     position: fixed;
-    top: var(--lz-space-4);
-    right: var(--lz-space-4);
+    top: var(--quanta-space-4);
+    right: var(--quanta-space-4);
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-3);
+    gap: var(--quanta-space-3);
     max-width: 90vw;
     width: 320px;
     pointer-events: none;
   }
 
-  .lz-toast {
-    background-color: var(--lz-bg-default);
-    color: var(--lz-text-default);
-    border-left: 4px solid var(--lz-primary);
-    border-radius: var(--lz-rounded-md);
-    padding: var(--lz-space-3) var(--lz-space-4);
-    box-shadow: var(--lz-shadow-md);
-    font-size: var(--lz-text-sm);
+  .quanta-toast {
+    background-color: var(--quanta-bg-default);
+    color: var(--quanta-text-default);
+    border-left: 4px solid var(--quanta-primary);
+    border-radius: var(--quanta-rounded-md);
+    padding: var(--quanta-space-3) var(--quanta-space-4);
+    box-shadow: var(--quanta-shadow-md);
+    font-size: var(--quanta-text-sm);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--lz-space-2);
-    animation: lz-fade-in 0.4s ease forwards;
+    gap: var(--quanta-space-2);
+    animation: quanta-fade-in 0.4s ease forwards;
     pointer-events: auto;
   }
 
-  .lz-toast.lz-success {
-    border-color: var(--lz-success);
+  .quanta-toast.quanta-success {
+    border-color: var(--quanta-success);
   }
 
-  .lz-toast.lz-error {
-    border-color: var(--lz-danger);
+  .quanta-toast.quanta-error {
+    border-color: var(--quanta-danger);
   }
 
-  .lz-toast.lz-warning {
-    border-color: var(--lz-warning);
+  .quanta-toast.quanta-warning {
+    border-color: var(--quanta-warning);
   }
 
-  .lz-toast.lz-info {
-    border-color: var(--lz-info);
+  .quanta-toast.quanta-info {
+    border-color: var(--quanta-info);
   }
 
-  .lz-toast .lz-toast-close {
+  .quanta-toast .quanta-toast-close {
     background: none;
     border: none;
     font-size: 1rem;
     cursor: pointer;
-    color: var(--lz-text-muted);
+    color: var(--quanta-text-muted);
     transition: color 0.3s;
   }
 
-  .lz-toast .lz-toast-close:hover {
-    color: var(--lz-text-default);
+  .quanta-toast .quanta-toast-close:hover {
+    color: var(--quanta-text-default);
   }
 
   /* Animations */
-  @keyframes lz-fade-in {
+  @keyframes quanta-fade-in {
     from {
       opacity: 0;
       transform: translateY(-20px);
@@ -70,7 +70,7 @@
     }
   }
 
-  @keyframes lz-fade-out {
+  @keyframes quanta-fade-out {
     from {
       opacity: 1;
       transform: translateY(0);
@@ -83,55 +83,55 @@
 
   /* Dark Mode Support */
   html[data-theme='dark'] {
-    .lz-toast {
-      background-color: var(--lz-bg-emphasis);
-      color: var(--lz-text-light);
+    .quanta-toast {
+      background-color: var(--quanta-bg-emphasis);
+      color: var(--quanta-text-light);
     }
 
-    .lz-toast .lz-toast-close {
-      color: var(--lz-grey-400);
+    .quanta-toast .quanta-toast-close {
+      color: var(--quanta-grey-400);
     }
 
-    .lz-toast .lz-toast-close:hover {
-      color: var(--lz-grey-200);
+    .quanta-toast .quanta-toast-close:hover {
+      color: var(--quanta-grey-200);
     }
   }
 
   /* ─── Responsive Media Queries ─────────────────────────────────── */
   @media (max-width: 640px) {
-    .lz-toast-container {
-      left: var(--lz-space-2);
-      right: var(--lz-space-2);
+    .quanta-toast-container {
+      left: var(--quanta-space-2);
+      right: var(--quanta-space-2);
       width: auto;
-      top: var(--lz-space-3);
+      top: var(--quanta-space-3);
     }
 
-    .lz-toast {
-      font-size: var(--lz-text-xs);
-      padding: var(--lz-space-2) var(--lz-space-3);
+    .quanta-toast {
+      font-size: var(--quanta-text-xs);
+      padding: var(--quanta-space-2) var(--quanta-space-3);
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-toast-container {
+    .quanta-toast-container {
       width: 280px;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-toast-container {
+    .quanta-toast-container {
       width: 300px;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-toast-container {
+    .quanta-toast-container {
       width: 320px;
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-toast-container {
+    .quanta-toast-container {
       width: 360px;
     }
   }

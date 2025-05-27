@@ -1,138 +1,138 @@
 /* src/components/sidebar.css */
 @layer components.sidebar {
-  .lz-sidebar {
+  .quanta-sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 260px;
-    background-color: var(--lz-bg-default);
-    color: var(--lz-text-default);
-    box-shadow: var(--lz-shadow-lg);
+    background-color: var(--quanta-bg-default);
+    color: var(--quanta-text-default);
+    box-shadow: var(--quanta-shadow-lg);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
   }
 
-  .lz-sidebar.collapsed {
+  .quanta-sidebar.collapsed {
     width: 72px;
   }
 
-  .lz-sidebar-hidden {
+  .quanta-sidebar-hidden {
     transform: translateX(-100%);
   }
 
-  .lz-sidebar-header {
-    font-size: var(--lz-text-lg);
+  .quanta-sidebar-header {
+    font-size: var(--quanta-text-lg);
     font-weight: bold;
-    padding: var(--lz-space-4);
-    border-bottom: var(--lz-border-width) solid var(--lz-border-color);
+    padding: var(--quanta-space-4);
+    border-bottom: var(--quanta-border-width) solid var(--quanta-border-color);
   }
 
-  .lz-sidebar-nav {
+  .quanta-sidebar-nav {
     display: flex;
     flex-direction: column;
-    padding: var(--lz-space-4);
-    gap: var(--lz-space-3);
+    padding: var(--quanta-space-4);
+    gap: var(--quanta-space-3);
     flex-grow: 1;
   }
 
-  .lz-sidebar-link {
+  .quanta-sidebar-link {
     text-decoration: none;
-    color: var(--lz-text-default);
-    font-size: var(--lz-text-base);
-    padding: var(--lz-space-2) var(--lz-space-3);
-    border-radius: var(--lz-rounded-sm);
+    color: var(--quanta-text-default);
+    font-size: var(--quanta-text-base);
+    padding: var(--quanta-space-2) var(--quanta-space-3);
+    border-radius: var(--quanta-rounded-sm);
     transition: background-color 0.2s ease;
   }
 
-  .lz-sidebar-link:hover,
-  .lz-sidebar-link.active {
-    background-color: var(--lz-bg-muted);
+  .quanta-sidebar-link:hover,
+  .quanta-sidebar-link.active {
+    background-color: var(--quanta-bg-muted);
   }
 
-  .lz-sidebar-footer {
-    padding: var(--lz-space-4);
-    font-size: var(--lz-text-sm);
-    color: var(--lz-text-muted);
-    border-top: var(--lz-border-width) solid var(--lz-border-color);
+  .quanta-sidebar-footer {
+    padding: var(--quanta-space-4);
+    font-size: var(--quanta-text-sm);
+    color: var(--quanta-text-muted);
+    border-top: var(--quanta-border-width) solid var(--quanta-border-color);
   }
 
-  .lz-sidebar-toggle {
+  .quanta-sidebar-toggle {
     display: none;
     position: fixed;
-    top: var(--lz-space-3);
-    left: var(--lz-space-3);
+    top: var(--quanta-space-3);
+    left: var(--quanta-space-3);
     z-index: 1100;
-    background-color: var(--lz-primary);
+    background-color: var(--quanta-primary);
     color: #fff;
     border: none;
-    padding: var(--lz-space-2) var(--lz-space-3);
-    border-radius: var(--lz-rounded-sm);
+    padding: var(--quanta-space-2) var(--quanta-space-3);
+    border-radius: var(--quanta-rounded-sm);
     cursor: pointer;
-    box-shadow: var(--lz-shadow-md);
+    box-shadow: var(--quanta-shadow-md);
   }
 
   /* ─── Responsive ─────────────────────────────────────────── */
   @media (max-width: 640px) {
-    .lz-sidebar {
+    .quanta-sidebar {
       width: 100%;
       max-width: 260px;
       transform: translateX(-100%);
     }
 
-    .lz-sidebar.show {
+    .quanta-sidebar.show {
       transform: translateX(0);
     }
 
-    .lz-sidebar-toggle {
+    .quanta-sidebar-toggle {
       display: block;
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-sidebar {
+    .quanta-sidebar {
       width: 220px;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-sidebar {
+    .quanta-sidebar {
       width: 240px;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-sidebar {
+    .quanta-sidebar {
       width: 260px;
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-sidebar {
+    .quanta-sidebar {
       width: 280px;
     }
   }
 
   /* ─── Dark Mode ─────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-sidebar {
-      background-color: var(--lz-bg-emphasis);
-      color: var(--lz-text-light);
+    .quanta-sidebar {
+      background-color: var(--quanta-bg-emphasis);
+      color: var(--quanta-text-light);
     }
 
-    .lz-sidebar-link {
-      color: var(--lz-text-light);
+    .quanta-sidebar-link {
+      color: var(--quanta-text-light);
     }
 
-    .lz-sidebar-link:hover,
-    .lz-sidebar-link.active {
-      background-color: var(--lz-grey-800);
+    .quanta-sidebar-link:hover,
+    .quanta-sidebar-link.active {
+      background-color: var(--quanta-grey-800);
     }
 
-    .lz-sidebar-footer {
-      color: var(--lz-grey-500);
+    .quanta-sidebar-footer {
+      color: var(--quanta-grey-500);
     }
   }
 }

@@ -163,15 +163,15 @@
 
 /* ─── Dark Mode Support ──────────────────────────────────── */
 html[data-theme="dark"] {
-  --lz-bg-default: #1a202c; /* Dark Background */
-  --lz-text-default: #e2e8f0; /* Light Text */
-  --lz-primary: #38b2ac; /* Light primary color for contrast */
-  --lz-border-color: #4a5568; /* Dark border color */
-  --lz-grey-400: #cbd5e0;
-  --lz-grey-600: #2d3748;
+  --quanta-bg-default: #1a202c; /* Dark Background */
+  --quanta-text-default: #e2e8f0; /* Light Text */
+  --quanta-primary: #38b2ac; /* Light primary color for contrast */
+  --quanta-border-color: #4a5568; /* Dark border color */
+  --quanta-grey-400: #cbd5e0;
+  --quanta-grey-600: #2d3748;
 
-  background-color: var(--lz-bg-default);
-  color: var(--lz-text-default);
+  background-color: var(--quanta-bg-default);
+  color: var(--quanta-text-default);
 }
 
 /* ─── Responsive Variants ─────────────────────────────────── */
@@ -230,22 +230,22 @@ html[data-theme="dark"] {
 
 
 /* ─── Text Color Utilities ───────────────────────────────── */
-.text-default { color: var(--lz-text-default); }
-.text-muted { color: var(--lz-text-muted); }
-.text-primary { color: var(--lz-primary); }
+.text-default { color: var(--quanta-text-default); }
+.text-muted { color: var(--quanta-text-muted); }
+.text-primary { color: var(--quanta-primary); }
 
 /* Dark mode text colors */
 html[data-theme="dark"] {
-  .text-default { color: var(--lz-text-default-dark); }
-  .text-muted { color: var(--lz-text-muted-dark); }
-  .text-primary { color: var(--lz-primary-dark); }
+  .text-default { color: var(--quanta-text-default-dark); }
+  .text-muted { color: var(--quanta-text-muted-dark); }
+  .text-primary { color: var(--quanta-primary-dark); }
 }
 
 /* ─── Border Utilities ───────────────────────────────────── */
 .border-0 { border: none; }
-.border { border: 1px solid var(--lz-border-color); }
-.border-sm { border: 2px solid var(--lz-border-color); }
-.border-lg { border: 4px solid var(--lz-border-color); }
+.border { border: 1px solid var(--quanta-border-color); }
+.border-sm { border: 2px solid var(--quanta-border-color); }
+.border-lg { border: 4px solid var(--quanta-border-color); }
 
 /* Border Radius */
 .rounded-sm { border-radius: 4px; }
@@ -302,28 +302,28 @@ html[data-theme="dark"] {
 .filter-brightness { filter: brightness(1.2); }
 
 /* ─── Semantic Backgrounds ─────────────────────────── */
-.bg-primary      { background-color: var(--lz-primary); }
-.bg-secondary    { background-color: var(--lz-bg-secondary); }
-.bg-success      { background-color: var(--lz-bg-success); }
-.bg-warning      { background-color: var(--lz-bg-warning); }
-.bg-danger       { background-color: var(--lz-bg-danger); }
-.bg-info         { background-color: var(--lz-bg-info); }
+.bg-primary      { background-color: var(--quanta-primary); }
+.bg-secondary    { background-color: var(--quanta-bg-secondary); }
+.bg-success      { background-color: var(--quanta-bg-success); }
+.bg-warning      { background-color: var(--quanta-bg-warning); }
+.bg-danger       { background-color: var(--quanta-bg-danger); }
+.bg-info         { background-color: var(--quanta-bg-info); }
 
 /* ─── Semantic Text Colors ─────────────────────────── */
-.text-primary    { color: var(--lz-primary); }
-.text-secondary  { color: var(--lz-text-secondary); }
-.text-success    { color: var(--lz-text-success); }
-.text-warning    { color: var(--lz-text-warning); }
-.text-danger     { color: var(--lz-text-danger); }
-.text-info       { color: var(--lz-text-info); }
+.text-primary    { color: var(--quanta-primary); }
+.text-secondary  { color: var(--quanta-text-secondary); }
+.text-success    { color: var(--quanta-text-success); }
+.text-warning    { color: var(--quanta-text-warning); }
+.text-danger     { color: var(--quanta-text-danger); }
+.text-info       { color: var(--quanta-text-info); }
 
 /* ─── Semantic Border Colors ───────────────────────── */
-.border-primary      { border-color: var(--lz-primary); }
-.border-secondary    { border-color: var(--lz-border-secondary); }
-.border-success      { border-color: var(--lz-border-success); }
-.border-warning      { border-color: var(--lz-border-warning); }
-.border-danger       { border-color: var(--lz-border-danger); }
-.border-info         { border-color: var(--lz-border-info); }
+.border-primary      { border-color: var(--quanta-primary); }
+.border-secondary    { border-color: var(--quanta-border-secondary); }
+.border-success      { border-color: var(--quanta-border-success); }
+.border-warning      { border-color: var(--quanta-border-warning); }
+.border-danger       { border-color: var(--quanta-border-danger); }
+.border-info         { border-color: var(--quanta-border-info); }
 
 /* ─── Responsive Font Sizes ──────────────────────────────── */
 @media (max-width: 640px) {

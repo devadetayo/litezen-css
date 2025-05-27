@@ -1,152 +1,152 @@
 /* src/components/accordion.css */
-@layer components.lz-accordion {
+@layer components.quanta-accordion {
   /* ─── Accordion Container ─────────────────────────────────── */
-  .lz-accordion {
+  .quanta-accordion {
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
     width: 100%;
   }
 
   /* ─── Accordion Item ──────────────────────────────────────── */
-  .lz-accordion-item {
-    border: var(--lz-border-width) solid var(--lz-border-color);
-    border-radius: var(--lz-rounded);
+  .quanta-accordion-item {
+    border: var(--quanta-border-width) solid var(--quanta-border-color);
+    border-radius: var(--quanta-rounded);
     overflow: hidden;
     width: 100%; /* Ensure items are full-width */
   }
 
   /* ─── Accordion Header ────────────────────────────────────── */
-  .lz-accordion-header {
-    background-color: var(--lz-bg-surface);
-    color: var(--lz-text-default);
-    padding: var(--lz-space-3) var(--lz-space-4); /* Mobile-first padding */
-    font-family: var(--lz-font-primary);
-    font-size: var(--lz-body-size);
+  .quanta-accordion-header {
+    background-color: var(--quanta-bg-surface);
+    color: var(--quanta-text-default);
+    padding: var(--quanta-space-3) var(--quanta-space-4); /* Mobile-first padding */
+    font-family: var(--quanta-font-primary);
+    font-size: var(--quanta-body-size);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     user-select: none;
-    transition: background-color var(--lz-transition-fast);
+    transition: background-color var(--quanta-transition-fast);
     width: 100%;
   }
 
-  .lz-accordion-header:hover {
-    background-color: var(--lz-bg-emphasis);
+  .quanta-accordion-header:hover {
+    background-color: var(--quanta-bg-emphasis);
   }
 
   /* ─── Accordion Content ───────────────────────────────────── */
-  .lz-accordion-content {
+  .quanta-accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--lz-transition-normal), padding var(--lz-transition-fast);
-    padding: 0 var(--lz-space-4);
-    background-color: var(--lz-bg-default);
+    transition: max-height var(--quanta-transition-normal), padding var(--quanta-transition-fast);
+    padding: 0 var(--quanta-space-4);
+    background-color: var(--quanta-bg-default);
   }
 
-  .lz-accordion-content.open {
-    padding: var(--lz-space-3) var(--lz-space-4);
+  .quanta-accordion-content.open {
+    padding: var(--quanta-space-3) var(--quanta-space-4);
     max-height: 100vh; /* large enough to show content */
   }
 
   /* ─── Icon Toggles ─────────────────────────────────────────── */
-  .lz-accordion-header .icon {
-    transition: transform var(--lz-transition-fast);
+  .quanta-accordion-header .icon {
+    transition: transform var(--quanta-transition-fast);
   }
 
-  .lz-accordion-header.lz-active .icon {
+  .quanta-accordion-header.quanta-active .icon {
     transform: rotate(180deg);
   }
 
   /* ─── Dark Mode Tweaks ─────────────────────────────────────── */
-  html[data-theme="dark"] .lz-accordion-header {
-    background-color: var(--lz-bg-surface);
-    color: var(--lz-text-default);
+  html[data-theme="dark"] .quanta-accordion-header {
+    background-color: var(--quanta-bg-surface);
+    color: var(--quanta-text-default);
   }
 
-  html[data-theme="dark"] .lz-accordion-content {
-    background-color: var(--lz-bg-default);
+  html[data-theme="dark"] .quanta-accordion-content {
+    background-color: var(--quanta-bg-default);
   }
 
   /* ─── Mobile-First Styles ──────────────────────────────────── */
   /* Base styles are for mobile devices */
-  .lz-accordion-header {
-    font-size: var(--lz-body-size); /* Default font size for mobile */
-    padding: var(--lz-space-3) var(--lz-space-4); /* Padding for mobile */
+  .quanta-accordion-header {
+    font-size: var(--quanta-body-size); /* Default font size for mobile */
+    padding: var(--quanta-space-3) var(--quanta-space-4); /* Padding for mobile */
   }
 
-  .lz-accordion-content {
-    padding: 0 var(--lz-space-4); /* Padding for mobile */
+  .quanta-accordion-content {
+    padding: 0 var(--quanta-space-4); /* Padding for mobile */
   }
 
   /* ─── Responsive Adjustments ─────────────────────────────────── */
   /* Tablet and larger screens (min-width: 768px) */
   @media (min-width: 768px) {
-    .lz-accordion-header {
-      padding: var(--lz-space-3) var(--lz-space-5); /* Larger padding for tablets */
-      font-size: var(--lz-body-size-md); /* Slightly larger font on tablets */
+    .quanta-accordion-header {
+      padding: var(--quanta-space-3) var(--quanta-space-5); /* Larger padding for tablets */
+      font-size: var(--quanta-body-size-md); /* Slightly larger font on tablets */
     }
 
-    .lz-accordion-content.open {
-      padding: var(--lz-space-3) var(--lz-space-5); /* Increase padding on larger screens */
+    .quanta-accordion-content.open {
+      padding: var(--quanta-space-3) var(--quanta-space-5); /* Increase padding on larger screens */
     }
 
-    .lz-accordion-item {
-      margin-bottom: var(--lz-space-3); /* Larger space between accordion items */
+    .quanta-accordion-item {
+      margin-bottom: var(--quanta-space-3); /* Larger space between accordion items */
     }
   }
 
   /* Larger screens (min-width: 1024px) */
   @media (min-width: 1024px) {
-    .lz-accordion-header {
-      font-size: var(--lz-body-size-lg); /* Increase font size on large screens */
-      padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding on larger screens */
+    .quanta-accordion-header {
+      font-size: var(--quanta-body-size-lg); /* Increase font size on large screens */
+      padding: var(--quanta-space-4) var(--quanta-space-6); /* Add more padding on larger screens */
     }
 
-    .lz-accordion-content.open {
-      padding: var(--lz-space-4) var(--lz-space-6); /* Add more padding */
+    .quanta-accordion-content.open {
+      padding: var(--quanta-space-4) var(--quanta-space-6); /* Add more padding */
     }
 
-    .lz-accordion-item {
-      margin-bottom: var(--lz-space-4); /* More space on larger screens */
+    .quanta-accordion-item {
+      margin-bottom: var(--quanta-space-4); /* More space on larger screens */
     }
   }
 
   /* Extra Large screens (min-width: 1280px) */
   @media (min-width: 1280px) {
-    .lz-accordion-header {
-      font-size: var(--lz-body-size-xl); /* Even larger font size on extra large screens */
-      padding: var(--lz-space-5) var(--lz-space-8); /* Adjust padding for larger screens */
+    .quanta-accordion-header {
+      font-size: var(--quanta-body-size-xl); /* Even larger font size on extra large screens */
+      padding: var(--quanta-space-5) var(--quanta-space-8); /* Adjust padding for larger screens */
     }
 
-    .lz-accordion-content.open {
-      padding: var(--lz-space-5) var(--lz-space-8); /* More padding for larger screens */
+    .quanta-accordion-content.open {
+      padding: var(--quanta-space-5) var(--quanta-space-8); /* More padding for larger screens */
     }
 
-    .lz-accordion-item {
-      margin-bottom: var(--lz-space-5); /* Larger space on extra large screens */
+    .quanta-accordion-item {
+      margin-bottom: var(--quanta-space-5); /* Larger space on extra large screens */
     }
   }
 
   /* ─── Accessibility & Usability Enhancements ───────────────── */
-  .lz-accordion-header:focus {
-    outline: 2px solid var(--lz-primary); /* Focus state for accessibility */
-    background-color: var(--lz-bg-emphasis);
+  .quanta-accordion-header:focus {
+    outline: 2px solid var(--quanta-primary); /* Focus state for accessibility */
+    background-color: var(--quanta-bg-emphasis);
   }
 
-  .lz-accordion-header[aria-expanded="true"] {
-    background-color: var(--lz-bg-emphasis);
+  .quanta-accordion-header[aria-expanded="true"] {
+    background-color: var(--quanta-bg-emphasis);
   }
 
   /* ─── Additional Utility Support ──────────────────────────── */
   /* Allow utility-based control for padding and margins */
-  .lz-accordion-header {
+  .quanta-accordion-header {
     @apply p-4; /* Utility class for padding */
     @apply mb-2; /* Margin-bottom utility */
   }
 
-  .lz-accordion-content {
+  .quanta-accordion-content {
     @apply p-4; /* Utility class for padding */
   }
 }

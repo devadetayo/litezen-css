@@ -1,12 +1,14 @@
-# Litezen CSS
+<p align="center">
+  <img src="src/logo/favico.png" alt="Quanta CSS Logo" width="160" />
+</p>
 
 **A modern CSS framework built for speed, simplicity, and complete design control.**
 
 > Built with utility-first flexibility and component-based elegance — without the bloat.
 
-![npm version](https://img.shields.io/npm/v/litezencss)
-![build status](https://github.com/devadetayo/litezen-css/actions/workflows/ci.yml/badge.svg)
-![license](https://img.shields.io/github/license/devadetayo/litezen-css)
+![npm version](https://img.shields.io/npm/v/quanta-css)
+![build status](https://github.com/devadetayo/quanta-css/actions/workflows/ci.yml/badge.svg)
+![license](https://img.shields.io/github/license/devadetayo/quanta-css)
 
 ---
 
@@ -20,19 +22,19 @@
 
 ---
 
-## 🚀 What is Litezen?
+## 🚀 What is quanta?
 
-Litezen CSS is a hybrid framework blending utility-first classes with component-based patterns. Stay lean, theme-aware, and production-ready.
+Quanta CSS is a hybrid framework blending utility-first classes with component-based patterns. Stay lean, theme-aware, and production-ready.
 
 ---
 
 ## 📁 Folder Structure
 
 ```plain
-litezen-css/
+quanta-css/
 ├── dist/             # Compiled CSS output
-│   ├── litezen.css         # Full bundle (utilities + components)
-│   ├── litezen.min.css     # Minified bundle
+│   ├── quanta.css         # Full bundle (utilities + components)
+│   ├── quanta.min.css     # Minified bundle
 │   ├── components.css      # Prebuilt UI components
 │   ├── utilities.css       # Core utility classes
 │   └── themes           # Theme overrides
@@ -41,8 +43,8 @@ litezen-css/
 │   ├── tokens/            # Design tokens (variables)
 │   └── utilities/         # Utility CSS sources
 ├── tools/            # Build & generator scripts
-│   ├── litezen-cli.js
-│   └── litezen-generator.js
+│   ├── quanta-cli.js
+│   └── quanta-generator.js
 ├── docs/             # Documentation site sources
 ├── playground.html   # Live editor & preview
 ├── documentation.html# Documentation entrypoint
@@ -59,13 +61,13 @@ litezen-css/
 ### Via npm
 
 ```bash
-npm install litezen-css
+npm install quanta-css
 ```
 
 ### Via CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litezencss@1.0.2/dist/litezen.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quantacss@1.0.2/dist/quanta.css">
 ```
 
 ---
@@ -78,13 +80,13 @@ npm install litezen-css
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="path/to/litezen.min.css" />
-  <title>Litezen Starter</title>
+  <link rel="stylesheet" href="path/to/quanta.min.css" />
+  <title>quanta Starter</title>
 </head>
 <body class="p-8 bg-light text-dark">
 
-  <h1 class="text-2xl font-bold mb-4">Hello, Litezen!</h1>
-  <button class="lz-btn lz-bg-primary hover:lz-bg-secondary">Get Started</button>
+  <h1 class="text-2xl font-bold mb-4">Hello, quanta!</h1>
+  <button class="quanta-btn quanta-bg-primary hover-quanta-bg-secondary">Get Started</button>
 
 </body>
 </html>
@@ -94,9 +96,9 @@ npm install litezen-css
 
 ## 🔗 Quick Links
 
-* **Documentation:** [https://devadetayo.github.io/litezen-css/documentation.html](https://devadetayo.github.io/litezen-css/documentation.html)
-* **Playground:** [https://devadetayo.github.io/litezen-css/playground.html](https://devadetayo.github.io/litezen-css/playground.html)
-* **Homepage:** [https://devadetayo.github.io/litezen-css](https://devadetayo.github.io/litezen-css)
+* **Documentation:** [https://devadetayo.github.io/quanta-css/documentation.html](https://devadetayo.github.io/quanta-css/documentation.html)
+* **Playground:** [https://devadetayo.github.io/quanta-css/playground.html](https://devadetayo.github.io/quanta-css/playground.html)
+* **Homepage:** [https://devadetayo.github.io/quanta-css](https://devadetayo.github.io/quanta-css)
 
 ---
 

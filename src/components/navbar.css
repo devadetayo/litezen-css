@@ -1,29 +1,29 @@
 /* src/components/navbar.css */
 @layer components.navbar {
-  .lz-navbar {
+  .quanta-navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--lz-space-4);
-    background: var(--lz-bg-default);
-    box-shadow: var(--lz-shadow-sm);
+    padding: var(--quanta-space-4);
+    background: var(--quanta-bg-default);
+    box-shadow: var(--quanta-shadow-sm);
   }
-  .lz-navbar .lz-brand { font-size: var(--lz-text-lg); font-weight: bold; }
-  .lz-navbar .lz-nav {
+  .quanta-navbar .quanta-brand { font-size: var(--quanta-text-lg); font-weight: bold; }
+  .quanta-navbar .quanta-nav {
     display: flex;
-    gap: var(--lz-space-4);
+    gap: var(--quanta-space-4);
   }
-  .lz-navbar .lz-nav-link {
+  .quanta-navbar .quanta-nav-link {
     text-decoration: none;
-    color: var(--lz-text-default);
-    transition: color var(--lz-transition-fast);
+    color: var(--quanta-text-default);
+    transition: color var(--quanta-transition-fast);
   }
-  .lz-navbar .lz-nav-link:hover { color: var(--lz-primary); }
+  .quanta-navbar .quanta-nav-link:hover { color: var(--quanta-primary); }
 
-  html[data-theme="dark"] .lz-navbar { background: var(--lz-bg-emphasis); }
-  html[data-theme="dark"] .lz-nav-link { color: var(--lz-text-light); }
+  html[data-theme="dark"] .quanta-navbar { background: var(--quanta-bg-emphasis); }
+  html[data-theme="dark"] .quanta-nav-link { color: var(--quanta-text-light); }
 
-  @media (max-width:640px) { .lz-navbar .lz-nav { display: none; } }
+  @media (max-width:640px) { .quanta-navbar .quanta-nav { display: none; } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }

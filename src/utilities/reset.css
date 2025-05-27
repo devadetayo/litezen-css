@@ -68,7 +68,7 @@
 
   /* Accessibility */
   :where(:focus-visible) {
-    outline: 2px solid var(--lz-focus, #4f46e5);
+    outline: 2px solid var(--quanta-focus, #4f46e5);
     outline-offset: 2px;
   }
 }

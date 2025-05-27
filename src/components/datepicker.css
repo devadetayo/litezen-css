@@ -2,184 +2,184 @@
 @layer components.datepicker {
 
   /* ─── Base Date Picker Styles ──────────────────────────────────── */
-  .lz-datepicker {
+  .quanta-datepicker {
     position: relative;
     display: inline-block;
     width: 100%;
-    font-family: var(--lz-font-family);
+    font-family: var(--quanta-font-family);
   }
 
   /* Input Field */
-  .lz-datepicker input {
+  .quanta-datepicker input {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--lz-border-muted);
-    border-radius: var(--lz-rounded-sm);
-    background-color: var(--lz-bg-input);
-    color: var(--lz-text-primary);
-    font-size: var(--lz-font-size-md);
+    border: 1px solid var(--quanta-border-muted);
+    border-radius: var(--quanta-rounded-sm);
+    background-color: var(--quanta-bg-input);
+    color: var(--quanta-text-primary);
+    font-size: var(--quanta-font-size-md);
     transition: border-color 0.3s ease;
   }
 
-  .lz-datepicker input:focus {
-    border-color: var(--lz-bg-primary);
+  .quanta-datepicker input:focus {
+    border-color: var(--quanta-bg-primary);
     outline: none;
   }
 
   /* Input Focused */
-  .lz-datepicker input:focus::placeholder {
+  .quanta-datepicker input:focus::placeholder {
     color: transparent;
   }
 
   /* Date Picker Popup */
-  .lz-datepicker-popup {
+  .quanta-datepicker-popup {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 10;
-    background-color: var(--lz-bg-primary);
-    border-radius: var(--lz-rounded-sm);
+    background-color: var(--quanta-bg-primary);
+    border-radius: var(--quanta-rounded-sm);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     width: 100%;
   }
 
-  .lz-datepicker.active .lz-datepicker-popup {
+  .quanta-datepicker.active .quanta-datepicker-popup {
     display: block;
   }
 
   /* Calendar Grid */
-  .lz-datepicker-popup .lz-calendar {
+  .quanta-datepicker-popup .quanta-calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
   }
 
   /* Calendar Days */
-  .lz-datepicker-popup .lz-calendar .lz-day {
+  .quanta-datepicker-popup .quanta-calendar .quanta-day {
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--lz-rounded-sm);
+    border-radius: var(--quanta-rounded-sm);
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
-  .lz-datepicker-popup .lz-calendar .lz-day:hover {
-    background-color: var(--lz-bg-muted);
+  .quanta-datepicker-popup .quanta-calendar .quanta-day:hover {
+    background-color: var(--quanta-bg-muted);
   }
 
-  .lz-datepicker-popup .lz-calendar .lz-day.selected {
-    background-color: var(--lz-bg-primary);
-    color: var(--lz-text-white);
+  .quanta-datepicker-popup .quanta-calendar .quanta-day.selected {
+    background-color: var(--quanta-bg-primary);
+    color: var(--quanta-text-white);
   }
 
   /* Day Numbers */
-  .lz-datepicker-popup .lz-calendar .lz-day.disabled {
-    background-color: var(--lz-bg-light);
+  .quanta-datepicker-popup .quanta-calendar .quanta-day.disabled {
+    background-color: var(--quanta-bg-light);
     cursor: not-allowed;
   }
 
   /* Navigation Buttons (Previous & Next Month) */
-  .lz-datepicker-popup .lz-navigation {
+  .quanta-datepicker-popup .quanta-navigation {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
 
-  .lz-datepicker-popup .lz-navigation button {
+  .quanta-datepicker-popup .quanta-navigation button {
     background-color: transparent;
     border: none;
-    font-size: var(--lz-font-size-md);
-    color: var(--lz-text-primary);
+    font-size: var(--quanta-font-size-md);
+    color: var(--quanta-text-primary);
     cursor: pointer;
     padding: 5px;
   }
 
-  .lz-datepicker-popup .lz-navigation button:hover {
-    color: var(--lz-bg-primary);
+  .quanta-datepicker-popup .quanta-navigation button:hover {
+    color: var(--quanta-bg-primary);
   }
 
   /* ─── Dark Mode Support ─────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-datepicker input {
-      background-color: var(--lz-bg-dark-input);
-      color: var(--lz-text-light);
-      border: 1px solid var(--lz-border-dark);
+    .quanta-datepicker input {
+      background-color: var(--quanta-bg-dark-input);
+      color: var(--quanta-text-light);
+      border: 1px solid var(--quanta-border-dark);
     }
 
-    .lz-datepicker-popup {
-      background-color: var(--lz-bg-dark-primary);
+    .quanta-datepicker-popup {
+      background-color: var(--quanta-bg-dark-primary);
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day:hover {
-      background-color: var(--lz-bg-dark-muted);
+    .quanta-datepicker-popup .quanta-calendar .quanta-day:hover {
+      background-color: var(--quanta-bg-dark-muted);
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day.selected {
-      background-color: var(--lz-bg-dark-primary);
-      color: var(--lz-text-dark);
+    .quanta-datepicker-popup .quanta-calendar .quanta-day.selected {
+      background-color: var(--quanta-bg-dark-primary);
+      color: var(--quanta-text-dark);
     }
 
-    .lz-datepicker-popup .lz-navigation button {
-      color: var(--lz-text-light);
+    .quanta-datepicker-popup .quanta-navigation button {
+      color: var(--quanta-text-light);
     }
   }
 
   /* ─── Responsive Design (5 Breakpoints) ──────────────────────────── */
   @media (max-width: 640px) {
-    .lz-datepicker input {
+    .quanta-datepicker input {
       padding: 8px;
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day {
+    .quanta-datepicker-popup .quanta-calendar .quanta-day {
       width: 30px;
       height: 30px;
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-datepicker input {
+    .quanta-datepicker input {
       padding: 9px;
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day {
+    .quanta-datepicker-popup .quanta-calendar .quanta-day {
       width: 35px;
       height: 35px;
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-datepicker input {
+    .quanta-datepicker input {
       padding: 10px;
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day {
+    .quanta-datepicker-popup .quanta-calendar .quanta-day {
       width: 40px;
       height: 40px;
     }
   }
 
   @media (min-width: 1025px) and (max-width: 1280px) {
-    .lz-datepicker input {
+    .quanta-datepicker input {
       padding: 11px;
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day {
+    .quanta-datepicker-popup .quanta-calendar .quanta-day {
       width: 45px;
       height: 45px;
     }
   }
 
   @media (min-width: 1281px) {
-    .lz-datepicker input {
+    .quanta-datepicker input {
       padding: 12px;
     }
 
-    .lz-datepicker-popup .lz-calendar .lz-day {
+    .quanta-datepicker-popup .quanta-calendar .quanta-day {
       width: 50px;
       height: 50px;
     }

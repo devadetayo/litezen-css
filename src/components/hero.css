@@ -1,27 +1,27 @@
 /* src/components/hero.css */
 @layer components.hero {
-  .lz-hero {
+  .quanta-hero {
     position: relative;
-    padding: var(--lz-space-12) var(--lz-space-4);
+    padding: var(--quanta-space-12) var(--quanta-space-4);
     text-align: center;
     background-size: cover;
     background-position: center;
-    color: var(--lz-text-light);
+    color: var(--quanta-text-light);
   }
-  .lz-hero-title { font-size: var(--lz-text-4xl); margin-bottom: var(--lz-space-4); }
-  .lz-hero-sub { font-size: var(--lz-text-xl); margin-bottom: var(--lz-space-6); }
-  .lz-hero-cta {
+  .quanta-hero-title { font-size: var(--quanta-text-4xl); margin-bottom: var(--quanta-space-4); }
+  .quanta-hero-sub { font-size: var(--quanta-text-xl); margin-bottom: var(--quanta-space-6); }
+  .quanta-hero-cta {
     display: inline-block;
-    padding: var(--lz-space-3) var(--lz-space-6);
-    background: var(--lz-primary);
-    border-radius: var(--lz-rounded-md);
+    padding: var(--quanta-space-3) var(--quanta-space-6);
+    background: var(--quanta-primary);
+    border-radius: var(--quanta-rounded-md);
   }
 
-  html[data-theme="dark"] .lz-hero { color: var(--lz-text-light); }
+  html[data-theme="dark"] .quanta-hero { color: var(--quanta-text-light); }
 
   @media (max-width:640px) {
-    .lz-hero-title { font-size: var(--lz-text-2xl); }
-    .lz-hero-sub { font-size: var(--lz-text-lg); }
+    .quanta-hero-title { font-size: var(--quanta-text-2xl); }
+    .quanta-hero-sub { font-size: var(--quanta-text-lg); }
   }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }

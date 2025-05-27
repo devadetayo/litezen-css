@@ -1,31 +1,31 @@
 /* src/components/pricing.css */
 @layer components.pricing {
-  .lz-pricing {
+  .quanta-pricing {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--lz-space-6);
+    gap: var(--quanta-space-6);
     justify-content: center;
   }
-  .lz-plan {
-    background: var(--lz-bg-default);
-    border-radius: var(--lz-rounded-md);
-    padding: var(--lz-space-6);
+  .quanta-plan {
+    background: var(--quanta-bg-default);
+    border-radius: var(--quanta-rounded-md);
+    padding: var(--quanta-space-6);
     flex: 1 1 240px;
     text-align: center;
-    box-shadow: var(--lz-shadow-sm);
+    box-shadow: var(--quanta-shadow-sm);
     display: flex;
     flex-direction: column;
-    gap: var(--lz-space-4);
+    gap: var(--quanta-space-4);
   }
-  .lz-plan-title { font-size: var(--lz-text-xl); font-weight: 600; }
-  .lz-plan-price { font-size: var(--lz-text-3xl); font-weight: bold; }
-  .lz-plan-features { list-style: none; padding: 0; margin: 0; }
-  .lz-plan-features li { margin-bottom: var(--lz-space-2); }
-  .lz-plan-cta { margin-top: auto; }
+  .quanta-plan-title { font-size: var(--quanta-text-xl); font-weight: 600; }
+  .quanta-plan-price { font-size: var(--quanta-text-3xl); font-weight: bold; }
+  .quanta-plan-features { list-style: none; padding: 0; margin: 0; }
+  .quanta-plan-features li { margin-bottom: var(--quanta-space-2); }
+  .quanta-plan-cta { margin-top: auto; }
 
-  html[data-theme="dark"] .lz-plan { background: var(--lz-bg-emphasis); }
+  html[data-theme="dark"] .quanta-plan { background: var(--quanta-bg-emphasis); }
 
-  @media (max-width:640px) { .lz-plan { padding: var(--lz-space-4); } }
+  @media (max-width:640px) { .quanta-plan { padding: var(--quanta-space-4); } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }

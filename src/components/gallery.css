@@ -1,25 +1,25 @@
 /* src/components/gallery.css */
 @layer components.gallery {
-  .lz-gallery {
+  .quanta-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: var(--lz-space-4);
+    gap: var(--quanta-space-4);
   }
-  .lz-gallery-item {
+  .quanta-gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: var(--lz-rounded-md);
+    border-radius: var(--quanta-rounded-md);
   }
-  .lz-gallery-item img {
+  .quanta-gallery-item img {
     width: 100%;
     height: auto;
     transition: transform 0.3s;
   }
-  .lz-gallery-item:hover img {
+  .quanta-gallery-item:hover img {
     transform: scale(1.1);
   }
   /* Lightbox */
-  .lz-lightbox {
+  .quanta-lightbox {
     display: none;
     position: fixed;
     inset: 0;
@@ -28,24 +28,24 @@
     justify-content: center;
     z-index: 10000;
   }
-  .lz-lightbox.active {
+  .quanta-lightbox.active {
     display: flex;
   }
-  .lz-lightbox img {
+  .quanta-lightbox img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: var(--lz-rounded-md);
+    border-radius: var(--quanta-rounded-md);
   }
-  .lz-lightbox-close {
+  .quanta-lightbox-close {
     position: absolute;
-    top: var(--lz-space-4);
-    right: var(--lz-space-4);
-    font-size: var(--lz-text-2xl);
+    top: var(--quanta-space-4);
+    right: var(--quanta-space-4);
+    font-size: var(--quanta-text-2xl);
     color: #fff;
     cursor: pointer;
   }
 
-  @media (max-width:640px) { .lz-gallery { gap: var(--lz-space-2); } }
+  @media (max-width:640px) { .quanta-gallery { gap: var(--quanta-space-2); } }
   @media (min-width:641px) and (max-width:768px) { /* no change */ }
   @media (min-width:769px) and (max-width:1024px) { /* no change */ }
   @media (min-width:1025px) and (max-width:1280px) { /* no change */ }

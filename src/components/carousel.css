@@ -1,210 +1,210 @@
 /* src/components/carousel.css */
 @layer components.carousel {
   /* ─── Carousel Container ────────────────────────────────── */
-  .lz-carousel {
+  .quanta-carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    background-color: var(--lz-bg-default);
-    border-radius: var(--lz-rounded-md);
+    background-color: var(--quanta-bg-default);
+    border-radius: var(--quanta-rounded-md);
   }
 
   /* ─── Carousel Items ────────────────────────────────────── */
-  .lz-carousel-item {
+  .quanta-carousel-item {
     display: none;
     width: 100%;
     height: auto;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
 
-  .lz-carousel-item.active {
+  .quanta-carousel-item.active {
     display: block;
   }
 
-  .lz-carousel-item img,
-  .lz-carousel-item .lz-carousel-content {
+  .quanta-carousel-item img,
+  .quanta-carousel-item .quanta-carousel-content {
     width: 100%;
     height: auto;
-    border-radius: var(--lz-rounded-md);
+    border-radius: var(--quanta-rounded-md);
   }
 
   /* ─── Custom Layouts ────────────────────────────────────── */
   /* Layout 1: Image Only */
-  .lz-carousel.layout-image-only .lz-carousel-item img {
+  .quanta-carousel.layout-image-only .quanta-carousel-item img {
     width: 100%;
     object-fit: cover;
   }
 
   /* Layout 2: Image + Text */
-  .lz-carousel.layout-image-text .lz-carousel-item {
+  .quanta-carousel.layout-image-text .quanta-carousel-item {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .lz-carousel.layout-image-text .lz-carousel-item img {
+  .quanta-carousel.layout-image-text .quanta-carousel-item img {
     width: 50%;
     object-fit: cover;
   }
 
-  .lz-carousel.layout-image-text .lz-carousel-item .lz-carousel-caption {
+  .quanta-carousel.layout-image-text .quanta-carousel-item .quanta-carousel-caption {
     width: 50%;
-    padding: var(--lz-space-4);
-    color: var(--lz-text-light);
+    padding: var(--quanta-space-4);
+    color: var(--quanta-text-light);
     background-color: rgba(0, 0, 0, 0.5);
   }
 
   /* Layout 3: Testimonials */
-  .lz-carousel.layout-testimonial .lz-carousel-item {
+  .quanta-carousel.layout-testimonial .quanta-carousel-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .lz-carousel.layout-testimonial .lz-carousel-item .lz-carousel-caption {
+  .quanta-carousel.layout-testimonial .quanta-carousel-item .quanta-carousel-caption {
     text-align: center;
-    padding: var(--lz-space-4);
+    padding: var(--quanta-space-4);
     background-color: rgba(0, 0, 0, 0.7);
   }
 
   /* ─── Carousel Controls (Previous & Next) ──────────────── */
-  .lz-carousel-prev,
-  .lz-carousel-next {
+  .quanta-carousel-prev,
+  .quanta-carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--lz-bg-muted);
-    padding: var(--lz-space-3);
+    background-color: var(--quanta-bg-muted);
+    padding: var(--quanta-space-3);
     border-radius: 50%;
-    box-shadow: var(--lz-shadow-lg);
-    color: var(--lz-text-default);
+    box-shadow: var(--quanta-shadow-lg);
+    color: var(--quanta-text-default);
     z-index: 10;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
-  .lz-carousel-prev:hover,
-  .lz-carousel-next:hover {
-    background-color: var(--lz-primary);
+  .quanta-carousel-prev:hover,
+  .quanta-carousel-next:hover {
+    background-color: var(--quanta-primary);
     transform: translateY(-50%) scale(1.1);
   }
 
-  .lz-carousel-prev {
-    left: var(--lz-space-4);
+  .quanta-carousel-prev {
+    left: var(--quanta-space-4);
   }
 
-  .lz-carousel-next {
-    right: var(--lz-space-4);
+  .quanta-carousel-next {
+    right: var(--quanta-space-4);
   }
 
   /* ─── Carousel Indicators (Dots) ────────────────────────── */
-  .lz-carousel-indicators {
+  .quanta-carousel-indicators {
     position: absolute;
-    bottom: var(--lz-space-4);
+    bottom: var(--quanta-space-4);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: var(--lz-space-2);
+    gap: var(--quanta-space-2);
     z-index: 10;
   }
 
-  .lz-carousel-indicator {
-    width: var(--lz-space-2);
-    height: var(--lz-space-2);
+  .quanta-carousel-indicator {
+    width: var(--quanta-space-2);
+    height: var(--quanta-space-2);
     border-radius: 50%;
-    background-color: var(--lz-text-muted);
+    background-color: var(--quanta-text-muted);
     transition: background-color 0.3s ease;
     cursor: pointer;
   }
 
-  .lz-carousel-indicator.active {
-    background-color: var(--lz-primary);
+  .quanta-carousel-indicator.active {
+    background-color: var(--quanta-primary);
   }
 
   /* ─── Carousel Caption (Text Content) ───────────────────── */
-  .lz-carousel-caption {
+  .quanta-carousel-caption {
     position: absolute;
-    bottom: var(--lz-space-4);
-    left: var(--lz-space-4);
-    right: var(--lz-space-4);
-    color: var(--lz-text-light);
-    font-size: var(--lz-text-lg);
+    bottom: var(--quanta-space-4);
+    left: var(--quanta-space-4);
+    right: var(--quanta-space-4);
+    color: var(--quanta-text-light);
+    font-size: var(--quanta-text-lg);
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     z-index: 5;
   }
 
   /* ─── Dark Mode ─────────────────────────────────────────── */
   html[data-theme="dark"] {
-    .lz-carousel {
-      background-color: var(--lz-bg-emphasis);
+    .quanta-carousel {
+      background-color: var(--quanta-bg-emphasis);
     }
 
-    .lz-carousel-prev,
-    .lz-carousel-next {
-      background-color: var(--lz-bg-dark);
-      color: var(--lz-text-light);
+    .quanta-carousel-prev,
+    .quanta-carousel-next {
+      background-color: var(--quanta-bg-dark);
+      color: var(--quanta-text-light);
     }
 
-    .lz-carousel-prev:hover,
-    .lz-carousel-next:hover {
-      background-color: var(--lz-primary-dark);
+    .quanta-carousel-prev:hover,
+    .quanta-carousel-next:hover {
+      background-color: var(--quanta-primary-dark);
     }
 
-    .lz-carousel-indicator {
-      background-color: var(--lz-text-muted-dark);
+    .quanta-carousel-indicator {
+      background-color: var(--quanta-text-muted-dark);
     }
 
-    .lz-carousel-indicator.active {
-      background-color: var(--lz-primary-dark);
+    .quanta-carousel-indicator.active {
+      background-color: var(--quanta-primary-dark);
     }
 
-    .lz-carousel-caption {
-      color: var(--lz-text-light);
+    .quanta-carousel-caption {
+      color: var(--quanta-text-light);
       text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
   }
 
   /* ─── Responsive Media Queries ──────────────────────────── */
   @media (max-width: 640px) {
-    .lz-carousel-prev,
-    .lz-carousel-next {
-      padding: var(--lz-space-2);
+    .quanta-carousel-prev,
+    .quanta-carousel-next {
+      padding: var(--quanta-space-2);
     }
 
-    .lz-carousel-caption {
-      font-size: var(--lz-text-sm);
+    .quanta-carousel-caption {
+      font-size: var(--quanta-text-sm);
     }
 
-    .lz-carousel.layout-image-text .lz-carousel-item img {
+    .quanta-carousel.layout-image-text .quanta-carousel-item img {
       width: 100%;
     }
 
-    .lz-carousel.layout-image-text .lz-carousel-item .lz-carousel-caption {
+    .quanta-carousel.layout-image-text .quanta-carousel-item .quanta-carousel-caption {
       width: 100%;
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .lz-carousel-prev,
-    .lz-carousel-next {
-      padding: var(--lz-space-3);
+    .quanta-carousel-prev,
+    .quanta-carousel-next {
+      padding: var(--quanta-space-3);
     }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .lz-carousel-prev,
-    .lz-carousel-next {
-      padding: var(--lz-space-3);
+    .quanta-carousel-prev,
+    .quanta-carousel-next {
+      padding: var(--quanta-space-3);
     }
   }
 
   @media (min-width: 1025px) {
-    .lz-carousel-prev,
-    .lz-carousel-next {
-      padding: var(--lz-space-4);
+    .quanta-carousel-prev,
+    .quanta-carousel-next {
+      padding: var(--quanta-space-4);
     }
   }
 }
